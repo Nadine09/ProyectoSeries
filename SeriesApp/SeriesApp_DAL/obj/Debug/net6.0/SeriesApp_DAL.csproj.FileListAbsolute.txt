@@ -1,0 +1,15 @@
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0\SeriesApp_DAL.csproj.AssemblyReference.cache
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0\SeriesApp_DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0\SeriesApp_DAL.AssemblyInfoInputs.cache
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0\SeriesApp_DAL.AssemblyInfo.cs
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0\SeriesApp_DAL.csproj.CoreCompileInputs.cache
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\bin\Debug\net6.0\SeriesApp_DAL.deps.json
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\bin\Debug\net6.0\SeriesApp_DAL.dll
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\bin\Debug\net6.0\SeriesApp_DAL.pdb
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\bin\Debug\net6.0\SeriesApp_Entities.dll
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\bin\Debug\net6.0\SeriesApp_Entities.pdb
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0\SeriesApp_DAL.csproj.CopyComplete
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0\SeriesApp_DAL.dll
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0\refint\SeriesApp_DAL.dll
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0\SeriesApp_DAL.pdb
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0\ref\SeriesApp_DAL.dll

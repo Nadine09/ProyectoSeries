@@ -1,0 +1,12 @@
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\bin\Debug\net6.0-windows10.0.19041.0\SeriesApp_Entities.deps.json
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\bin\Debug\net6.0-windows10.0.19041.0\SeriesApp_Entities.dll
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\bin\Debug\net6.0-windows10.0.19041.0\SeriesApp_Entities.pdb
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-windows10.0.19041.0\SeriesApp_Entities.csproj.AssemblyReference.cache
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-windows10.0.19041.0\SeriesApp_Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-windows10.0.19041.0\SeriesApp_Entities.AssemblyInfoInputs.cache
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-windows10.0.19041.0\SeriesApp_Entities.AssemblyInfo.cs
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-windows10.0.19041.0\SeriesApp_Entities.csproj.CoreCompileInputs.cache
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-windows10.0.19041.0\SeriesApp_Entities.dll
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-windows10.0.19041.0\refint\SeriesApp_Entities.dll
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-windows10.0.19041.0\SeriesApp_Entities.pdb
+C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-windows10.0.19041.0\ref\SeriesApp_Entities.dll
