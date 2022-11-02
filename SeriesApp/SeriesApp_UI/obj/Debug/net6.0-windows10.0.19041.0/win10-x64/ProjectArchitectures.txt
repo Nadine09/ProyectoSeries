@@ -1,4 +1,4 @@
-C:\Users\nadin\source\repos\SeriesApp\SeriesApp_DAL\SeriesApp_DAL.csproj;neutral
-C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\SeriesApp_Entities.csproj;neutral
-C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\SeriesApp_Entities.csproj;neutral
-C:\Users\nadin\source\repos\SeriesApp\SeriesApp_UI\SeriesApp_UI.csproj;x64
+D:\ProyectoSeries\SeriesApp\SeriesApp_DAL\SeriesApp_DAL.csproj;neutral
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\SeriesApp_Entities.csproj;neutral
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\SeriesApp_Entities.csproj;neutral
+D:\ProyectoSeries\SeriesApp\SeriesApp_UI\SeriesApp_UI.csproj;x64

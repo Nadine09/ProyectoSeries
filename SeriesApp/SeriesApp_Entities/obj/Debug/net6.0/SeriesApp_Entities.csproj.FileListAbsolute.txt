@@ -10,3 +10,15 @@ C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\Series
 C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\refint\SeriesApp_Entities.dll
 C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\SeriesApp_Entities.pdb
 C:\Users\nadin\source\repos\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\ref\SeriesApp_Entities.dll
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\bin\Debug\net6.0\SeriesApp_Entities.deps.json
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\bin\Debug\net6.0\SeriesApp_Entities.dll
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\bin\Debug\net6.0\SeriesApp_Entities.pdb
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\SeriesApp_Entities.csproj.AssemblyReference.cache
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\SeriesApp_Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\SeriesApp_Entities.AssemblyInfoInputs.cache
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\SeriesApp_Entities.AssemblyInfo.cs
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\SeriesApp_Entities.csproj.CoreCompileInputs.cache
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\SeriesApp_Entities.dll
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\refint\SeriesApp_Entities.dll
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\SeriesApp_Entities.pdb
+D:\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0\ref\SeriesApp_Entities.dll

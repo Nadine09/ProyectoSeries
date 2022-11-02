@@ -53,6 +53,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <ProjectReference Include="..\SeriesApp_DAL\SeriesApp_DAL.csproj" />
 	  <ProjectReference Include="..\SeriesApp_Entities\SeriesApp_Entities.csproj" />
 	</ItemGroup>

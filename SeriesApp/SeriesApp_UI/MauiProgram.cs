@@ -1,4 +1,7 @@
-﻿namespace SeriesApp_UI;
+﻿using SeriesApp_UI.ViewModels;
+using SeriesApp_UI.Views;
+
+namespace SeriesApp_UI;
 
 public static class MauiProgram
 {
@@ -12,7 +15,15 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+		
+		//Login
+		builder.Services.AddSingleton<LoginPage>();
+		builder.Services.AddSingleton<VM_Login>();
 
-		return builder.Build();
+        builder.Services.AddTransient<MainPage>();
+        builder.Services.AddTransient<VM_MainPage>();
+
+
+        return builder.Build();
 	}
 }
