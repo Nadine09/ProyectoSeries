@@ -19,7 +19,12 @@ public static class MauiProgram
 		//Login
 		builder.Services.AddSingleton<LoginPage>();
 		builder.Services.AddSingleton<VM_Login>();
+		
+		//CreateAccount
+		builder.Services.AddSingleton<CreateAccountPage>();
+		builder.Services.AddSingleton<VM_CreateAccount>();
 
+		//MainPage
         builder.Services.AddTransient<MainPage>();
         builder.Services.AddTransient<VM_MainPage>();
 

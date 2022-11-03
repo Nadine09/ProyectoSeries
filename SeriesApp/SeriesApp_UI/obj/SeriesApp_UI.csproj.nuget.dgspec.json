@@ -1,28 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_UI\\SeriesApp_UI.csproj": {}
+    "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_UI\\SeriesApp_UI.csproj": {}
   },
   "projects": {
-    "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj": {
+    "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj",
+        "projectUniqueName": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj",
         "projectName": "SeriesApp_DAL",
-        "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj",
-        "packagesPath": "C:\\Users\\Alvaro\\.nuget\\packages\\",
-        "outputPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\obj\\",
+        "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj",
+        "packagesPath": "C:\\Users\\nadin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Alvaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nadin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0",
@@ -40,40 +38,40 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
               }
             }
           },
           "net6.0-android31.0": {
             "targetAlias": "net6.0-android",
             "projectReferences": {
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
               }
             }
           },
-          "net6.0-ios16.0": {
+          "net6.0-ios15.4": {
             "targetAlias": "net6.0-ios",
             "projectReferences": {
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
               }
             }
           },
           "net6.0-maccatalyst15.4": {
             "targetAlias": "net6.0-maccatalyst",
             "projectReferences": {
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
               }
             }
           },
           "net6.0-windows10.0.19041": {
             "targetAlias": "net6.0-windows10.0.19041.0",
             "projectReferences": {
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
               }
             }
           }
@@ -88,16 +86,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "System.Data.SqlClient": {
@@ -130,21 +132,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
         "net6.0-android31.0": {
           "targetAlias": "net6.0-android",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "System.Data.SqlClient": {
@@ -180,21 +186,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
-        "net6.0-ios16.0": {
+        "net6.0-ios15.4": {
           "targetAlias": "net6.0-ios",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "System.Data.SqlClient": {
@@ -235,21 +245,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
         "net6.0-maccatalyst15.4": {
           "targetAlias": "net6.0-maccatalyst",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "System.Data.SqlClient": {
@@ -291,21 +305,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
         "net6.0-windows10.0.19041": {
           "targetAlias": "net6.0-windows10.0.19041.0",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Windows.SDK.BuildTools": {
@@ -333,7 +351,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.19041.27, 10.0.19041.27]"
+              "version": "[10.0.19041.26, 10.0.19041.26]"
             }
           ],
           "frameworkReferences": {
@@ -353,29 +371,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
+    "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj",
+        "projectUniqueName": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj",
         "projectName": "SeriesApp_Entities",
-        "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj",
-        "packagesPath": "C:\\Users\\Alvaro\\.nuget\\packages\\",
-        "outputPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\obj\\",
+        "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj",
+        "packagesPath": "C:\\Users\\nadin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Alvaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nadin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0",
@@ -398,7 +414,7 @@
             "targetAlias": "net6.0-android",
             "projectReferences": {}
           },
-          "net6.0-ios16.0": {
+          "net6.0-ios15.4": {
             "targetAlias": "net6.0-ios",
             "projectReferences": {}
           },
@@ -424,13 +440,13 @@
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             }
           },
@@ -459,7 +475,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
         "net6.0-android31.0": {
           "targetAlias": "net6.0-android",
@@ -467,13 +483,13 @@
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             }
           },
@@ -505,21 +521,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
-        "net6.0-ios16.0": {
+        "net6.0-ios15.4": {
           "targetAlias": "net6.0-ios",
           "dependencies": {
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
@@ -556,7 +572,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
         "net6.0-maccatalyst15.4": {
           "targetAlias": "net6.0-maccatalyst",
@@ -564,13 +580,13 @@
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
@@ -608,7 +624,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
         "net6.0-windows10.0.19041": {
           "targetAlias": "net6.0-windows10.0.19041.0",
@@ -616,13 +632,13 @@
             "Microsoft.Maui.Dependencies": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Windows.SDK.BuildTools": {
@@ -646,7 +662,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.19041.27, 10.0.19041.27]"
+              "version": "[10.0.19041.26, 10.0.19041.26]"
             }
           ],
           "frameworkReferences": {
@@ -666,29 +682,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_UI\\SeriesApp_UI.csproj": {
+    "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_UI\\SeriesApp_UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_UI\\SeriesApp_UI.csproj",
+        "projectUniqueName": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_UI\\SeriesApp_UI.csproj",
         "projectName": "SeriesApp_UI",
-        "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_UI\\SeriesApp_UI.csproj",
-        "packagesPath": "C:\\Users\\Alvaro\\.nuget\\packages\\",
-        "outputPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_UI\\obj\\",
+        "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_UI\\SeriesApp_UI.csproj",
+        "packagesPath": "C:\\Users\\nadin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_UI\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Alvaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nadin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0-android",
@@ -705,44 +719,44 @@
           "net6.0-android31.0": {
             "targetAlias": "net6.0-android",
             "projectReferences": {
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj"
               },
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
               }
             }
           },
-          "net6.0-ios16.0": {
+          "net6.0-ios15.4": {
             "targetAlias": "net6.0-ios",
             "projectReferences": {
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj"
               },
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
               }
             }
           },
           "net6.0-maccatalyst15.4": {
             "targetAlias": "net6.0-maccatalyst",
             "projectReferences": {
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj"
               },
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
               }
             }
           },
           "net6.0-windows10.0.19041": {
             "targetAlias": "net6.0-windows10.0.19041.0",
             "projectReferences": {
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_DAL\\SeriesApp_DAL.csproj"
               },
-              "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
-                "projectPath": "D:\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
+              "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj": {
+                "projectPath": "C:\\Users\\nadin\\source\\repos\\ProyectoSeries\\SeriesApp\\SeriesApp_Entities\\SeriesApp_Entities.csproj"
               }
             }
           }
@@ -763,12 +777,12 @@
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             }
           },
@@ -783,6 +797,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-arm",
+              "version": "[6.0.8, 6.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-arm64",
+              "version": "[6.0.8, 6.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.8, 6.0.8]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.Android": {
               "privateAssets": "all"
@@ -800,9 +828,9 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
-        "net6.0-ios16.0": {
+        "net6.0-ios15.4": {
           "targetAlias": "net6.0-ios",
           "dependencies": {
             "CommunityToolkit.Mvvm": {
@@ -811,12 +839,12 @@
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
@@ -853,7 +881,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
         "net6.0-maccatalyst15.4": {
           "targetAlias": "net6.0-maccatalyst",
@@ -864,12 +892,12 @@
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
@@ -907,7 +935,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         },
         "net6.0-windows10.0.19041": {
           "targetAlias": "net6.0-windows10.0.19041.0",
@@ -918,12 +946,12 @@
             },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.541, )",
+              "version": "[6.0.486, )",
               "autoReferenced": true
             },
             "Microsoft.Windows.SDK.BuildTools": {
@@ -947,19 +975,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[6.0.10, 6.0.10]"
+              "version": "[6.0.8, 6.0.8]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[6.0.10, 6.0.10]"
+              "version": "[6.0.8, 6.0.8]"
             },
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.19041.27, 10.0.19041.27]"
+              "version": "[10.0.19041.26, 10.0.19041.26]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[6.0.10, 6.0.10]"
+              "version": "[6.0.8, 6.0.8]"
             }
           ],
           "frameworkReferences": {
@@ -979,7 +1007,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

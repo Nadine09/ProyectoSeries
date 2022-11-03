@@ -157,3 +157,4 @@ gifdecoder.aar
 glide.aar
 SeriesApp_Entities.dll
 SeriesApp_DAL.dll
+Microsoft.Identity.Client.dll

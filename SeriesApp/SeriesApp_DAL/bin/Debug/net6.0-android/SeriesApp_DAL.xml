@@ -4,5 +4,33 @@
         <name>SeriesApp_DAL</name>
     </assembly>
     <members>
+        <member name="M:SeriesApp_DAL.Connection.ConnectionProvider.getConnection">
+            <summary>
+            Método que crea y devuelve una conexión con la base de datos
+            </summary>
+            <returns>Una conexión abierta con la base de datos</returns>
+        </member>
+        <member name="M:SeriesApp_DAL.Connection.ConnectionProvider.openConnection(Microsoft.Data.SqlClient.SqlConnection)">
+            <summary>
+            Método que abre la conexion pasada por parámetros
+            Precondiciones: La conexión no debe ser nula
+            </summary>
+            <param name="connection"></param>
+        </member>
+        <member name="M:SeriesApp_DAL.Connection.ConnectionProvider.closeConnection(Microsoft.Data.SqlClient.SqlConnection)">
+            <summary>
+            Este metodo cierra una conexión con la Base de datos
+            </summary>
+            <post>La conexion es cerrada</post>
+            <param name="connection">SqlConnection pr referencia. Conexion a cerrar
+            </param>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.InsertOneGetId(System.String)">
+            <summary>
+            Este método inserta un objeto en la base de datos y devuelve el id del objeto insertado.
+            </summary>
+            <param name="command">Instrucción SQL para insertar el objeto</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
