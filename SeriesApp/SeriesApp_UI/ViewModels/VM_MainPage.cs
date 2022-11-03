@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,19 @@ namespace SeriesApp_UI.ViewModels
     {
         [ObservableProperty]
         string text;
+
+        [ObservableProperty]
+        string textoQueSeGuarda;
+
+        public VM_MainPage()
+        {
+            textoQueSeGuarda = "TEXTO INICIAL";
+        }
+
+        [RelayCommand]
+        void Boton()
+        {
+            TextoQueSeGuarda = text;
+        }
     }
 }

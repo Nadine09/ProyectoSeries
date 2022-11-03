@@ -3,18 +3,15 @@ using CommunityToolkit.Mvvm.Input;
 using SeriesApp_DAL.DAO;
 using SeriesApp_Entities.Classes;
 using SeriesApp_UI.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeriesApp_UI.ViewModels
 {
-    public partial class VM_Login : ObservableObject
+    public partial class VM_CreateAccount : ObservableObject
     {
+        public const string CREATE_ACCOUNT_ERROR = "No se ha podido crear el usuario :(";
 
-        public const string LOGIN_ERROR = "No se ha podido hacer login :(";
+        [ObservableProperty]
+        string username;
 
         [ObservableProperty]
         string email;
@@ -25,32 +22,29 @@ namespace SeriesApp_UI.ViewModels
         [ObservableProperty]
         string errorMessage;
 
+
         #region Commands
         [RelayCommand]
-        async void Login()
+        async void CreateAccount()
         {
             errorMessage = "";
             UserDAO userDAO = new UserDAO();
-            ClsUser user = userDAO.GetUserByEmailAndPassword(email, password);
+            ClsUser user = new ClsUser();
+            user.UserName = username;
+            user.Email = email;
+            user.Password = password;
+            
+            user = userDAO.CreateUser(user);
             if (user != null)
             {
                 await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
             }
             else
             {
-                ErrorMessage = LOGIN_ERROR;
+                ErrorMessage = CREATE_ACCOUNT_ERROR;
             }
         }
 
-        [RelayCommand]
-        async void CreateAccount()
-        {
-            await Shell.Current.GoToAsync($"//{nameof(CreateAccountPage)}");
-        }
-
         #endregion
-
-
-
     }
 }

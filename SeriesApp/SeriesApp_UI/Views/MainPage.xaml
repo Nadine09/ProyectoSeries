@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:VM="clr-namespace:SeriesApp_UI.ViewModels"
              x:DataType="VM:VM_MainPage"
-             x:Class="SeriesApp_UI.Views.MainPage">
+             x:Class="SeriesApp_UI.Views.MainPage"
+             BackgroundColor="{StaticResource clrDarkBlue}">
 
     <ScrollView>
         <VerticalStackLayout
@@ -14,6 +15,10 @@
             <Entry Text="{Binding Text}"/>
 
             <Label Text="{Binding Text}"/>
+
+
+            <Button Command="{Binding BotonCommand}" Text="Pulsame" />
+            <Label Text="{Binding TextoQueSeGuarda}"/>
 
         </VerticalStackLayout>
     </ScrollView>

@@ -6,7 +6,7 @@
              x:Class="SeriesApp_UI.Views.LoginPage"
              Title="LoginPage"
              BackgroundColor="{StaticResource clrDarkBlue}">
-    <VerticalStackLayout>
+    <VerticalStackLayout BackgroundColor="White">
         <!--<Label 
             Text="{Binding Valor}"
             VerticalOptions="Center" 
@@ -16,10 +16,11 @@
         <Label Text="{Binding Number}"/>-->
 
         
-        <Entry Placeholder="Email"/>
-        <Entry Placeholder="Password" IsPassword="True" />
+        <Entry Placeholder="Email" Text="{Binding Email}"/>
+        <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" />
+        <Label Text="{Binding ErrorMessage}" TextColor="Red"/>
         <Button Text="Log in" Style="{StaticResource stlBtnLogin}" Command="{Binding LoginCommand}"/>
         <Line BackgroundColor="White"/>
-        <Button Text="Create Account" Style="{StaticResource stlBtnLogin}"/>
+        <Button Text="Create Account" Style="{StaticResource stlBtnLogin}" Command="{Binding CreateAccountCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

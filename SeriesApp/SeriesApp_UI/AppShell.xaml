@@ -12,12 +12,19 @@
         Title="Home"
         ContentTemplate="{DataTemplate views:LoginPage}"
         Route="LoginPage"/>
+    
+    <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate views:CreateAccountPage}"
+            Route="CreateAccountPage" />
 
     <FlyoutItem>
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate views:MainPage}"
             Route="MainPage" />
+
+        
     </FlyoutItem>
 
 </Shell>
