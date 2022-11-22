@@ -32,5 +32,18 @@
             <param name="command">Instrucción SQL para insertar el objeto</param>
             <returns></returns>
         </member>
+        <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.ExecuteNonQuery(System.String)">
+            <summary>
+            Este método ejecutará la instruccion pasada por parámetros
+            </summary>
+            <param name="command">Instrucción que se ejecutará</param>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.BuildObject(Microsoft.Data.SqlClient.SqlDataReader)">
+            <summary>
+            Este método crea un objeto con los valores del sqlReader.
+            </summary>
+            <param name="sqlDataReader">Objeto SqlDataReader en el que se buscarán los valores para crear el objeto</param>
+            <returns>Objeto creado</returns>
+        </member>
     </members>
 </doc>

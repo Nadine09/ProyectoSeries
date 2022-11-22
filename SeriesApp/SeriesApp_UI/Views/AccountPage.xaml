@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:VM="clr-namespace:SeriesApp_UI.ViewModels"
+             x:DataType="VM:VM_Account"
+             x:Class="SeriesApp_UI.Views.AccountPage"
+             Title="AccountPage">
+    <VerticalStackLayout>
+        <Label Text="Mi cuenta" />
+        <Label Text="{Binding User.UserName}" />
+        <HorizontalStackLayout>
+            <Label Text="Email: " />
+            <Label Text="{Binding User.Email}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Password: " />
+            <Entry Text="{Binding User.Password}" IsPassword="True" IsEnabled="False"/>
+        </HorizontalStackLayout>
+        <Button Text="Logout" Command="{Binding LogoutCommand}"/>
+        
+        <Button Text="Refresh" Command="{Binding RefreshCommand}"/>
+
+    </VerticalStackLayout>
+</ContentPage>

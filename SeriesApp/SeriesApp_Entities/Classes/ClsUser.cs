@@ -20,13 +20,22 @@ namespace SeriesApp_Entities.Classes
         {
         }
 
+        public ClsUser(string userName, string email, string password)
+        {
+            UserName = userName;
+            Email = email;
+            Password = password;
+        }
+
         public ClsUser(int id, string userName, string email, string password)
         {
             Id = id;
             UserName = userName;
             Email = email;
+            Password = password;
         }
         #endregion
 
+        
     }
 }

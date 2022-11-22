@@ -34,7 +34,11 @@ namespace SeriesApp_UI.ViewModels
             ClsUser user = userDAO.GetUserByEmailAndPassword(email, password);
             if (user != null)
             {
-                await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+                await SecureStorage.Default.SetAsync("Account", user.Id.ToString());
+                await Shell.Current.GoToAsync($"//{nameof(HomePage)}?", new Dictionary<string, object>
+                {
+                    ["UserId"] = user
+                });
             }
             else
             {
@@ -50,7 +54,14 @@ namespace SeriesApp_UI.ViewModels
 
         #endregion
 
+        [ObservableProperty]
+        long id;
 
+        [RelayCommand]
+        async Task GetUserAsync()
+        {
+            Id = long.Parse(await SecureStorage.Default.GetAsync("Account"));
+        }
 
     }
 }

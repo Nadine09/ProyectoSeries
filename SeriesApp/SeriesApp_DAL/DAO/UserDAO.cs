@@ -14,19 +14,18 @@ namespace SeriesApp_DAL.DAO
         public const string TABLE_NAME = "NAD_Users";
         public const string INSERT = $"INSERT INTO {TABLE_NAME} (UserName, Email, Password) VALUES ('@username', '@email', '@password')";
         public const string UPDATE = $"UPDATE {TABLE_NAME} SET UserName = @username, Password '@password'";
-        public const string VALIDATE_USER = $"SELECT id, username, email, [password] FROM {TABLE_NAME} WHERE Email = '@email' AND Password = '@password'";
-
+        public const string SELECT_USER_BY_EMAIL_AND_PASSWORD = $"SELECT id, username, email, [password] FROM {TABLE_NAME} WHERE Email = '@email' AND Password = '@password'";
         
+        public const string SELECT_BY_ID = $"SELECT id, username, email, [password] FROM {TABLE_NAME} WHERE Id = '@id'";
+
+        public UserDAO()
+        {
+            cmdSelectById = SELECT_BY_ID;
+        }
 
         public ClsUser GetUserByEmailAndPassword(string email, string password)
-        {
-            ClsUser user = null;
-            List<ClsUser> userList = Select(VALIDATE_USER.Replace("@email", email).Replace("@password", password));
-            if (userList != null && userList.Count > 0)
-            {
-                user = userList[0];
-            }
-            return user;
+        {      
+            return ExecuteQueryOneObject(SELECT_USER_BY_EMAIL_AND_PASSWORD.Replace("@email", email).Replace("@password", password));            
         }
 
         public ClsUser CreateUser(ClsUser user)

@@ -28,6 +28,18 @@ public static class MauiProgram
         builder.Services.AddTransient<MainPage>();
         builder.Services.AddTransient<VM_MainPage>();
 
+        //Home
+        builder.Services.AddTransient<HomePage>();
+        builder.Services.AddTransient<VM_Home>();
+
+        //UserSeries
+        builder.Services.AddTransient<UserSeriesPage>();
+        builder.Services.AddTransient<VM_UserSeries>();
+
+        //Account
+        builder.Services.AddTransient<AccountPage>();
+        builder.Services.AddTransient<VM_Account>();
+
 
         return builder.Build();
 	}

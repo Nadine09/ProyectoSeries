@@ -352,7 +352,8 @@
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+        <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />-->
+        <Setter Property="BackgroundColor" Value="{StaticResource clrMediumBlue}"/>
     </Style>
 
     <Style TargetType="Shell" ApplyToDerivedTypes="True">
@@ -393,7 +394,14 @@
         <Setter Property="MaximumWidthRequest" Value="300"/>
         <Setter Property="Margin" Value="5"/>
     </Style>
+
     
     
+    <!-- Label -->
+    <Style TargetType="Label" x:Key="lblTitle">
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontSize" Value="Title"/>
+        <Setter Property="Margin" Value="0, 20, 0, 5"/>
+    </Style>
     
 </ResourceDictionary>

@@ -1350,3 +1350,7 @@ C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\bin\Debug\net6
 C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\zh-Hant\UIAutomationTypes.resources.dll
 C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\zh-Hant\WindowsBase.resources.dll
 C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\zh-Hant\WindowsFormsIntegration.resources.dll
+C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\account.scale-100.png
+C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png
+C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\list.scale-100.png
+C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\popcorn.scale-100.jpg

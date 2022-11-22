@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:VM="clr-namespace:SeriesApp_UI.ViewModels"
+             x:Class="SeriesApp_UI.Views.SearchPage"
+             Title="SearchPage">
+    <VerticalStackLayout>
+        <SearchBar HorizontalOptions="Center" Text="{Binding SearchText}"/>
+        <ListView ItemsSource="{Binding SearchResult}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

@@ -6,25 +6,69 @@
     xmlns:local="clr-namespace:SeriesApp_UI"
     xmlns:views="clr-namespace:SeriesApp_UI.Views"
     Shell.FlyoutBehavior="Disabled"
-    Shell.NavBarIsVisible="False">
+    Shell.NavBarIsVisible="False"
+    FlyoutBackgroundColor="{AppThemeBinding Default={StaticResource clrLightBlue}}">
+
+
 
     <ShellContent
-        Title="Home"
+        Title="Login"
         ContentTemplate="{DataTemplate views:LoginPage}"
         Route="LoginPage"/>
-    
+
     <ShellContent
-            Title="Home"
+        Title="Loading"
+        ContentTemplate="{DataTemplate views:LoadingPage}"
+        Route="LoadingPage"/>
+
+    <ShellContent
+            Title="Create Account"
             ContentTemplate="{DataTemplate views:CreateAccountPage}"
             Route="CreateAccountPage" />
 
-    <FlyoutItem>
-        <ShellContent
+    <TabBar Shell.BackgroundColor="{StaticResource clrLightBlue}">
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent
             Title="Home"
+            ContentTemplate="{DataTemplate views:HomePage}"
+            Route="HomePage"/>
+        </Tab>
+
+        <Tab Icon="list.png">
+            <ShellContent
+            Title="My series"
+            ContentTemplate="{DataTemplate views:UserSeriesPage}"
+            Route="UserSeriesPage"/>
+        </Tab>
+
+        <Tab Title="Account" Icon="account.png">
+            <ShellContent
+            Title="Account"
+            ContentTemplate="{DataTemplate views:AccountPage}"
+            Route="AccountPage"/>
+        </Tab>
+    </TabBar>
+
+    <!--<FlyoutItem>
+        <ShellContent
+            Title="Test"
             ContentTemplate="{DataTemplate views:MainPage}"
             Route="MainPage" />
 
-        
-    </FlyoutItem>
+        <ShellContent
+            Title="Home" Icon="home.png"
+            ContentTemplate="{DataTemplate views:HomePage}"
+            Route="HomePage"/>
+
+        <ShellContent
+            Title="My series" Icon="list.png"
+            ContentTemplate="{DataTemplate views:UserSeriesPage}"
+            Route="UserSeriesPage"/>
+
+        <ShellContent
+            Title="Account" Icon="account.png"
+            ContentTemplate="{DataTemplate views:AccountPage}"
+            Route="AccountPage"/>
+    </FlyoutItem>-->
 
 </Shell>

@@ -5,8 +5,9 @@
              x:DataType="VM:VM_Login"
              x:Class="SeriesApp_UI.Views.LoginPage"
              Title="LoginPage"
-             BackgroundColor="{StaticResource clrDarkBlue}">
-    <VerticalStackLayout BackgroundColor="White">
+             BackgroundColor="{StaticResource clrDarkBlue}"
+             Padding="30">
+    <VerticalStackLayout Padding="20">
         <!--<Label 
             Text="{Binding Valor}"
             VerticalOptions="Center" 
@@ -22,5 +23,8 @@
         <Button Text="Log in" Style="{StaticResource stlBtnLogin}" Command="{Binding LoginCommand}"/>
         <Line BackgroundColor="White"/>
         <Button Text="Create Account" Style="{StaticResource stlBtnLogin}" Command="{Binding CreateAccountCommand}"/>
+        <Button Text="View Account" Style="{StaticResource stlBtnLogin}" Command="{Binding GetUserCommand}"/>
+        <Label Text="Username:"/>
+        <Label Text="{Binding Id}"/>
     </VerticalStackLayout>
 </ContentPage>
