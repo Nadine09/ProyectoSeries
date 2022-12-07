@@ -384,6 +384,7 @@
     
     <!--  -->
 
+     <!-- Button -->    
     <Style TargetType="Button" x:Key="stlBtnBasic">
         <Setter Property="CornerRadius" Value="8"/>        
     </Style>
@@ -392,16 +393,38 @@
         <Setter Property="BackgroundColor" Value="{StaticResource clrLightRed}"/>
         <Setter Property="TextColor" Value="White"/>
         <Setter Property="MaximumWidthRequest" Value="300"/>
-        <Setter Property="Margin" Value="5"/>
-    </Style>
-
-    
+        <Setter Property="Margin" Value="0, 10"/>
+    </Style>    
     
     <!-- Label -->
-    <Style TargetType="Label" x:Key="lblTitle">
+    <Style TargetType="Label" x:Key="lblGeneric">
         <Setter Property="TextColor" Value="White"/>
         <Setter Property="FontSize" Value="Title"/>
         <Setter Property="Margin" Value="0, 20, 0, 5"/>
     </Style>
-    
+
+    <Style TargetType="Label" x:Key="lblTitle" BasedOn="{StaticResource Key=lblGeneric}">
+        <Setter Property="FontSize" Value="Title"/>
+        <Setter Property="Margin" Value="10, 20, 10, 5"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="lblBigSeriesName" BasedOn="{StaticResource Key=lblGeneric}">
+        <Setter Property="FontSize" Value="Header"/>
+    </Style>
+
+    <!-- Entry -->
+    <Style TargetType="Entry" x:Key="entField">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="FontFamily" Value="OpenSansRegular"/>
+        <Setter Property="Margin" Value="0, 10"/>
+        <Setter Property="CharacterSpacing" Value="1"/>
+    </Style>
+
+    <!-- ScrollView -->
+    <Style TargetType="ScrollView">
+        <Setter Property="VerticalScrollBarVisibility" Value="Never"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Never"/>
+    </Style>
+
 </ResourceDictionary>

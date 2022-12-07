@@ -7,6 +7,6 @@ public partial class SearchPage : ContentPage
 	public SearchPage()
 	{
 		InitializeComponent();
-		BindingContext = new VM_Search();
-	}
+        BindingContext = App.Current.Services.GetService<VM_Search>();
+    }
 }

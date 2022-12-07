@@ -7,6 +7,6 @@ public partial class UserSeriesPage : ContentPage
 	public UserSeriesPage()
 	{
 		InitializeComponent();
-		this.BindingContext = new VM_UserSeries();
-	}
+        BindingContext = App.Current.Services.GetService<VM_UserSeries>();
+    }
 }

@@ -14,7 +14,13 @@ namespace SeriesApp_UI.ViewModels
     public partial class VM_UserSeries : ObservableObject
     {
         [ObservableProperty]
-        List<ClsSeries> series;
+        ClsSeries selectedSerie;
+
+        [ObservableProperty]
+        string selectedSerieText;
+
+        [ObservableProperty]
+        ObservableCollection<ClsSeries> series;
 
         private long userId;
 
@@ -24,19 +30,42 @@ namespace SeriesApp_UI.ViewModels
         {
             GetUserId();
             seriesDAO = new SeriesDAO();
-            Series = seriesDAO.GetByUser(userId);
+            if (userId != 0)
+            {
+                Series = new ObservableCollection<ClsSeries>(seriesDAO.GetByUser(userId));
+            }
+            selectedSerieText = "Sin serie";
         }
 
-        private async void GetUserId()
+        private void GetUserId()
         {
-            userId = long.Parse(await SecureStorage.Default.GetAsync("Account"));
+            userId = App.Current.User.Id;
         }
 
         [RelayCommand]
         void Refresh()
         {
-            seriesDAO = new SeriesDAO();
-            Series = seriesDAO.GetByUser(userId);
+            Series = new ObservableCollection<ClsSeries>(seriesDAO.GetByUser(userId));
+        }
+
+        [RelayCommand]
+        public async Task EditSerie(ClsSeries series)
+        {
+            SelectedSerieText = $"Editar serie :: Serie -> Id: {series.Id} Nombre: {series.Name}";
+        }
+
+        [RelayCommand]
+        public async Task NextEpisode(ClsSeries series)
+        {
+            SelectedSerieText = $"Siguiente cap :: Serie -> Id: {series.Id} Nombre: {series.Name}";
+        }
+
+        [RelayCommand]
+        public async Task SeriesDetails(ClsSeries series)
+        {
+            var dictionary = new Dictionary<string, object>();
+            dictionary.Add("Series", series);
+            await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
         }
     }
 }

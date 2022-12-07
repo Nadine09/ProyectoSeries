@@ -1,42 +1,60 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:VM="clr-namespace:SeriesApp_UI.ViewModels"
+             xmlns:vm="clr-namespace:SeriesApp_UI.ViewModels"
+             xmlns:te="clr-namespace:SeriesApp_UI.Views.Templates"
              x:Class="SeriesApp_UI.Views.HomePage"
              Title="HomePage">
-    <VerticalStackLayout Padding="10">
-        <Button Text="Refresh" Command="{Binding RefreshCommand}"/>
+    <ScrollView>
+        <VerticalStackLayout Padding="0, 10">
+            <Button Text="Refresh" Command="{Binding RefreshCommand}" Margin="10,0"/>
 
-        <Label Text="Añadidas recientemente" Style="{StaticResource lblTitle}"/>
-        <ScrollView Orientation="Horizontal">
-            <StackLayout BindableLayout.ItemsSource="{Binding NewSeries}" Orientation="Horizontal">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout MaximumWidthRequest="200" Padding="10" BackgroundColor="{StaticResource clrDarkBlue}" Margin="0,0,2,0">
-                            <Image Source="{Binding ImageUrl}" MaximumHeightRequest="200"/>
-                            <Label Text="{Binding Name}" FontSize="Subtitle" Margin="0, 10, 0, 0" TextColor="White"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
-        </ScrollView>
-        <!--<ScrollView Orientation="Horizontal">
+            <Label Text="Añadidas recientemente" Style="{StaticResource lblTitle}"/>
+            <!--<ScrollView Orientation="Horizontal">
+                <StackLayout BindableLayout.ItemsSource="{Binding NewSeries}" Orientation="Horizontal">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <te:ItemSeriesBase/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>-->
+
+            <ScrollView Orientation="Horizontal">
+                <CollectionView ItemsSource="{Binding NewSeries}" ItemsLayout="HorizontalList" SelectionMode="Single" SelectionChangedCommand="{Binding SeriesDetailsCommand}"  SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={RelativeSource Self}}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <te:ItemSeriesHome/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+
+            <!--<ScrollView Orientation="Horizontal">
             
         </ScrollView>-->
-        <Label Text="Top 10" Style="{StaticResource lblTitle}"/>
-        <ScrollView Orientation="Horizontal">
-            <StackLayout BindableLayout.ItemsSource="{Binding Top10Series}" Orientation="Horizontal">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout MaximumWidthRequest="200" Padding="10" BackgroundColor="{StaticResource clrDarkBlue}" Margin="0,0,2,0">
-                            <Image Source="{Binding ImageUrl}" MaximumHeightRequest="200"/>
-                            <Label Text="{Binding Name}" FontSize="Subtitle" Margin="0, 10, 0, 0" TextColor="White"/>
-                            <Button Text="+" Command="{Binding AddSerieCommand}" CommandParameter="{Binding Id}"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
-        </ScrollView>
-        <Label Text="{Binding SerieId}"/>
-    </VerticalStackLayout>
+            <!--<Label Text="Top 10" Style="{StaticResource lblTitle}"/>
+            <ScrollView Orientation="Horizontal">
+                <StackLayout BindableLayout.ItemsSource="{Binding Top10Series}" Orientation="Horizontal">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <te:ItemSeriesBase/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+            <Label Text="{Binding SerieId}"/>-->
+
+            <Label Text="Top 10" Style="{StaticResource lblTitle}"/>
+            <ScrollView Orientation="Horizontal">
+                <CollectionView ItemsSource="{Binding Top10Series}" ItemsLayout="HorizontalList" SelectionMode="Single" SelectionChangedCommand="{Binding SeriesDetailsCommand}"  SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={RelativeSource Self}}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <te:ItemSeriesHome/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

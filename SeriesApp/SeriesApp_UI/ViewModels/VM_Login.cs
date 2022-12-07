@@ -5,6 +5,7 @@ using SeriesApp_Entities.Classes;
 using SeriesApp_UI.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,15 @@ namespace SeriesApp_UI.ViewModels
     public partial class VM_Login : ObservableObject
     {
 
+        private UserDAO userDAO;
+
         public const string LOGIN_ERROR = "No se ha podido hacer login :(";
+
+        [ObservableProperty]
+        ObservableCollection<ClsUser> users;
+
+        [ObservableProperty]
+        ClsUser selectedUser;
 
         [ObservableProperty]
         string email;
@@ -25,20 +34,35 @@ namespace SeriesApp_UI.ViewModels
         [ObservableProperty]
         string errorMessage;
 
+        public VM_Login()
+        {
+            userDAO = new UserDAO();
+            users = new ObservableCollection<ClsUser>(userDAO.GetAll());
+        }
+
+
+
         #region Commands
         [RelayCommand]
         async void Login()
         {
             errorMessage = "";
-            UserDAO userDAO = new UserDAO();
-            ClsUser user = userDAO.GetUserByEmailAndPassword(email, password);
+            //ClsUser user = userDAO.GetUserByEmailAndPassword(email, password); //TODO Mostrar
+            ClsUser user = SelectedUser;
             if (user != null)
             {
+                App.Current.Restart();
+                App.Current.User = user;
                 await SecureStorage.Default.SetAsync("Account", user.Id.ToString());
-                await Shell.Current.GoToAsync($"//{nameof(HomePage)}?", new Dictionary<string, object>
-                {
-                    ["UserId"] = user
-                });
+                await Shell.Current.GoToAsync("//HomePage");
+                //await Shell.Current.GoToAsync($"//{nameof(HomePage)}?", new Dictionary<string, object>
+                //{
+                //    ["UserId"] = user
+                //});
+
+                //var dictionary = new Dictionary<string, object>();
+                //dictionary.Add("User", user);
+                //await Shell.Current.GoToAsync("/HomePage", dictionary);
             }
             else
             {

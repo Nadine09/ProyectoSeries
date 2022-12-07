@@ -47,6 +47,7 @@
     <Color x:Key="clrDarkBlue">#293241</Color>
     <Color x:Key="clrLightGrey">#F4F4F4</Color>
     <Color x:Key="clrLightRed">#EE6C4D</Color>
+    <Color x:Key="clrTransparentWhite">#66FFFFFF</Color>
     
     
 

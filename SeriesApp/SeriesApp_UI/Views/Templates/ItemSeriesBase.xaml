@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:en="clr-namespace:SeriesApp_Entities.Classes;assembly=SeriesApp_Entities"
+             xmlns:vm="clr-namespace:SeriesApp_UI.ViewModels"
+             x:Class="SeriesApp_UI.Views.Templates.ItemSeriesBase"
+             x:DataType="en:ClsSeries">
+    <!--<StackLayout MaximumWidthRequest="200" Padding="10" BackgroundColor="{StaticResource clrDarkBlue}" Margin="0,0,2,0" HeightRequest="300">
+        <Image Source="{Binding ImageUrl}" MaximumHeightRequest="200" MinimumHeightRequest="150"/>
+        <Label Text="{Binding Name}" FontSize="Subtitle" Margin="0, 10, 0, 0" TextColor="White"/>
+    </StackLayout>-->
+    <Grid Padding="10" BackgroundColor="{StaticResource clrDarkBlue}" Margin="0,0,2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Image Source="{Binding ImageUrl}" Grid.Row="0" MaximumHeightRequest="200" MinimumHeightRequest="150"/>
+        <Label Text="{Binding Name}" Grid.Row="1" FontSize="Subtitle" Margin="0, 10, 0, 0" TextColor="White"/>
+    </Grid>
+</ContentView>

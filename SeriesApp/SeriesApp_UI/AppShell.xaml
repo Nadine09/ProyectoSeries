@@ -14,12 +14,7 @@
     <ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate views:LoginPage}"
-        Route="LoginPage"/>
-
-    <ShellContent
-        Title="Loading"
-        ContentTemplate="{DataTemplate views:LoadingPage}"
-        Route="LoadingPage"/>
+        Route="LoginPage"/>    
 
     <ShellContent
             Title="Create Account"
@@ -34,7 +29,14 @@
             Route="HomePage"/>
         </Tab>
 
-        <Tab Icon="list.png">
+        <Tab Title="Search" Icon="search.png">
+            <ShellContent
+            Title="Search"
+            ContentTemplate="{DataTemplate views:SearchPage}"
+            Route="SearchPage"/>
+        </Tab>
+        
+        <Tab Title="My series" Icon="list.png">
             <ShellContent
             Title="My series"
             ContentTemplate="{DataTemplate views:UserSeriesPage}"
@@ -47,6 +49,11 @@
             ContentTemplate="{DataTemplate views:AccountPage}"
             Route="AccountPage"/>
         </Tab>
+
+        <ShellContent IsVisible="False"
+        Title="SeriesDetails"
+        ContentTemplate="{DataTemplate views:SeriesDetailsPage}"
+        Route="SeriesDetailsPage"/>
     </TabBar>
 
     <!--<FlyoutItem>

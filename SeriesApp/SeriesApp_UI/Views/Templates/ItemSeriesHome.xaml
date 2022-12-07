@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:en="clr-namespace:SeriesApp_Entities.Classes;assembly=SeriesApp_Entities"
+             xmlns:vm="clr-namespace:SeriesApp_UI.ViewModels"
+             x:Class="SeriesApp_UI.Views.Templates.ItemSeriesHome">
+    <Border BackgroundColor="{StaticResource clrDarkBlue}"
+                 Stroke="{StaticResource clrDarkBlue}"
+                 Padding="10"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 HeightRequest="280"
+                 MaximumWidthRequest="150"
+                 Margin="0">
+        <Grid x:DataType="en:ClsSeries">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="img" Source="{Binding ImageUrl}" 
+                   Grid.Row="0" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Start" 
+                   HeightRequest="200"/>
+
+            <Label Grid.Row="1"
+                         Text="{Binding Name}"
+                         FontAttributes="Bold"
+                         FontSize="18"
+                         VerticalTextAlignment="Start"
+                         HorizontalTextAlignment="Start" 
+                         Margin="0,5"
+                         MaximumWidthRequest="120" 
+                   MaxLines="2" LineBreakMode="WordWrap" 
+                   FontAutoScalingEnabled="True"/>
+        </Grid>
+    </Border>
+</ContentView>

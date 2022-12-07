@@ -7,6 +7,6 @@ public partial class HomePage : ContentPage
 	public HomePage()
 	{
 		InitializeComponent();
-        BindingContext = new VM_Home();
+        BindingContext = App.Current.Services.GetService<VM_Home>();
     }
 }

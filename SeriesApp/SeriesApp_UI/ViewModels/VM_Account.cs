@@ -17,9 +17,10 @@ namespace SeriesApp_UI.ViewModels
 
         public VM_Account()
         {
-            GetUserId();
+            //GetUserId();
             userDAO = new UserDAO();
-            GetUser();
+            User = App.Current.User;
+            //GetUser();
         }
 
         private void GetUser()
@@ -35,7 +36,8 @@ namespace SeriesApp_UI.ViewModels
         [RelayCommand]
         void Refresh()
         {
-            GetUser();
+            //GetUser();
+            User = App.Current.User;
         }
 
         [RelayCommand]

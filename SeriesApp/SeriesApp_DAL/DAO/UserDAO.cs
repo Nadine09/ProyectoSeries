@@ -17,10 +17,12 @@ namespace SeriesApp_DAL.DAO
         public const string SELECT_USER_BY_EMAIL_AND_PASSWORD = $"SELECT id, username, email, [password] FROM {TABLE_NAME} WHERE Email = '@email' AND Password = '@password'";
         
         public const string SELECT_BY_ID = $"SELECT id, username, email, [password] FROM {TABLE_NAME} WHERE Id = '@id'";
+        public const string SELECT_ALL = $"SELECT id, username, email, [password] FROM {TABLE_NAME}";
 
         public UserDAO()
         {
             cmdSelectById = SELECT_BY_ID;
+            cmdSelectAll = SELECT_ALL;
         }
 
         public ClsUser GetUserByEmailAndPassword(string email, string password)
