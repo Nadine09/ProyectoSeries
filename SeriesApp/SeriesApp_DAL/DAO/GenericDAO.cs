@@ -10,28 +10,27 @@ using System.Threading.Tasks;
 
 namespace SeriesApp_DAL.DAO
 {
-    public abstract class GenericDAO<T>
+    public abstract class GenericDAO<T> : GenericAbstractDAO
     {
         #region Constants
         public const string GET_ID = "; SELECT SCOPE_IDENTITY()";
         #endregion
 
         #region Properties
-        protected ConnectionProvider connectionProvider;
+        
         
         public string cmdSelectAll;
         public string cmdSelectById;
         #endregion
 
         #region Constructors
-        public GenericDAO()
+        public GenericDAO() : base()
         {
-            connectionProvider = new ConnectionProvider();
+            
         }
 
-        protected GenericDAO(string cmdSelectAll, string cmdSelectById)
+        protected GenericDAO(string cmdSelectAll, string cmdSelectById) : base()
         {
-            connectionProvider = new ConnectionProvider();
             this.cmdSelectAll = cmdSelectAll;
             this.cmdSelectById = cmdSelectById;
         }
@@ -152,25 +151,35 @@ namespace SeriesApp_DAL.DAO
             return id;
         }
 
-
-        /// <summary>
-        /// Este método ejecutará la instruccion pasada por parámetros
-        /// </summary>
-        /// <param name="command">Instrucción que se ejecutará</param>
-        public void ExecuteNonQuery(string command)
+        public int executeQueryGetInt(string command)
         {
+            int number = 0;
+
             //Creamos y abrimos la conexión
             SqlConnection sqlConnection = connectionProvider.getConnection();
 
             //Creamos un SqlCommand con el comando apropiado y la conexion
-            SqlCommand sqlCommand = new SqlCommand(command + GET_ID, sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
 
-            //Ejecutamos
-            sqlCommand.ExecuteNonQuery();
+            //Obtenemos el SqlDataReader
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            //Miramos si hay alguna fila
+            if (sqlDataReader.HasRows)
+            {
+                //Nos movemos hasta la fila y la leemos
+                sqlDataReader.Read();
+                number = (int)sqlDataReader[0];
+            }
+
+            //Cerramos el SqlDataReader
+            sqlDataReader.Close();
 
             //Cerramos la conexión
             connectionProvider.closeConnection(sqlConnection);
-        }
+
+            return number;
+        }        
 
         /// <summary>
         /// Este método crea un objeto con los valores del sqlReader.

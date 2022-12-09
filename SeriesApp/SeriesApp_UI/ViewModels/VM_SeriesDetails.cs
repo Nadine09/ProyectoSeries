@@ -1,8 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Java.Util;
-using SeriesApp_DAL.DAO;
-using SeriesApp_Entities.Classes;
 
 namespace SeriesApp_UI.ViewModels
 {

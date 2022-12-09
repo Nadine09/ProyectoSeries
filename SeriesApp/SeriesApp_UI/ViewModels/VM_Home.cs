@@ -1,9 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using SeriesApp_DAL.DAO;
-using SeriesApp_Entities.Classes;
-using System.Collections.ObjectModel;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace SeriesApp_UI.ViewModels
 {

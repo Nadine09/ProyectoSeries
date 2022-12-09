@@ -1,13 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using SeriesApp_DAL.DAO;
-using SeriesApp_Entities.Classes;
-using SeriesApp_UI.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeriesApp_UI.ViewModels
 {
@@ -38,6 +30,9 @@ namespace SeriesApp_UI.ViewModels
         public async Task AddSerie(ClsSeries series)
         {
             Serie = $"Serie -> Id: {series.Id} Nombre: {series.Name}";
+            var dictionary = new Dictionary<string, object>();
+            dictionary.Add("Series", series);
+            await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
         }
 
         [RelayCommand]

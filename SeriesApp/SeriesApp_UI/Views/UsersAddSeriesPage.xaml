@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SeriesApp_UI.ViewModels"
+             xmlns:mo="clr-namespace:SeriesApp_UI.Models"
              x:Class="SeriesApp_UI.Views.UsersAddSeriesPage"
              Title="UsersAddSeriesPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout x:DataType="vm:VM_UsersAddSeries" Padding="20">
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Atrás" Command="{Binding GoBackCommand}" MaximumHeightRequest="50" MaximumWidthRequest="100"/>
+            <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Button Text="Guardar" Command="{Binding SaveCommand}" HorizontalOptions="End" TextColor="White" BackgroundColor="Transparent"/>
+            </Border>
+        </StackLayout>
+        
+        <Label Text="{Binding SeriesEpi.Name}"/>
+        <Border BackgroundColor="{StaticResource clrLightBlue}" Padding="5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5"/>
+            </Border.StrokeShape>
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Temporada " TextColor="{StaticResource clrDarkBlue}" VerticalOptions="Center"/>
+                <Picker Title="(Seleccione la temporada)" ItemsSource="{Binding SeriesEpi.Episodes}" SelectedItem="{Binding SeasonEpisodes}" ItemDisplayBinding="{Binding SeasonNumber}" TextColor="{StaticResource clrDarkBlue}" VerticalOptions="Center" TitleColor="White"/>
+            </StackLayout>
+        </Border>
+        <Slider Minimum="1" Maximum="{Binding SeasonEpisodes.EpisodesNumber}" Value="{Binding Episode}" ThumbColor="{StaticResource clrLightRed}"/>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Episodio selecionado: "/>
+            <Label Text="{Binding Episode}"/>
+        </StackLayout>
+        
     </VerticalStackLayout>
 </ContentPage>

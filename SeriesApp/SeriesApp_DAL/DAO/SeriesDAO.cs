@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Maui.Controls;
 using SeriesApp_Entities.Classes;
 
 namespace SeriesApp_DAL.DAO
@@ -11,10 +12,11 @@ namespace SeriesApp_DAL.DAO
         public const string TABLE_NAME_USER_SERIES_VALUATION = "NAD_UsersSeriesValuation";
 
         public const string SELECT_ALL = $"SELECT [id], [name], [synopsis], [state], [launchDate], [mra], [valuation], [imageUrl] FROM {TABLE_NAME}";
-        public const string SELECT_BY_ID = $"SELECT [id], [name], [synopsis], [state], [launchDate], [mra], [valuation], [imageUrl] FROM {TABLE_NAME} WHERE Id = '@id'";
+        public const string SELECT_BY_ID = $"SELECT [id], [name], [synopsis], [state], [launchDate], [mra], [valuation], [imageUrl] FROM {TABLE_NAME} WHERE Id = @id";
         public const string SELECT_TOP_10 = $"SELECT TOP(10) [id], [name], [synopsis], [state], [launchDate], [mra], [valuation], [imageUrl] FROM {TABLE_NAME} AS S INNER JOIN (SELECT serieId, (SUM(valuation) / COUNT(valuation)) AS TotalValuation FROM {TABLE_NAME_USER_SERIES_VALUATION} GROUP BY serieId) AS V ON S.id = V.serieId ORDER BY V.TotalValuation DESC";
         public const string SELECT_ALL_SERIES_BY_USER = $"SELECT [id], [name], [synopsis], [state], [launchDate], [mra], [valuation], [imageUrl] FROM {TABLE_NAME} AS S INNER JOIN {TABLE_NAME_USER_SERIES} AS US ON S.id = US.serieId WHERE US.userId = @id";
         public const string INSERT_USER_SERIES = $"INSERT INTO {TABLE_NAME_USER_SERIES} ([serieId], [userId]) VALUES (@serieId, @userId)";
+        public const string GET_EPISODES_PER_SEASON = $"SELECT (SEA.[order]) AS SeasonNumber, (MAX (EPI.[order])) AS Episodes FROM NAD_Series AS SER INNER JOIN NAD_Seasons AS SEA ON SER.id = SEA.serieId INNER JOIN NAD_Episodes AS EPI ON SEA.id = EPI.seasonId WHERE SER.id = @idSerie GROUP BY SEA.[order] ORDER BY SEA.[order]";
 
         public SeriesDAO()
         {
@@ -36,6 +38,54 @@ namespace SeriesApp_DAL.DAO
         public void UserAddSerie(long seriesId, long userId)
         {
             ExecuteNonQuery(INSERT_USER_SERIES.Replace("@serieId", seriesId.ToString()).Replace("@userId", userId.ToString()));
+        }
+
+        public List<int[]> episodesPerSeason(long idSerie)
+        {
+            SqlConnection sqlConnection = null;
+            SqlCommand sqlCommand = null;
+            SqlDataReader sqlDataReader = null;
+            List<int[]> seasonEpisodes = new List<int[]>();
+
+            StartQuery(ref sqlConnection, ref sqlCommand, ref sqlDataReader, GET_EPISODES_PER_SEASON.Replace("@idSerie", idSerie.ToString()));
+
+            //Miramos si hay alguna fila
+            if (sqlDataReader.HasRows)
+            {
+                //Mientras siga teniendo filas nos movemos hasta la fila y la leemos
+                while (sqlDataReader.Read())
+                {
+                    //Construimos el objeto y lo añadimos a la lista
+                    seasonEpisodes.Add(new int[] { (int)(short)sqlDataReader["SeasonNumber"], (int)(short)sqlDataReader["Episodes"] });
+                }
+            }
+
+            CloseAll(ref sqlConnection, ref sqlDataReader);
+
+
+            //Devolvemos la lista de objetos
+            return seasonEpisodes;
+        }
+
+        protected void StartQuery(ref SqlConnection sqlConnection, ref SqlCommand sqlCommand, ref SqlDataReader sqlDataReader, string command)
+        {
+            //Creamos y abrimos la conexión
+            sqlConnection = connectionProvider.getConnection();
+
+            //Creamos un SqlCommand con el comando apropiado y la conexion
+            sqlCommand = new SqlCommand(command, sqlConnection);
+
+            //Obtenemos el SqlDataReader
+            sqlDataReader = sqlCommand.ExecuteReader();
+        }
+
+        protected void CloseAll(ref SqlConnection sqlConnection, ref SqlDataReader sqlDataReader)
+        {
+            //Cerramos el SqlDataReader
+            sqlDataReader.Close();
+
+            //Cerramos la conexión
+            connectionProvider.closeConnection(sqlConnection);
         }
 
         public override ClsSeries BuildObject(SqlDataReader sqlDataReader)

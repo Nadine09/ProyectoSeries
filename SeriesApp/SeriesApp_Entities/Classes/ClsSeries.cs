@@ -42,6 +42,20 @@ namespace SeriesApp_Entities.Classes
             Valuation = valuation;
             ImageUrl = imageUrl;
         }
+        
+        public ClsSeries(ClsSeries clsSeries)
+        {
+            Id = clsSeries.Id;
+            Name = clsSeries.Name;
+            Synopsis = clsSeries.Synopsis;
+            State = clsSeries.State;
+            LaunchDate = clsSeries.LaunchDate;
+            Mra = clsSeries.Mra;
+            Valuation = clsSeries.Valuation;
+            ImageUrl = clsSeries.ImageUrl;
+        }
+
+
 
         #endregion
 
