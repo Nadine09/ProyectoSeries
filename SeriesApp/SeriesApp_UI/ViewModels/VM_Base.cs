@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,21 @@ namespace SeriesApp_UI.ViewModels
         [ObservableProperty]
         ClsUser user;
 
+        #region Constructors
         protected VM_Base()
         {
             User = App.Current.User;
+        }
+        #endregion
+
+        /// <summary>
+        /// Este método navega hasta la pantalla anterior
+        /// </summary>
+        [RelayCommand]
+        public async void GoBack()
+        {
+            //Volvemos atrás
+            await Shell.Current.GoToAsync("..");
         }
     }
 }

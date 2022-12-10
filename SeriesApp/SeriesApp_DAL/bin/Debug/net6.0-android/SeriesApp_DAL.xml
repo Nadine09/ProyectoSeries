@@ -25,13 +25,29 @@
             <param name="connection">SqlConnection pr referencia. Conexion a cerrar
             </param>
         </member>
+        <member name="M:SeriesApp_DAL.DAO.GenericAbstractDAO.StartQuery(Microsoft.Data.SqlClient.SqlConnection@,Microsoft.Data.SqlClient.SqlCommand@,Microsoft.Data.SqlClient.SqlDataReader@,System.String)">
+            <summary>
+            Este método inicializa todo lo necesario para realizar una consulta. Crea y abre una conexión y la asigna a sqlConnection.
+            </summary>
+            <param name="sqlConnection"></param>
+            <param name="sqlCommand"></param>
+            <param name="sqlDataReader"></param>
+            <param name="command"></param>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.GenericAbstractDAO.CloseAll(Microsoft.Data.SqlClient.SqlConnection@,Microsoft.Data.SqlClient.SqlDataReader@)">
+            <summary>
+            Este método cierra la SqlConnection y el SqlDataReader pasados por parámetros
+            </summary>
+            <param name="sqlConnection"></param>
+            <param name="sqlDataReader"></param>
+        </member>
         <member name="M:SeriesApp_DAL.DAO.GenericAbstractDAO.ExecuteNonQuery(System.String)">
             <summary>
             Este método ejecutará la instruccion pasada por parámetros
             </summary>
             <param name="command">Instrucción que se ejecutará</param>
         </member>
-        <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.InsertOneGetId(System.String)">
+        <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.executeQueryGetInt(System.String)">
             <summary>
             Este método inserta un objeto en la base de datos y devuelve el id del objeto insertado.
             </summary>
@@ -44,6 +60,13 @@
             </summary>
             <param name="sqlDataReader">Objeto SqlDataReader en el que se buscarán los valores para crear el objeto</param>
             <returns>Objeto creado</returns>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.UserDAO.CreateUser(SeriesApp_Entities.Classes.ClsUser)">
+            <summary>
+            Este método inserta un usuario en la base de datos y devuelve el usuario insertado 
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
         </member>
         <member name="M:SeriesApp_DAL.DAO.UsersEpisodesDAO.AddProgress(System.Int64,System.Int64,System.Int64,System.Int64)">
             <summary>

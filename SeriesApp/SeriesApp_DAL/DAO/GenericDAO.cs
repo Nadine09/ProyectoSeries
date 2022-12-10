@@ -121,35 +121,35 @@ namespace SeriesApp_DAL.DAO
         /// </summary>
         /// <param name="command">Instrucción SQL para insertar el objeto</param>
         /// <returns></returns>
-        public int InsertOneGetId(string command)
-        {
-            int id = 0;
+        //public int InsertOneGetId(string command)
+        //{
+        //    int id = 0;
 
-            //Creamos y abrimos la conexión
-            SqlConnection sqlConnection = connectionProvider.getConnection();
+        //    //Creamos y abrimos la conexión
+        //    SqlConnection sqlConnection = connectionProvider.getConnection();
 
-            //Creamos un SqlCommand con el comando apropiado y la conexion
-            SqlCommand sqlCommand = new SqlCommand(command + GET_ID, sqlConnection);
+        //    //Creamos un SqlCommand con el comando apropiado y la conexion
+        //    SqlCommand sqlCommand = new SqlCommand(command + GET_ID, sqlConnection);
 
-            //Obtenemos el SqlDataReader
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+        //    //Obtenemos el SqlDataReader
+        //    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-            //Miramos si hay alguna fila
-            if (sqlDataReader.HasRows)
-            {
-                //Nos movemos hasta la fila y la leemos
-                sqlDataReader.Read();
-                id = (int)sqlDataReader[0];
-            }
+        //    //Miramos si hay alguna fila
+        //    if (sqlDataReader.HasRows)
+        //    {
+        //        //Nos movemos hasta la fila y la leemos
+        //        sqlDataReader.Read();
+        //        id = (int)sqlDataReader[0];
+        //    }
 
-            //Cerramos el SqlDataReader
-            sqlDataReader.Close();
+        //    //Cerramos el SqlDataReader
+        //    sqlDataReader.Close();
 
-            //Cerramos la conexión
-            connectionProvider.closeConnection(sqlConnection);
+        //    //Cerramos la conexión
+        //    connectionProvider.closeConnection(sqlConnection);
 
-            return id;
-        }
+        //    return id;
+        //}
 
         public int executeQueryGetInt(string command)
         {

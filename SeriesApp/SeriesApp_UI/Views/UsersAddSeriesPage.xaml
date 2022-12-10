@@ -9,12 +9,18 @@
 
         <StackLayout Orientation="Horizontal">
             <Button Text="Atrás" Command="{Binding GoBackCommand}" MaximumHeightRequest="50" MaximumWidthRequest="100"/>
-            <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5">
+            <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" IsVisible="{Binding Add}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="15"/>
                 </Border.StrokeShape>
-                <Button Text="Guardar" Command="{Binding SaveCommand}" HorizontalOptions="End" TextColor="White" BackgroundColor="Transparent"/>
+                <Button Text="Guardar" Command="{Binding SaveProgressCommand}" HorizontalOptions="End" TextColor="White" BackgroundColor="Transparent"/>
             </Border>
+            <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" IsVisible="{Binding Edit}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Button Text="Editar" Command="{Binding EditProgressCommand}" HorizontalOptions="End" TextColor="White" BackgroundColor="Transparent"/>
+            </Border>            
         </StackLayout>
         
         <Label Text="{Binding SeriesEpi.Name}"/>

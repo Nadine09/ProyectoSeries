@@ -1,21 +1,14 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.Maui.Controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SeriesApp_DAL.Connection
+﻿namespace SeriesApp_DAL.Connection
 {
     public class ConnectionProvider
     {
-        
+        #region Constantes
         private const String Server = "iesnervion.database.windows.net";
         private const String Database = "WPFSample";
         private const String User = "prueba";
         private const String Password = "iesnervion123.";
         private const String ConnectionString = $"Server=tcp:{Server},1433;Initial Catalog={Database};Persist Security Info=False;User ID={User};Password={Password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        #endregion
 
         #region Metodos
         /// <summary>
@@ -76,8 +69,5 @@ namespace SeriesApp_DAL.Connection
             }
         }
         #endregion
-
-
-
     }
 }

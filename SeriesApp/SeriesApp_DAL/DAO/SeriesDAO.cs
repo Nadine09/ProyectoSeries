@@ -1,8 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.Maui.Controls;
-using SeriesApp_Entities.Classes;
-
-namespace SeriesApp_DAL.DAO
+﻿namespace SeriesApp_DAL.DAO
 {
     public class SeriesDAO : GenericDAO<ClsSeries>
     {
@@ -67,26 +63,7 @@ namespace SeriesApp_DAL.DAO
             return seasonEpisodes;
         }
 
-        protected void StartQuery(ref SqlConnection sqlConnection, ref SqlCommand sqlCommand, ref SqlDataReader sqlDataReader, string command)
-        {
-            //Creamos y abrimos la conexión
-            sqlConnection = connectionProvider.getConnection();
-
-            //Creamos un SqlCommand con el comando apropiado y la conexion
-            sqlCommand = new SqlCommand(command, sqlConnection);
-
-            //Obtenemos el SqlDataReader
-            sqlDataReader = sqlCommand.ExecuteReader();
-        }
-
-        protected void CloseAll(ref SqlConnection sqlConnection, ref SqlDataReader sqlDataReader)
-        {
-            //Cerramos el SqlDataReader
-            sqlDataReader.Close();
-
-            //Cerramos la conexión
-            connectionProvider.closeConnection(sqlConnection);
-        }
+        
 
         public override ClsSeries BuildObject(SqlDataReader sqlDataReader)
         {

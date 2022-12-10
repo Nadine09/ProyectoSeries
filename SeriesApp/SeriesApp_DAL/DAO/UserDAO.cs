@@ -30,13 +30,16 @@ namespace SeriesApp_DAL.DAO
             return ExecuteQueryOneObject(SELECT_USER_BY_EMAIL_AND_PASSWORD.Replace("@email", email).Replace("@password", password));            
         }
 
+        /// <summary>
+        /// Este método inserta un usuario en la base de datos y devuelve el usuario insertado 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public ClsUser CreateUser(ClsUser user)
         {
             string commmand = INSERT.Replace("@username", user.UserName).Replace("@email", user.Email).Replace("@password", user.Password);
-
-            user.Id = InsertOneGetId(commmand);
-
-            return user;
+            ExecuteNonQuery(commmand);
+            return GetUserByEmailAndPassword(user.Email, user.Password);
         }
 
         public override ClsUser BuildObject(SqlDataReader sqlDataReader)

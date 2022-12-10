@@ -25,7 +25,11 @@ namespace SeriesApp_UI.ViewModels
             seriesDAO = new SeriesDAO();
             if (userId != 0)
             {
-                Series = new ObservableCollection<ClsSeries>(seriesDAO.GetByUser(userId));
+                List<ClsSeries> userSeries = seriesDAO.GetByUser(userId);
+                if (userSeries != null)
+                {
+                    Series = new ObservableCollection<ClsSeries>(userSeries);
+                }
             }
             selectedSerieText = "Sin serie";
         }
