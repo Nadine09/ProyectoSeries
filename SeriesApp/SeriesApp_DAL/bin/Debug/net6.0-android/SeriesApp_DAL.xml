@@ -78,5 +78,15 @@
             <param name="episode">Último episodio que ha visto el usuario</param>
             <param name="userId">Id del usuario</param>
         </member>
+        <member name="M:SeriesApp_DAL.DAO.UsersEpisodesDAO.LastEpisode(System.Int64,System.Int64,System.Int32@,System.Int32@)">
+            <summary>
+            Este método busca el último episodio que ha visto el usuario con el id dado (idUser) de la serie indicada (idSerie) 
+            y mete los valores en los parámetros season (el número de temporada) y episode (el número de episodio)
+            </summary>
+            <param name="idUser"></param>
+            <param name="idSerie"></param>
+            <param name="season"></param>
+            <param name="episode"></param>
+        </member>
     </members>
 </doc>

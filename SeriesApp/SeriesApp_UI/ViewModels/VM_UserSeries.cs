@@ -1,69 +1,62 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.IdentityModel.Tokens;
+using SeriesApp_UI.Utils;
 using System.Collections.ObjectModel;
 
 namespace SeriesApp_UI.ViewModels
 {
-    public partial class VM_UserSeries : ObservableObject
+    public partial class VM_UserSeries : VM_Base
     {
         [ObservableProperty]
         ClsSeries selectedSerie;
 
         [ObservableProperty]
-        string selectedSerieText;
-
-        [ObservableProperty]
-        ObservableCollection<ClsSeries> series;
-
-        private long userId;
+        ObservableCollection<ItemUserSeriesDTO> series;
 
         private SeriesDAO seriesDAO;
+        private SeriesConverter converter;
 
-        public VM_UserSeries()
+        public VM_UserSeries() : base()
         {
-            GetUserId();
             seriesDAO = new SeriesDAO();
-            if (userId != 0)
+            converter = new SeriesConverter();
+            if (User.Id != 0)
             {
-                List<ClsSeries> userSeries = seriesDAO.GetByUser(userId);
-                if (userSeries != null)
-                {
-                    Series = new ObservableCollection<ClsSeries>(userSeries);
-                }
+                Refresh();
             }
-            selectedSerieText = "Sin serie";
-        }
-
-        private void GetUserId()
-        {
-            userId = App.Current.User.Id;
         }
 
         [RelayCommand]
         void Refresh()
         {
-            Series = new ObservableCollection<ClsSeries>(seriesDAO.GetByUser(userId));
+            List<ClsSeries> userSeries = seriesDAO.GetByUser(User.Id);
+            if (!userSeries.IsNullOrEmpty())
+            {
+                Series = new ObservableCollection<ItemUserSeriesDTO>();
+                userSeries.ForEach(x => Series.Add(converter.ConvertToItemUserSeriesDTO(x, User.Id)));
+            }
         }
 
         [RelayCommand]
-        public async Task EditSerie(ClsSeries series)
+        public async Task EditSerie(ItemUserSeriesDTO itemUserSeriesDTO)
         {
             var dictionary = new Dictionary<string, object>();
-            dictionary.Add("Series", series);
+            dictionary.Add("Series", itemUserSeriesDTO.Series);
             await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
         }
 
         [RelayCommand]
-        public async Task NextEpisode(ClsSeries series)
+        public async Task NextEpisode(ItemUserSeriesDTO itemUserSeriesDTO)
         {
-            SelectedSerieText = $"Siguiente cap :: Serie -> Id: {series.Id} Nombre: {series.Name}";
+            //TODO Hacer que el progreso se incremente en 1 episodio
         }
 
         [RelayCommand]
-        public async Task SeriesDetails(ClsSeries series)
+        public async Task SeriesDetails(ItemUserSeriesDTO itemUserSeriesDTO)
         {
             var dictionary = new Dictionary<string, object>();
-            dictionary.Add("Series", series);
+            dictionary.Add("Series", itemUserSeriesDTO.Series);
             await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
         }
     }

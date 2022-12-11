@@ -11,7 +11,6 @@ namespace SeriesApp_UI.ViewModels
         #region Properties
         private SeriesConverter converter;
         private UsersEpisodesDAO usersEpisodesDAO;
-        private UsersSeriesDAO usersSeriesDAO;
 
         [ObservableProperty]
         bool edit;
@@ -37,7 +36,6 @@ namespace SeriesApp_UI.ViewModels
         {
             converter = new SeriesConverter();
             usersEpisodesDAO = new UsersEpisodesDAO();
-            usersSeriesDAO = new UsersSeriesDAO();
         }
         #endregion
 
@@ -60,8 +58,17 @@ namespace SeriesApp_UI.ViewModels
 
         private void CheckRelation()
         {
-            Edit = usersSeriesDAO.UserHasSeries(User.Id, SeriesEpi.Id);
+            int season = 0, lastEpisode = 0;
+            usersEpisodesDAO.LastEpisode(User.Id, SeriesEpi.Id, ref season, ref lastEpisode);
+
+            Edit = season != 0;
             Add = !Edit;
+
+            if (Edit)
+            {
+                Episode = lastEpisode;
+                SeasonEpisodes = SeriesEpi.Episodes.Find(x => x.SeasonNumber == season);
+            }
         }
 
         [RelayCommand]
@@ -70,7 +77,6 @@ namespace SeriesApp_UI.ViewModels
             if (SeriesEpi != null && SeasonEpisodes != null && Episode != 0 && User != null)
             {
                 usersEpisodesDAO.AddProgress(SeriesEpi.Id, SeasonEpisodes.SeasonNumber, Episode, User.Id);
-                usersSeriesDAO.UserAddSeries(User.Id, SeriesEpi.Id);
                 GoBack();
             }
         }
@@ -87,20 +93,23 @@ namespace SeriesApp_UI.ViewModels
                 usersEpisodesDAO.LastEpisode(User.Id, SeriesEpi.Id, ref lastSeason, ref lastEpisode);
 
                 equalsSeason = lastSeason == SeasonEpisodes.SeasonNumber;
-                
+
                 //Vemos si el progreso a cambiado
-                if (!(lastSeason == SeasonEpisodes.SeasonNumber && lastEpisode == Episode)) 
+                if (!(lastSeason == SeasonEpisodes.SeasonNumber && lastEpisode == Episode))
                 {
                     //Vemos si el progreso ha aumentado (vamos por un capítulo superior a la última vez)
                     increasedProgress = lastSeason < SeasonEpisodes.SeasonNumber || (lastSeason == SeasonEpisodes.SeasonNumber && lastEpisode < Episode);
 
-                    if (equalsSeason)
+                    if (increasedProgress) //ACLARACIÓN: Esto lo hago porque al ir para atrás me está fallando, si me da tiempo lo arreglaré
                     {
-                        usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, lastEpisode, Episode, User.Id, increasedProgress);
-                    }
-                    else
-                    {
-                        usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, SeasonEpisodes.SeasonNumber, lastEpisode, Episode, User.Id, increasedProgress);
+                        if (equalsSeason)
+                        {
+                            usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, lastEpisode, Episode, User.Id, increasedProgress);
+                        }
+                        else
+                        {
+                            usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, SeasonEpisodes.SeasonNumber, lastEpisode, Episode, User.Id, increasedProgress);
+                        }
                     }
                 }
 

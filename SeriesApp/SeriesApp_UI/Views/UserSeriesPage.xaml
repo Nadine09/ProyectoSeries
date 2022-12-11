@@ -19,7 +19,6 @@
             </Border>
             <Button Text="Refresh" Command="{Binding RefreshCommand}"/>
         </StackLayout>
-        <Label Text="{Binding SelectedSerieText}" Grid.Row="0"/>        
 
         <ScrollView Grid.Row="1" Orientation="Vertical" Margin="0,5,0,0">
             <CollectionView ItemsSource="{Binding Series}" SelectionMode="Single" SelectionChangedCommand="{Binding SeriesDetailsCommand}"  SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={RelativeSource Self}}">

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:en="clr-namespace:SeriesApp_Entities.Classes;assembly=SeriesApp_Entities"
+             xmlns:mo="clr-namespace:SeriesApp_UI.Models"
              xmlns:vm="clr-namespace:SeriesApp_UI.ViewModels"
-             x:Class="SeriesApp_UI.Views.Templates.ItemUserSeries"
-             x:DataType="en:ClsSeries">
+             x:Class="SeriesApp_UI.Views.Templates.ItemUserSeries">
     <Border BackgroundColor="{StaticResource clrDarkBlue}"
                  Stroke="{StaticResource clrDarkBlue}"
                  Padding="10"
@@ -14,10 +13,10 @@
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="10"/>
         </Border.StrokeShape>
-        <Grid x:DataType="en:ClsSeries">
+        <Grid x:DataType="mo:ItemUserSeriesDTO">
             <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
@@ -25,10 +24,10 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
-            <Image Source="{Binding ImageUrl}" Grid.RowSpan="2" Grid.Column="0" VerticalOptions="Center"/>
+            <Image Source="{Binding Series.ImageUrl}" Grid.RowSpan="2" Grid.Column="0" VerticalOptions="Center"/>
             
             <Label Grid.Column="1" Grid.Row="0"
-                         Text="{Binding Name}"
+                         Text="{Binding Series.Name}"
                          FontAttributes="Bold"
                          FontSize="18"
                          VerticalTextAlignment="Start"
@@ -36,15 +35,23 @@
                          Margin="10, 0"
                    TextColor="White"/>
 
-            <ProgressBar Grid.Column="1" Grid.Row="1" Progress="0.5" IsVisible="true" Margin="10,0,0,0" ProgressColor="{StaticResource clrLightBlue}"/>
+            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1" Margin="10, 0" VerticalOptions="Center">
+                <Label Text="Temporada "/>
+                <Label Text="{Binding SeasonNumber}"/>
+                <Label Text=", Episodio "/>
+                <Label Text="{Binding EpisodeNumber}"/>
+            </StackLayout>
+            <!-- Progreso en la temporada -->
+            <!--<ProgressBar Grid.Column="1" Grid.Row="1" Progress="0.5" IsVisible="true" Margin="10,0,0,0" ProgressColor="{StaticResource clrLightBlue}"/>-->
 
-            <Border Stroke="{StaticResource clrLightBlue}" BackgroundColor="{StaticResource clrDarkBlue}"  Grid.Column="2" Grid.Row="0" HeightRequest="40" WidthRequest="40" Padding="5" VerticalOptions="End" Margin="10,0,0,0">
+            <Border Stroke="{StaticResource clrLightBlue}" BackgroundColor="{StaticResource clrDarkBlue}"  Grid.Column="2" Grid.Row="1" HeightRequest="50" WidthRequest="50" Padding="5" VerticalOptions="End" Margin="10,0,0,0">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="5"/>
                 </Border.StrokeShape>
-                <ImageButton Source="edit.png"  HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:VM_UserSeries}}, Path=EditSerieCommand}" CommandParameter="{Binding .}"/>
+                <ImageButton Source="edit.png"  HeightRequest="35" WidthRequest="35" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:VM_UserSeries}}, Path=EditSerieCommand}" CommandParameter="{Binding .}"/>
             </Border>
 
+            <!-- Botón para sumar un episodio visto -->
             <!--<Border Stroke="{StaticResource clrLightBlue}" BackgroundColor="{StaticResource clrDarkBlue}"  Grid.Column="2" Grid.Row="1" HeightRequest="40" WidthRequest="40" Padding="5" Margin="10,0,0,0">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="5"/>
@@ -53,40 +60,5 @@
             </Border>-->
 
         </Grid>
-        <!--<Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="3*" />
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Image Source="{Binding ImageUrl}" Grid.RowSpan="2" Grid.Column="0"/>
-
-            <Label Grid.Column="1" Grid.Row="0"
-                         Text="{Binding Name}"
-                         FontAttributes="Bold"
-                         FontSize="18"
-                         VerticalTextAlignment="Start"
-                         HorizontalTextAlignment="Start" 
-                         Margin="10, 0"/>
-            <ProgressBar Grid.Column="1" Grid.Row="1" Progress="0.5" IsVisible="true" Margin="10,0,0,0" ProgressColor="{StaticResource clrLightBlue}"/>
-
-            <Border Stroke="{StaticResource clrLightBlue}" BackgroundColor="{StaticResource clrDarkBlue}"  Grid.Column="2" Grid.Row="0" HeightRequest="40" WidthRequest="40" Padding="5" VerticalOptions="End" Margin="10,0,0,0">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="5"/>
-                </Border.StrokeShape>
-                <ImageButton Source="edit.png"  HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:VM_Search}}, Path=AddSerieCommand}" CommandParameter="{Binding .}"/>
-            </Border>
-            <Border Stroke="{StaticResource clrLightBlue}" BackgroundColor="{StaticResource clrDarkBlue}"  Grid.Column="2" Grid.Row="1" HeightRequest="40" WidthRequest="40" Padding="5" Margin="10,0,0,0">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="5"/>
-                </Border.StrokeShape>
-                <ImageButton Source="plus.png"  HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:VM_Search}}, Path=AddSerieCommand}" CommandParameter="{Binding .}"/>
-            </Border>
-        </Grid>-->
     </Border>
 </ContentView>

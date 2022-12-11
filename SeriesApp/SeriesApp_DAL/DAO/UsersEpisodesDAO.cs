@@ -9,7 +9,7 @@ namespace SeriesApp_DAL.DAO
     public class UsersEpisodesDAO : GenericAbstractDAO
     {
         private const string TABLE_NAME = "NAD_UsersEpisodes";
-        private const string ADD_PROGRESS = $"DECLARE @idEpisode int DECLARE MY_CURSOR CURSOR LOCAL STATIC READ_ONLY FORWARD_ONLY FOR SELECT EPI.id FROM NAD_Series AS SER INNER JOIN NAD_Seasons AS SEA ON SER.id = SEA.serieId INNER JOIN NAD_Episodes AS EPI ON SEA.id = EPI.seasonId WHERE SER.id = @idSerie AND (SEA.[order] < @season) OR ((SEA.[order] = @season) AND (EPI.[order] <= @episode)) ORDER BY SEA.[order], EPI.[order] OPEN MY_CURSOR FETCH NEXT FROM MY_CURSOR INTO @idEpisode WHILE @@FETCH_STATUS = 0 BEGIN    INSERT INTO {TABLE_NAME} (episodeId, userId) VALUES (@idEpisode, @userId) FETCH NEXT FROM MY_CURSOR INTO @idEpisode END CLOSE MY_CURSOR DEALLOCATE MY_CURSOR";
+        private const string ADD_PROGRESS = $"DECLARE @idEpisode int DECLARE MY_CURSOR CURSOR LOCAL STATIC READ_ONLY FORWARD_ONLY FOR SELECT EPI.id FROM NAD_Series AS SER INNER JOIN NAD_Seasons AS SEA ON SER.id = SEA.serieId INNER JOIN NAD_Episodes AS EPI ON SEA.id = EPI.seasonId WHERE SER.id = @idSerie AND ((SEA.[order] < @season) OR ((SEA.[order] = @season) AND (EPI.[order] <= @episode))) ORDER BY SEA.[order], EPI.[order] OPEN MY_CURSOR FETCH NEXT FROM MY_CURSOR INTO @idEpisode WHILE @@FETCH_STATUS = 0 BEGIN    INSERT INTO {TABLE_NAME} (episodeId, userId) VALUES (@idEpisode, @userId) FETCH NEXT FROM MY_CURSOR INTO @idEpisode END CLOSE MY_CURSOR DEALLOCATE MY_CURSOR";
         private const string GET_LAST_EPISODE_ORDER = "SELECT MAX(E.[order]) AS Episode, SEA.[order] AS Season FROM NAD_UsersEpisodes AS UE INNER JOIN NAD_Episodes AS E ON UE.episodeId = E.id INNER JOIN NAD_Seasons AS SEA ON E.seasonId = SEA.id WHERE UE.userId = @userId AND SEA.serieId = @serieId AND SEA.[order] = (SELECT MAX(SEA.[order]) AS Season FROM NAD_UsersEpisodes AS UE INNER JOIN NAD_Episodes AS E ON UE.episodeId = E.id INNER JOIN NAD_Seasons AS SEA ON E.seasonId = SEA.id WHERE UE.userId = @userId AND SEA.serieId = @serieId) GROUP BY SEA.[order]";
         private const string UPDATE_PROGRESS = "DECLARE @idEpisode int DECLARE MY_CURSOR CURSOR LOCAL STATIC READ_ONLY FORWARD_ONLY FOR @query OPEN MY_CURSOR FETCH NEXT FROM MY_CURSOR INTO @idEpisode WHILE @@FETCH_STATUS = 0 BEGIN @instruction FETCH NEXT FROM MY_CURSOR INTO @idEpisode  END CLOSE MY_CURSOR DEALLOCATE MY_CURSOR";
         private const string UPDATE_PROGRESS_QUERY_ONE_SEASON = "SELECT EPI.id FROM NAD_Series AS SER INNER JOIN NAD_Seasons AS SEA ON SER.id = SEA.serieId INNER JOIN NAD_Episodes AS EPI ON SEA.id = EPI.seasonId WHERE SER.id = @idSerie AND SEA.[order] = @season AND EPI.[order] BETWEEN @minEpisode+1 AND @maxEpisode ORDER BY SEA.[order], EPI.[order]";
@@ -30,6 +30,14 @@ namespace SeriesApp_DAL.DAO
             ExecuteNonQuery(ADD_PROGRESS.Replace("@idSerie", idSerie.ToString()).Replace("@season", season.ToString()).Replace("@episode", episode.ToString()).Replace("@userId", userId.ToString()));
         }
 
+        /// <summary>
+        /// Este método busca el último episodio que ha visto el usuario con el id dado (idUser) de la serie indicada (idSerie) 
+        /// y mete los valores en los parámetros season (el número de temporada) y episode (el número de episodio)
+        /// </summary>
+        /// <param name="idUser"></param>
+        /// <param name="idSerie"></param>
+        /// <param name="season"></param>
+        /// <param name="episode"></param>
         public void LastEpisode(long idUser, long idSerie, ref int season, ref int episode)
         {
             SqlConnection sqlConnection = null;
@@ -75,6 +83,6 @@ namespace SeriesApp_DAL.DAO
                 .Replace("@minEpisode", increasedProgress ? minEpisode.ToString() : maxEpisode.ToString())
                 .Replace("@maxEpisode", increasedProgress ? maxEpisode.ToString() : maxEpisode.ToString())
                 .Replace("@userId", userId.ToString()));
-        }
+        }     
     }
 }
