@@ -31,13 +31,6 @@ namespace SeriesApp_UI.ViewModels
         }
 
         [RelayCommand]
-        void Refresh()
-        {
-            //GetUser();
-            User = App.Current.User;
-        }
-
-        [RelayCommand]
         async Task LogoutAsync()
         {
             //await SecureStorage.Default.SetAsync("Account", " ");

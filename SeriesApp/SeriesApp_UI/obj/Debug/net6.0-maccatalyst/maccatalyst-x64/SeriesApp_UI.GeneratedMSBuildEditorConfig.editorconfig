@@ -45,17 +45,17 @@ build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.CreateA
 build_metadata.AdditionalFiles.TargetPath = Views\CreateAccountPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CreateAccountPage.xaml
 
+[C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/ErrorPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.ErrorPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ErrorPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ErrorPage.xaml
+
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/HomePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.HomePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\HomePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\HomePage.xaml
-
-[C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/LoadingPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.LoadingPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\LoadingPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\LoadingPage.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -80,18 +80,6 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.SeriesDetailsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SeriesDetailsPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SeriesDetailsPage.xaml
-
-[C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/Templates/ItemSeries.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.Templates.ItemSeries.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\Templates\ItemSeries.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\Templates\ItemSeries.xaml
-
-[C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/Templates/ItemSeriesBase.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.Templates.ItemSeriesBase.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\Templates\ItemSeriesBase.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\Templates\ItemSeriesBase.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/Templates/ItemSeriesHome.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

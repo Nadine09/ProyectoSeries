@@ -17,20 +17,7 @@
                 <RoundRectangle CornerRadius="30"/>
             </Border.StrokeShape>
             <SearchBar HorizontalOptions="Center" Text="{Binding SearchText}" PlaceholderColor="Black" TextColor="Black" CancelButtonColor="{StaticResource clrLightRed}"/>
-        </Border>
-        <Label Text="{Binding Serie}" Grid.Row="1"/>
-        <!--<ListView ItemsSource="{Binding SearchResult}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1"/>
-                            <ColumnDefinition Width="2"/>
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
+        </Border>        
 
         <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" Grid.Row="2">
             <CollectionView ItemsSource="{Binding SearchResult}" ItemsLayout="VerticalList" SelectionMode="Single" SelectedItem="{Binding SelectedSerie}" SelectionChangedCommand="{Binding SeriesDetailsCommand}"  SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={RelativeSource Self}}">
@@ -42,6 +29,5 @@
             </CollectionView>
         </ScrollView>        
     </Grid>
-
 
 </ContentPage>

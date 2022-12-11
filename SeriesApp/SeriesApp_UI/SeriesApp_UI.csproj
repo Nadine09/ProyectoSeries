@@ -52,6 +52,7 @@
 	  <None Remove="Resources\Images\account.png" />
 	  <None Remove="Resources\Images\add.png" />
 	  <None Remove="Resources\Images\edit.png" />
+	  <None Remove="Resources\Images\ghost.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\list.png" />
 	  <None Remove="Resources\Images\plus.png" />
@@ -74,10 +75,10 @@
 	  <MauiXaml Update="Views\CreateAccountPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\HomePage.xaml">
+	  <MauiXaml Update="Views\ErrorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\LoadingPage.xaml">
+	  <MauiXaml Update="Views\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\LoginPage.xaml">
@@ -87,12 +88,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SeriesDetailsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Templates\ItemSeries.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Templates\ItemSeriesBase.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Templates\ItemSeriesHome.xaml">

@@ -9,7 +9,7 @@ namespace SeriesApp_UI.ViewModels
 
         private UserDAO userDAO;
 
-        public const string LOGIN_ERROR = "No se ha podido hacer login :(";
+        public const string LOGIN_ERROR = "No se ha podido hacer login, revisa los datos e intentalo de nuevo";
 
         [ObservableProperty]
         ObservableCollection<ClsUser> users;
@@ -29,7 +29,7 @@ namespace SeriesApp_UI.ViewModels
         public VM_Login()
         {
             userDAO = new UserDAO();
-            users = new ObservableCollection<ClsUser>(userDAO.GetAll());
+            users = new ObservableCollection<ClsUser>(userDAO.GetAll()); //QUITAR
         }
 
 
@@ -40,12 +40,12 @@ namespace SeriesApp_UI.ViewModels
         {
             errorMessage = "";
             //ClsUser user = userDAO.GetUserByEmailAndPassword(email, password); //TODO Mostrar
-            ClsUser user = SelectedUser;
+            ClsUser user = SelectedUser; //Quitar
             if (user != null)
             {
                 App.Current.Restart();
                 App.Current.User = user;
-                await SecureStorage.Default.SetAsync("Account", user.Id.ToString());
+                await SecureStorage.Default.SetAsync("Account", user.Id.ToString()); //QUITAR
                 await Shell.Current.GoToAsync("//HomePage");
                 //await Shell.Current.GoToAsync($"//{nameof(HomePage)}?", new Dictionary<string, object>
                 //{
@@ -74,7 +74,7 @@ namespace SeriesApp_UI.ViewModels
         long id;
 
         [RelayCommand]
-        async Task GetUserAsync()
+        async Task GetUserAsync() //QUITAR
         {
             Id = long.Parse(await SecureStorage.Default.GetAsync("Account"));
         }

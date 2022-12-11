@@ -17,8 +17,5 @@
             <Entry Text="{Binding User.Password}" IsPassword="True" IsEnabled="False"/>
         </HorizontalStackLayout>
         <Button Text="Logout" Command="{Binding LogoutCommand}"/>
-        
-        <Button Text="Refresh" Command="{Binding RefreshCommand}"/>
-
     </VerticalStackLayout>
 </ContentPage>

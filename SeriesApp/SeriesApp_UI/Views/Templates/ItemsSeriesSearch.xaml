@@ -32,13 +32,14 @@
                          FontSize="18"
                          VerticalTextAlignment="Start"
                          HorizontalTextAlignment="Start" 
-                         Margin="10, 0"/>
+                         Margin="10, 0"
+                   TextColor="White"/>
 
-            <Border Stroke="{StaticResource clrLightBlue}" BackgroundColor="{StaticResource clrDarkBlue}"  Grid.Column="2" Grid.Row="0" HeightRequest="40" WidthRequest="40" Padding="5" VerticalOptions="End" Margin="10,0,0,0">
+            <Border Stroke="{StaticResource clrLightBlue}" BackgroundColor="{StaticResource clrDarkBlue}"  Grid.Column="2" Grid.Row="0" HeightRequest="50" WidthRequest="50" Padding="5" VerticalOptions="End" Margin="10,0,0,0">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="5"/>
                 </Border.StrokeShape>
-                <ImageButton Source="add.png"  HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:VM_Search}}, Path=AddSerieCommand}" CommandParameter="{Binding .}"/>
+                <ImageButton Source="add.png"  HeightRequest="35" WidthRequest="35" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:VM_Search}}, Path=AddSerieCommand}" CommandParameter="{Binding .}"/>
             </Border>
 
         </Grid>        

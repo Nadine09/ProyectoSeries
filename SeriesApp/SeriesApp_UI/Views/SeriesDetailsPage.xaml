@@ -16,7 +16,7 @@
             <Label Text="{Binding Series.Synopsis}"/>
         </StackLayout>
         
-        <Button Text="+"/>
+        <!--<Button Text="+" Command="{Binding AddSerieCommand}"/>-->
     </VerticalStackLayout>
     
 </ContentPage>

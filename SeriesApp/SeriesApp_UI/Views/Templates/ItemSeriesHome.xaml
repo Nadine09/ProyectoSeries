@@ -35,7 +35,8 @@
                          Margin="0,5"
                          MaximumWidthRequest="120" 
                    MaxLines="2" LineBreakMode="WordWrap" 
-                   FontAutoScalingEnabled="True"/>
+                   FontAutoScalingEnabled="True"
+                   TextColor="White"/>
         </Grid>
     </Border>
 </ContentView>

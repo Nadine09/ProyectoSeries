@@ -8,35 +8,35 @@ namespace SeriesApp_UI.ViewModels
     //[QueryProperty("ImageUrl", "ImageUrl")]
     //[QueryProperty("Synopsis", "Synopsis")]
     [QueryProperty("Series", "Series")]
-    public partial class VM_SeriesDetails : ObservableObject, IQueryAttributable
+    public partial class VM_SeriesDetails : VM_Base, IQueryAttributable
     {
         [ObservableProperty]
         ClsSeries series;
         
-        [ObservableProperty]
-        long id;
+        //[ObservableProperty]
+        //long id;
 
-        [ObservableProperty]
-        string name;
+        //[ObservableProperty]
+        //string name;
 
-        [ObservableProperty]
-        string imageUrl;
+        //[ObservableProperty]
+        //string imageUrl;
 
-        [ObservableProperty]
-        string synopsis;
+        //[ObservableProperty]
+        //string synopsis;
 
         public VM_SeriesDetails()
         {
         }
 
 
-        public VM_SeriesDetails(ClsSeries series)
-        {
-            Id = series.Id;
-            Name = series.Name;
-            ImageUrl = series.ImageUrl;
-            synopsis = series.Synopsis;
-        }
+        //public VM_SeriesDetails(ClsSeries series)
+        //{
+        //    Id = series.Id;
+        //    Name = series.Name;
+        //    ImageUrl = series.ImageUrl;
+        //    synopsis = series.Synopsis;
+        //}
 
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
@@ -49,14 +49,16 @@ namespace SeriesApp_UI.ViewModels
             }
             else
             {
-                throw new Exception();
+                Error();
             }
         }
 
         [RelayCommand]
-        public async void GoBack()
+        public async Task AddSerie()
         {
-            await Shell.Current.GoToAsync("..");
+            var dictionary = new Dictionary<string, object>();
+            dictionary.Add("Series", Series);
+            await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
         }
     }
 }

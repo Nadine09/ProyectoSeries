@@ -48,7 +48,9 @@ namespace SeriesApp_UI.ViewModels
         [RelayCommand]
         public async Task EditSerie(ClsSeries series)
         {
-            SelectedSerieText = $"Editar serie :: Serie -> Id: {series.Id} Nombre: {series.Name}";
+            var dictionary = new Dictionary<string, object>();
+            dictionary.Add("Series", series);
+            await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
         }
 
         [RelayCommand]

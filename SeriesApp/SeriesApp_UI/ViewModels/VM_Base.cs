@@ -26,8 +26,20 @@ namespace SeriesApp_UI.ViewModels
         [RelayCommand]
         public async void GoBack()
         {
-            //Volvemos atrás
-            await Shell.Current.GoToAsync("..");
+            try
+            {
+                //Volvemos atrás
+                await Shell.Current.GoToAsync("..");
+            }catch (Exception)
+            {
+                Error();
+            }
+        }
+
+        protected async void Error()
+        {
+            //Vamos a la pagina de error
+            await Shell.Current.GoToAsync($"//{nameof(ErrorPage)}");
         }
     }
 }

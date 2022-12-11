@@ -5,11 +5,37 @@
              x:DataType="VM:VM_CreateAccount"
              x:Class="SeriesApp_UI.Views.CreateAccountPage"             
              Title="CreateAccountPage">
-    <VerticalStackLayout>
-        <Entry Placeholder="Username" Text="{Binding Username}"/>
-        <Entry Placeholder="Email" Text="{Binding Email}"/>
-        <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" />
-        <Label Text="{Binding ErrorMessage}" TextColor="Red"/>
-        <Button Text="Create Account" Style="{StaticResource stlBtnLogin}" Command="{Binding CreateAccountCommand}"/>
+
+    <VerticalStackLayout  Padding="20">
+        <Button Text="Atrás" Command="{Binding BackToLoginCommand}" MaximumHeightRequest="50" MaximumWidthRequest="100" Margin="0,10"/>
+        <Border Grid.Row="0" Margin="10" BackgroundColor="{StaticResource clrLightGrey}" Padding="20,5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="30"/>
+            </Border.StrokeShape>
+            <Entry Placeholder="Username" Text="{Binding Username}"/>
+        </Border>
+        <Border Grid.Row="0" Margin="10,10" BackgroundColor="{StaticResource clrLightGrey}" Padding="20,5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="30"/>
+            </Border.StrokeShape>
+            <Entry Placeholder="Email" Text="{Binding Email}"/>
+        </Border>
+        <Border Grid.Row="0" Margin="10" BackgroundColor="{StaticResource clrLightGrey}" Padding="20,5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="30"/>
+            </Border.StrokeShape>
+            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" />
+        </Border>
+
+
+
+
+        <Label Text="{Binding ErrorMessage}" TextColor="Red" MaxLines="2" LineBreakMode="WordWrap"/>
+        <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20"/>
+            </Border.StrokeShape>
+            <Button Text="Create Account" Style="{StaticResource stlBtnLogin}" Command="{Binding CreateAccountCommand}"/>
+        </Border>
     </VerticalStackLayout>
 </ContentPage>

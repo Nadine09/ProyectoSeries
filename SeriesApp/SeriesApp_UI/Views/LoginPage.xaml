@@ -5,40 +5,57 @@
              xmlns:en="clr-namespace:SeriesApp_Entities.Classes;assembly=SeriesApp_Entities"
              x:DataType="vm:VM_Login"
              x:Class="SeriesApp_UI.Views.LoginPage"
-             Title="LoginPage"
-             BackgroundColor="{StaticResource clrDarkBlue}"
-             Padding="30, 50">
-    <Border BackgroundColor="{StaticResource clrTransparentWhite}" Stroke="{StaticResource clrTransparentWhite}" x:DataType="vm:VM_Login">
-        <Border.StrokeShape>
-            <RoundRectangle CornerRadius="20"/>
-        </Border.StrokeShape>
-        <VerticalStackLayout  Padding="20">
-            <!--<Label 
+             Title="LoginPage">
+
+    <VerticalStackLayout  Padding="20">
+        <!--<Label 
             Text="{Binding Valor}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Entry
             Text="{Binding Number}"/>
         <Label Text="{Binding Number}"/>-->
+        <Border Grid.Row="0" Margin="10" BackgroundColor="{StaticResource clrLightGrey}" Stroke="Transparent" Padding="20,5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="30"/>
+            </Border.StrokeShape>
+            <Entry Placeholder="Email" Text="{Binding Email}" TextColor="Black"/>
+        </Border>
+        <Border Grid.Row="0" Margin="10" BackgroundColor="{StaticResource clrLightGrey}" Padding="20,5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="30"/>
+            </Border.StrokeShape>
+            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}"  TextColor="Black"/>
+        </Border>
 
+        <Label Text="{Binding ErrorMessage}" TextColor="Red" MaxLines="2" LineBreakMode="WordWrap"/>
+        <CollectionView ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="en:ClsUser">
+                    <Label Text="{Binding UserName}" BackgroundColor="CornflowerBlue" TextColor="White"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-            <Entry Placeholder="Email" Text="{Binding Email}" Style="{StaticResource entField}"/>
-            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}"  Style="{StaticResource entField}"/>
-            <Label Text="{Binding ErrorMessage}" TextColor="Red"/>
-            <CollectionView ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}" SelectionMode="Single">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="en:ClsUser">
-                        <Label Text="{Binding UserName}" BackgroundColor="CornflowerBlue" TextColor="White"/>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+        <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
             <Button Text="Log in" Style="{StaticResource stlBtnLogin}" Command="{Binding LoginCommand}"/>
-            <Line BackgroundColor="White" Margin="20, 5"/>
+        </Border>
+        <Line BackgroundColor="White" HeightRequest="1" Margin="20, 15"/>
+        <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
             <Button Text="Create Account" Style="{StaticResource stlBtnLogin}" Command="{Binding CreateAccountCommand}"/>
+        </Border>
 
-            <!--<Button Text="View Account" Style="{StaticResource stlBtnLogin}" Command="{Binding GetUserCommand}"/>
+
+
+        <!--<Button Text="View Account" Style="{StaticResource stlBtnLogin}" Command="{Binding GetUserCommand}"/>
         <Label Text="Username:"/>
         <Label Text="{Binding Id}"/>-->
-        </VerticalStackLayout>
-    </Border>
+    </VerticalStackLayout>
+
 </ContentPage>

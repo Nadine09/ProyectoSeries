@@ -8,8 +8,8 @@ public partial class App : Application
 {
     public new static App Current => (App)Application.Current;
     public IServiceProvider Services { get; set; }
-
     public ClsUser User { get; set; }
+
     public App()
     {
         var services = new ServiceCollection();
@@ -18,6 +18,9 @@ public partial class App : Application
         MainPage = new AppShell();
     }
 
+    /// <summary>
+    /// Este método reinicia las Page de la aplicación
+    /// </summary>
     public void Restart()
     {
         var services = new ServiceCollection();
@@ -35,6 +38,7 @@ public partial class App : Application
         services.AddTransient<VM_UserSeries>();
         services.AddTransient<VM_SeriesDetails>();
         services.AddTransient<VM_UsersAddSeries>();
+        services.AddTransient<VM_Error>();
 
         //Views
         services.AddSingleton<LoginPage>();
@@ -44,6 +48,7 @@ public partial class App : Application
         services.AddSingleton<UserSeriesPage>();
         services.AddSingleton<SeriesDetailsPage>();
         services.AddSingleton<UsersAddSeriesPage>();
+        services.AddSingleton<ErrorPage>();
 
         return services.BuildServiceProvider();
     }

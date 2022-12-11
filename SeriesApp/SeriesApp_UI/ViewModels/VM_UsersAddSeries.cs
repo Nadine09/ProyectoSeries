@@ -54,7 +54,7 @@ namespace SeriesApp_UI.ViewModels
             }
             else
             {
-                throw new Exception();
+                Error();
             }
         }
 

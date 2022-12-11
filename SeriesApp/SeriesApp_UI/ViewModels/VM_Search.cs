@@ -8,9 +8,6 @@ namespace SeriesApp_UI.ViewModels
         private SeriesDAO seriesDAO;
 
         [ObservableProperty]
-        string serie;
-
-        [ObservableProperty]
         ClsSeries selectedSerie;
 
         [ObservableProperty]
@@ -23,13 +20,11 @@ namespace SeriesApp_UI.ViewModels
         {
             seriesDAO = new SeriesDAO();
             searchResult = seriesDAO.GetAll();
-            Serie = "No se ha añadido ninguna todavía";
         }
 
         [RelayCommand]
         public async Task AddSerie(ClsSeries series)
         {
-            Serie = $"Serie -> Id: {series.Id} Nombre: {series.Name}";
             var dictionary = new Dictionary<string, object>();
             dictionary.Add("Series", series);
             await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
@@ -41,12 +36,6 @@ namespace SeriesApp_UI.ViewModels
             var dictionary = new Dictionary<string, object>();
             dictionary.Add("Series", series);
             await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
-
-            //await Shell.Current.GoToAsync("SeriesDetailsPage", new Dictionary<string, object>
-            //{
-            //    {"Series", series}
-            //});
-            //await Shell.Current.GoToAsync($"/SeriesDetailsPage?Id={series.Id}&Name={series.Name}&ImageUrl={series.ImageUrl}&Synopsis={series.Synopsis}");
         }
     }
 }
