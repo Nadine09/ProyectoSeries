@@ -12,6 +12,7 @@ namespace SeriesApp_DAL.DAO
     public class UserDAO : GenericDAO<ClsUser>
     {
         public const string TABLE_NAME = "NAD_Users";
+        public const string VALIDATE_EMAIL = "SELECT * FROM NAD_Users WHERE email = '@email'";
         public const string INSERT = $"INSERT INTO {TABLE_NAME} (UserName, Email, Password) VALUES ('@username', '@email', '@password')";
         public const string UPDATE = $"UPDATE {TABLE_NAME} SET UserName = @username, Password '@password'";
         public const string SELECT_USER_BY_EMAIL_AND_PASSWORD = $"SELECT id, username, email, [password] FROM {TABLE_NAME} WHERE Email = '@email' AND Password = '@password'";
@@ -25,6 +26,36 @@ namespace SeriesApp_DAL.DAO
             cmdSelectAll = SELECT_ALL;
         }
 
+        /// <summary>
+        /// Valida el email dado. Si el email ya está en uso devolverá FALSE, en caso contrario, TRUE.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public bool ValidateEmail(string email)
+        {
+            bool valid = true;
+            SqlConnection sqlConnection = null;
+            SqlCommand sqlCommand = null;
+            SqlDataReader sqlDataReader = null;
+
+            StartQuery(ref sqlConnection, ref sqlCommand, ref sqlDataReader, VALIDATE_EMAIL.Replace("@email", email));
+
+            if (sqlDataReader.HasRows)
+            { 
+                valid = false;
+            }
+
+            CloseAll(ref sqlConnection, ref sqlDataReader);
+
+            return valid;
+        }
+
+        /// <summary>
+        /// Obtiene (si existe) el usuario por su email y constraseña
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public ClsUser GetUserByEmailAndPassword(string email, string password)
         {      
             return ExecuteQueryOneObject(SELECT_USER_BY_EMAIL_AND_PASSWORD.Replace("@email", email).Replace("@password", password));            
@@ -37,8 +68,8 @@ namespace SeriesApp_DAL.DAO
         /// <returns></returns>
         public ClsUser CreateUser(ClsUser user)
         {
-            string commmand = INSERT.Replace("@username", user.UserName).Replace("@email", user.Email).Replace("@password", user.Password);
-            ExecuteNonQuery(commmand);
+            string command = INSERT.Replace("@username", user.UserName).Replace("@email", user.Email).Replace("@password", user.Password);
+            ExecuteNonQuery(command);
             return GetUserByEmailAndPassword(user.Email, user.Password);
         }
 

@@ -36,6 +36,9 @@ namespace SeriesApp_UI.ViewModels
             }
         }
 
+        /// <summary>
+        /// Este método navega hasta la pantalla de error
+        /// </summary>
         protected async void Error()
         {
             //Vamos a la pagina de error

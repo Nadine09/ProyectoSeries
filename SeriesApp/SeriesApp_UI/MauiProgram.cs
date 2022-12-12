@@ -24,10 +24,6 @@ public static class MauiProgram
 		builder.Services.AddSingleton<CreateAccountPage>();
 		builder.Services.AddSingleton<VM_CreateAccount>();
 
-		//MainPage
-        builder.Services.AddTransient<MainPage>();
-        builder.Services.AddTransient<VM_MainPage>();
-
         //Home
         builder.Services.AddTransient<HomePage>();
         builder.Services.AddTransient<VM_Home>();

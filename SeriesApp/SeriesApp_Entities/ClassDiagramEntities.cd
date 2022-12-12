@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SeriesApp_Entities.Classes.ClsEpisode">
+    <Position X="6.5" Y="0.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAACYAAAAAAQAAAAAAAAAAQIAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Classes\ClsEpisode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_Entities.Classes.ClsGenre">
+    <Position X="9.75" Y="0.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ClsGenre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_Entities.Classes.ClsSeason">
+    <Position X="13" Y="0.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAAAAAQAAAAAAAAAAQIAAAAAAAAAAAABAAQEAA=</HashCode>
+      <FileName>Classes\ClsSeason.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_Entities.Classes.ClsSeries">
+    <Position X="9.75" Y="3" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAAAAAQAAAAAAAAAAQIAAACAAAIAAAABAAAAAA=</HashCode>
+      <FileName>Classes\ClsSeries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_Entities.Classes.ClsUser">
+    <Position X="6.5" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAAAAAAAAAAAACAQAAAAAAAAA=</HashCode>
+      <FileName>Classes\ClsUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SeriesApp_Entities.Enums.MRA">
+    <Position X="13" Y="4.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAABAAAAAAAAAAAQCAAAAAAEAAAAAA=</HashCode>
+      <FileName>Enums\MRA.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

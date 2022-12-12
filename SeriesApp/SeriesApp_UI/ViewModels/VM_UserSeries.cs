@@ -27,37 +27,76 @@ namespace SeriesApp_UI.ViewModels
             }
         }
 
+        /// <summary>
+        /// Este metodo obtiene las series de las que es usuario ya tiene progreso guardado
+        /// </summary>
         [RelayCommand]
         void Refresh()
         {
-            List<ClsSeries> userSeries = seriesDAO.GetByUser(User.Id);
-            if (!userSeries.IsNullOrEmpty())
+            try
             {
-                Series = new ObservableCollection<ItemUserSeriesDTO>();
-                userSeries.ForEach(x => Series.Add(converter.ConvertToItemUserSeriesDTO(x, User.Id)));
+                List<ClsSeries> userSeries = seriesDAO.GetByUser(User.Id);
+                if (!userSeries.IsNullOrEmpty())
+                {
+                    Series = new ObservableCollection<ItemUserSeriesDTO>();
+                    userSeries.ForEach(x => Series.Add(converter.ConvertToItemUserSeriesDTO(x, User.Id)));
+                }
+            }
+            catch (Exception)
+            {
+                Error();
             }
         }
 
+        /// <summary>
+        /// Este método navega a UsersAddSeries pasandole la serie recibida por parámetros
+        /// </summary>
+        /// <param name="itemUserSeriesDTO"></param>
+        /// <returns></returns>
         [RelayCommand]
         public async Task EditSerie(ItemUserSeriesDTO itemUserSeriesDTO)
         {
-            var dictionary = new Dictionary<string, object>();
-            dictionary.Add("Series", itemUserSeriesDTO.Series);
-            await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
+            try
+            {
+                var dictionary = new Dictionary<string, object>();
+                dictionary.Add("Series", itemUserSeriesDTO.Series);
+                await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
+            }
+            catch (Exception)
+            {
+                Error();
+            }
         }
 
+        /// <summary>
+        /// Este metodo suma 1 al progreso
+        /// </summary>
+        /// <param name="itemUserSeriesDTO"></param>
+        /// <returns></returns>
         [RelayCommand]
         public async Task NextEpisode(ItemUserSeriesDTO itemUserSeriesDTO)
         {
             //TODO Hacer que el progreso se incremente en 1 episodio
         }
 
+        /// <summary>
+        /// Este método navega a SeriesDetails pasandole la serie recibida por parámetros
+        /// </summary>
+        /// <param name="itemUserSeriesDTO"></param>
+        /// <returns></returns>
         [RelayCommand]
         public async Task SeriesDetails(ItemUserSeriesDTO itemUserSeriesDTO)
         {
-            var dictionary = new Dictionary<string, object>();
-            dictionary.Add("Series", itemUserSeriesDTO.Series);
-            await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
+            try
+            {
+                var dictionary = new Dictionary<string, object>();
+                dictionary.Add("Series", itemUserSeriesDTO.Series);
+                await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
+            }
+            catch (Exception)
+            {
+                Error();
+            }
         }
     }
 }

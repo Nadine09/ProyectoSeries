@@ -14,10 +14,6 @@
         public override ClsSeason BuildObject(SqlDataReader sqlDataReader)
         {
             throw new NotImplementedException();
-        }
-
-        
+        }        
     }
-
-
 }

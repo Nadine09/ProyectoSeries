@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 namespace SeriesApp_UI.ViewModels
 {
     //[QueryProperty("User", "User")]
-    public partial class VM_Home : ObservableObject
+    public partial class VM_Home : VM_Base
     {
         private SeriesDAO seriesDAO;
 
@@ -14,9 +14,6 @@ namespace SeriesApp_UI.ViewModels
         [ObservableProperty]
         List<ClsSeries> top10Series;
 
-        [ObservableProperty]
-        ClsUser user;
-
         public VM_Home()
         {
             seriesDAO = new SeriesDAO();
@@ -24,28 +21,24 @@ namespace SeriesApp_UI.ViewModels
             top10Series = seriesDAO.GetTop10();
         }
 
-        [RelayCommand]
-        void Refresh()
-        {
-            newSeries = seriesDAO.GetAll();
-            Top10Series = seriesDAO.GetTop10();
-        }
-
-        [ObservableProperty]
-        long serieId;
-
-        [RelayCommand]
-        void AddSerie()
-        {
-            SerieId = 1;
-        }
-
+        /// <summary>
+        /// Este método navega a SeriesDetails pasandole la serie recibida por parámetros
+        /// </summary>
+        /// <param name="series"></param>
+        /// <returns></returns>
         [RelayCommand]
         public async Task SeriesDetails(ClsSeries series)
         {
-            var dictionary = new Dictionary<string, object>();
-            dictionary.Add("Series", series);
-            await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
+            try
+            {
+                var dictionary = new Dictionary<string, object>();
+                dictionary.Add("Series", series);
+                await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
+            }
+            catch (Exception)
+            {
+                Error();
+            }
         }
     }
 }

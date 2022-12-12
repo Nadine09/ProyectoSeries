@@ -3,7 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace SeriesApp_UI.ViewModels
 {
-    public partial class VM_Search : ObservableObject
+    public partial class VM_Search : VM_Base
     {
         private SeriesDAO seriesDAO;
 
@@ -22,20 +22,46 @@ namespace SeriesApp_UI.ViewModels
             searchResult = seriesDAO.GetAll();
         }
 
+        /// <summary>
+        /// Este método navega a UsersAddSeries pasandole la serie recibida por parámetros
+        /// </summary>
+        /// <param name="series"></param>
+        /// <returns></returns>
         [RelayCommand]
         public async Task AddSerie(ClsSeries series)
         {
-            var dictionary = new Dictionary<string, object>();
-            dictionary.Add("Series", series);
-            await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
+            try
+            {
+                var dictionary = new Dictionary<string, object>();
+                dictionary.Add("Series", series);
+                await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
+            }
+            catch (Exception)
+            {
+                Error();
+            }
+
         }
 
+        /// <summary>
+        /// Este método navega a SeriesDetails pasandole la serie recibida por parámetros
+        /// </summary>
+        /// <param name="series"></param>
+        /// <returns></returns>
         [RelayCommand]
         public async Task SeriesDetails(ClsSeries series)
         {
-            var dictionary = new Dictionary<string, object>();
-            dictionary.Add("Series", series);
-            await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
+            try
+            {
+                var dictionary = new Dictionary<string, object>();
+                dictionary.Add("Series", series);
+                await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
+            }
+            catch (Exception)
+            {
+                Error();
+            }
+
         }
     }
 }

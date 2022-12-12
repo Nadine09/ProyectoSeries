@@ -11,14 +11,9 @@ using System.Threading.Tasks;
 namespace SeriesApp_DAL.DAO
 {
     public abstract class GenericDAO<T> : GenericAbstractDAO
-    {
-        #region Constants
-        public const string GET_ID = "; SELECT SCOPE_IDENTITY()";
-        #endregion
+    {        
 
         #region Properties
-        
-        
         public string cmdSelectAll;
         public string cmdSelectById;
         #endregion
@@ -26,7 +21,7 @@ namespace SeriesApp_DAL.DAO
         #region Constructors
         public GenericDAO() : base()
         {
-            
+
         }
 
         protected GenericDAO(string cmdSelectAll, string cmdSelectById) : base()
@@ -36,16 +31,30 @@ namespace SeriesApp_DAL.DAO
         }
         #endregion
 
+        /// <summary>
+        /// Este método usa la propiedad cmdSelectAll, ejecuta la consulta y devuelve la lista de objetos T
+        /// </summary>
+        /// <returns></returns>
         public List<T> GetAll()
         {
             return ExecuteQuery(cmdSelectAll);
         }
 
+        /// <summary>
+        /// Este método usa la propiedad cmdSelectById, reemplaza @id en la cadena por el id dado y ejecuta la consulta. Devuelve un único objeto T
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public T GetById(long id)
         {
             return ExecuteQueryOneObject(cmdSelectById.Replace("@id", id.ToString()));
         }
 
+        /// <summary>
+        /// Este método ejecuta una consulta que devuelve un único objeto T. La consulta será el string command pasado por parámetros.
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
         public T ExecuteQueryOneObject(string command)
         {
             T item = default;
@@ -63,10 +72,11 @@ namespace SeriesApp_DAL.DAO
             if (sqlDataReader.HasRows)
             {
                 //Nos movemos hasta la fila y la leemos
-                sqlDataReader.Read();
-
-                //Construimos el objeto y lo añadimos a la lista
-                item = BuildObject(sqlDataReader);
+                if (sqlDataReader.Read())
+                {
+                    //Construimos el objeto y lo añadimos a la lista
+                    item = BuildObject(sqlDataReader);
+                }
 
             }
 
@@ -80,6 +90,11 @@ namespace SeriesApp_DAL.DAO
             return item;
         }
 
+        /// <summary>
+        /// Este método ejecuta una consulta que devuelve una lista de objetos T. La consulta será el string command pasado por parámetros.
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
         public List<T> ExecuteQuery(string command)
         {
             List<T> items = null;
@@ -117,40 +132,10 @@ namespace SeriesApp_DAL.DAO
         }
 
         /// <summary>
-        /// Este método inserta un objeto en la base de datos y devuelve el id del objeto insertado.
+        /// Este método ejecuta una consulta que devuelve un único valor int. La consulta será el string command pasado por parámetros.
         /// </summary>
-        /// <param name="command">Instrucción SQL para insertar el objeto</param>
+        /// <param name="command"></param>
         /// <returns></returns>
-        //public int InsertOneGetId(string command)
-        //{
-        //    int id = 0;
-
-        //    //Creamos y abrimos la conexión
-        //    SqlConnection sqlConnection = connectionProvider.getConnection();
-
-        //    //Creamos un SqlCommand con el comando apropiado y la conexion
-        //    SqlCommand sqlCommand = new SqlCommand(command + GET_ID, sqlConnection);
-
-        //    //Obtenemos el SqlDataReader
-        //    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-
-        //    //Miramos si hay alguna fila
-        //    if (sqlDataReader.HasRows)
-        //    {
-        //        //Nos movemos hasta la fila y la leemos
-        //        sqlDataReader.Read();
-        //        id = (int)sqlDataReader[0];
-        //    }
-
-        //    //Cerramos el SqlDataReader
-        //    sqlDataReader.Close();
-
-        //    //Cerramos la conexión
-        //    connectionProvider.closeConnection(sqlConnection);
-
-        //    return id;
-        //}
-
         public int executeQueryGetInt(string command)
         {
             int number = 0;
@@ -179,7 +164,7 @@ namespace SeriesApp_DAL.DAO
             connectionProvider.closeConnection(sqlConnection);
 
             return number;
-        }        
+        }
 
         /// <summary>
         /// Este método crea un objeto con los valores del sqlReader.

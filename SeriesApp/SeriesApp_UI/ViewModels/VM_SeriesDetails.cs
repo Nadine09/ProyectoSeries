@@ -3,40 +3,15 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace SeriesApp_UI.ViewModels
 {
-    //[QueryProperty("Id", "Id")]
-    //[QueryProperty("Name", "Name")]
-    //[QueryProperty("ImageUrl", "ImageUrl")]
-    //[QueryProperty("Synopsis", "Synopsis")]
     [QueryProperty("Series", "Series")]
     public partial class VM_SeriesDetails : VM_Base, IQueryAttributable
     {
         [ObservableProperty]
         ClsSeries series;
-        
-        //[ObservableProperty]
-        //long id;
-
-        //[ObservableProperty]
-        //string name;
-
-        //[ObservableProperty]
-        //string imageUrl;
-
-        //[ObservableProperty]
-        //string synopsis;
 
         public VM_SeriesDetails()
         {
         }
-
-
-        //public VM_SeriesDetails(ClsSeries series)
-        //{
-        //    Id = series.Id;
-        //    Name = series.Name;
-        //    ImageUrl = series.ImageUrl;
-        //    synopsis = series.Synopsis;
-        //}
 
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
@@ -45,7 +20,7 @@ namespace SeriesApp_UI.ViewModels
 
             if (hasValue)
             {
-                Series = (ClsSeries) obj;
+                Series = (ClsSeries)obj;
             }
             else
             {
@@ -53,12 +28,24 @@ namespace SeriesApp_UI.ViewModels
             }
         }
 
+        /// <summary>
+        /// Este método navega a UsersAddSeries pasandole la serie
+        /// </summary>
+        /// <returns></returns>
         [RelayCommand]
         public async Task AddSerie()
         {
-            var dictionary = new Dictionary<string, object>();
-            dictionary.Add("Series", Series);
-            await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
+            try
+            {
+                var dictionary = new Dictionary<string, object>();
+                dictionary.Add("Series", Series);
+                await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
+            }
+            catch (Exception)
+            {
+                Error();
+            }
+
         }
     }
 }

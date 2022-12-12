@@ -5,17 +5,26 @@
              xmlns:en="clr-namespace:SeriesApp_Entities.Classes;assembly=SeriesApp_Entities"
              x:Class="SeriesApp_UI.Views.SeriesDetailsPage"
              Title="SeriesDetailsPage">
-    <VerticalStackLayout x:DataType="vm:VM_SeriesDetails">
-        <Button Text="Atrás" Command="{Binding GoBackCommand}"/>
+    <VerticalStackLayout x:DataType="vm:VM_SeriesDetails" Padding="10,20">
+        <Border BackgroundColor="White" Padding="5" HeightRequest="60" WidthRequest="60" HorizontalOptions="Start">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="30"/>
+            </Border.StrokeShape>
+            <ImageButton Source="backicon.png" Command="{Binding GoBackCommand}" HeightRequest="30" MaximumWidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Border>
 
-        <Label Text="{Binding Series.Id}" />
-
-        <StackLayout>
-            <Label Text="{Binding Series.Name}"/>
-            <Image Source="{Binding Series.ImageUrl}" MaximumHeightRequest="150"/>
+        <StackLayout Margin="10,20">
+            <Label Text="{Binding Series.Name}" FontAttributes="Bold" FontSize="Title" TextColor="White"/>
+            <Border BackgroundColor="White" Padding="10" HorizontalOptions="Center" Margin="0,10">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <Image Source="{Binding Series.ImageUrl}" HeightRequest="250"/>
+            </Border>
             <Label Text="{Binding Series.Synopsis}"/>
         </StackLayout>
         
+        <!-- Añadir serie -->
         <!--<Button Text="+" Command="{Binding AddSerieCommand}"/>-->
     </VerticalStackLayout>
     

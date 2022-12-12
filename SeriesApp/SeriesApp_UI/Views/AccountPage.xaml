@@ -5,17 +5,45 @@
              x:DataType="VM:VM_Account"
              x:Class="SeriesApp_UI.Views.AccountPage"
              Title="AccountPage">
-    <VerticalStackLayout>
-        <Label Text="Mi cuenta" />
-        <Label Text="{Binding User.UserName}" />
-        <HorizontalStackLayout>
-            <Label Text="Email: " />
-            <Label Text="{Binding User.Email}" />
-        </HorizontalStackLayout>
-        <HorizontalStackLayout>
-            <Label Text="Password: " />
-            <Entry Text="{Binding User.Password}" IsPassword="True" IsEnabled="False"/>
-        </HorizontalStackLayout>
-        <Button Text="Logout" Command="{Binding LogoutCommand}"/>
-    </VerticalStackLayout>
+    <Grid VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border BackgroundColor="{StaticResource clrLightGrey}" Padding="10,20" VerticalOptions="Start" Margin="15,30" Grid.Row="0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Mi cuenta" Grid.Row="0" TextColor="{StaticResource clrLightRed}" FontAttributes="Bold" FontSize="Large" Margin="10,0"/>
+                <Image Source="happypopcorn.png" Grid.Row="1" HorizontalOptions="Center" Margin="0, 50" HeightRequest="150"/>
+                <Label Text="{Binding User.UserName}" Grid.Row="2" TextColor="{StaticResource clrLightBlue}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" Margin="0,0,0,10"/>
+                <HorizontalStackLayout Grid.Row="3" Margin="30,10" >
+                    <Label Text="Email: " TextColor="Black" />
+                    <Label Text="{Binding User.Email}" TextColor="Black"  />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Row="4" Margin="30,0">
+                    <Label Text="Password: " TextColor="Black"  />
+                    <Entry Text="{Binding User.Password}" IsPassword="True" IsEnabled="False" TextColor="Black" />
+                </HorizontalStackLayout>
+                
+            </Grid>
+        </Border>
+
+        <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" VerticalOptions="End" WidthRequest="150" Grid.Row="0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
+            <Button Text="Logout" Command="{Binding LogoutCommand}" Style="{StaticResource stlBtnLogin}"/>
+        </Border>
+    </Grid>
 </ContentPage>

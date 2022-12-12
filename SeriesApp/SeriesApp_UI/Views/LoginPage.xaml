@@ -7,7 +7,7 @@
              x:Class="SeriesApp_UI.Views.LoginPage"
              Title="LoginPage">
 
-    <VerticalStackLayout  Padding="20">
+    <VerticalStackLayout  Padding="20" VerticalOptions="Center">
         <!--<Label 
             Text="{Binding Valor}"
             VerticalOptions="Center" 
@@ -15,6 +15,7 @@
         <Entry
             Text="{Binding Number}"/>
         <Label Text="{Binding Number}"/>-->
+        <Image Source="happypopcorn.png" HeightRequest="150" Margin="0,0,0,30"/>
         <Border Grid.Row="0" Margin="10" BackgroundColor="{StaticResource clrLightGrey}" Stroke="Transparent" Padding="20,5">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30"/>
@@ -25,37 +26,24 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30"/>
             </Border.StrokeShape>
-            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}"  TextColor="Black"/>
+            <Entry Placeholder="Contraseña" IsPassword="True" Text="{Binding Password}"  TextColor="Black"/>
         </Border>
 
-        <Label Text="{Binding ErrorMessage}" TextColor="Red" MaxLines="2" LineBreakMode="WordWrap"/>
-        <CollectionView ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}" SelectionMode="Single">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="en:ClsUser">
-                    <Label Text="{Binding UserName}" BackgroundColor="CornflowerBlue" TextColor="White"/>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <Label Text="{Binding ErrorMessage}" TextColor="Red" MaxLines="2" LineBreakMode="WordWrap"/>    
 
-        <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5">
+        <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" WidthRequest="200">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="15"/>
             </Border.StrokeShape>
-            <Button Text="Log in" Style="{StaticResource stlBtnLogin}" Command="{Binding LoginCommand}"/>
+            <Button Text="Entrar" Style="{StaticResource stlBtnLogin}" Command="{Binding LoginCommand}"/>
         </Border>
-        <Line BackgroundColor="White" HeightRequest="1" Margin="20, 15"/>
-        <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5">
+        <Line BackgroundColor="White" HeightRequest="1" Margin="20, 30"/>
+        <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" WidthRequest="200">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="15"/>
             </Border.StrokeShape>
-            <Button Text="Create Account" Style="{StaticResource stlBtnLogin}" Command="{Binding CreateAccountCommand}"/>
+            <Button Text="Crear cuenta" Style="{StaticResource stlBtnLogin}" Command="{Binding CreateAccountCommand}"/>
         </Border>
-
-
-
-        <!--<Button Text="View Account" Style="{StaticResource stlBtnLogin}" Command="{Binding GetUserCommand}"/>
-        <Label Text="Username:"/>
-        <Label Text="{Binding Id}"/>-->
     </VerticalStackLayout>
 
 </ContentPage>

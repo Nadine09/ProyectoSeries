@@ -5,40 +5,71 @@
              xmlns:mo="clr-namespace:SeriesApp_UI.Models"
              x:Class="SeriesApp_UI.Views.UsersAddSeriesPage"
              Title="UsersAddSeriesPage">
-    <VerticalStackLayout x:DataType="vm:VM_UsersAddSeries" Padding="20">
+    <VerticalStackLayout x:DataType="vm:VM_UsersAddSeries" Padding="10,20">
 
-        <StackLayout Orientation="Horizontal">
-            <Button Text="Atrás" Command="{Binding GoBackCommand}" MaximumHeightRequest="50" MaximumWidthRequest="100"/>
-            <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" IsVisible="{Binding Add}">
+        <Grid Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BackgroundColor="White" Padding="5" HeightRequest="60" WidthRequest="60" HorizontalOptions="Start" Grid.Column="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="30"/>
+                </Border.StrokeShape>
+                <ImageButton Source="backicon.png" Command="{Binding GoBackCommand}" HeightRequest="30" MaximumWidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Border>
+
+            <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" IsVisible="{Binding Add}" MaximumWidthRequest="200" HorizontalOptions="End" Grid.Column="1">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="15"/>
                 </Border.StrokeShape>
-                <Button Text="Guardar" Command="{Binding SaveProgressCommand}" HorizontalOptions="End" TextColor="White" BackgroundColor="Transparent"/>
+                <Button Text="Guardar" Command="{Binding SaveProgressCommand}" TextColor="White" BackgroundColor="Transparent"/>
             </Border>
-            <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" IsVisible="{Binding Edit}">
+
+            <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" IsVisible="{Binding Edit}" MaximumWidthRequest="200" HorizontalOptions="End" Grid.Column="1">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="15"/>
                 </Border.StrokeShape>
                 <Button Text="Editar" Command="{Binding EditProgressCommand}" HorizontalOptions="End" TextColor="White" BackgroundColor="Transparent"/>
-            </Border>            
-        </StackLayout>
-        
-        <Label Text="{Binding SeriesEpi.Name}"/>
-        <Border BackgroundColor="{StaticResource clrLightBlue}" Padding="5">
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="5"/>
-            </Border.StrokeShape>
-            <StackLayout Orientation="Horizontal">
+            </Border>
+        </Grid>
 
-                <Label Text="Temporada " TextColor="{StaticResource clrDarkBlue}" VerticalOptions="Center"/>
-                <Picker Title="(Seleccione la temporada)" ItemsSource="{Binding SeriesEpi.Episodes}" SelectedItem="{Binding SeasonEpisodes}" ItemDisplayBinding="{Binding SeasonNumber}" TextColor="{StaticResource clrDarkBlue}" VerticalOptions="Center" TitleColor="White"/>
-            </StackLayout>
+        <Border BackgroundColor="{StaticResource clrDarkBlue}" Padding="15,20" VerticalOptions="Start">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15"/>
+            </Border.StrokeShape>
+            
+            <VerticalStackLayout>
+                <Label Text="{Binding SeriesEpi.Name}" FontAttributes="Bold" FontSize="Large" TextColor="White" Margin="0,10,0,30"/>
+                
+                <Label Text="Temporada" FontAttributes="Bold" FontSize="Medium" TextColor="White" Margin="0,10,0,10"/>
+                <Label Text="Selecciona la temporada:" TextColor="White"/>
+                <Border BackgroundColor="{StaticResource clrLightBlue}" Padding="5">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5"/>
+                    </Border.StrokeShape>
+                    <StackLayout Orientation="Horizontal">
+
+                        <Label Text="Temporada " TextColor="{StaticResource clrDarkBlue}" VerticalOptions="Center" />
+                        <Picker Title="     PULSA AQUÍ PARA SELECCIONAR" ItemsSource="{Binding SeriesEpi.Episodes}" SelectedItem="{Binding SeasonEpisodes}" ItemDisplayBinding="{Binding SeasonNumber}" TextColor="{StaticResource clrDarkBlue}" VerticalOptions="Center" TitleColor="White"/>
+                    </StackLayout>
+                </Border>
+                
+                <Label Text="Episodio" FontAttributes="Bold" FontSize="Medium" TextColor="White" Margin="0,30,0,10"/>
+                <Label Text="Desliza para elegir el episodio:" TextColor="White"/>
+                <Slider Minimum="1" Maximum="{Binding SeasonEpisodes.EpisodesNumber}" Value="{Binding Episode}" ThumbColor="{StaticResource clrLightRed}" Margin="0,20" MinimumTrackColor="{StaticResource clrLightRed}" MaximumTrackColor="{StaticResource clrLightGrey}"/>
+                
+                <Border BackgroundColor="{StaticResource clrLightBlue}" Padding="5">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5"/>
+                    </Border.StrokeShape>
+                    <StackLayout Orientation="Horizontal" MinimumHeightRequest="40">
+                        <Label Text="Episodio " TextColor="{StaticResource clrDarkBlue}" VerticalOptions="Center"/>
+                        <Label Text="{Binding Episode}" TextColor="{StaticResource clrDarkBlue}" VerticalOptions="Center"/>
+                    </StackLayout>
+                </Border>
+            </VerticalStackLayout>
         </Border>
-        <Slider Minimum="1" Maximum="{Binding SeasonEpisodes.EpisodesNumber}" Value="{Binding Episode}" ThumbColor="{StaticResource clrLightRed}"/>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Episodio selecionado: "/>
-            <Label Text="{Binding Episode}"/>
-        </StackLayout>
-        
     </VerticalStackLayout>
 </ContentPage>

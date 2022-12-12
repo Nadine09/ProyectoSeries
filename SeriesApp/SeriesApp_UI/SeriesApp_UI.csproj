@@ -51,11 +51,15 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\account.png" />
 	  <None Remove="Resources\Images\add.png" />
+	  <None Remove="Resources\Images\back.png" />
+	  <None Remove="Resources\Images\backicon.png" />
 	  <None Remove="Resources\Images\edit.png" />
 	  <None Remove="Resources\Images\ghost.png" />
+	  <None Remove="Resources\Images\happypopcorn.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\list.png" />
 	  <None Remove="Resources\Images\plus.png" />
+	  <None Remove="Resources\Images\refresh.png" />
 	  <None Remove="Resources\Images\search.png" />
 	</ItemGroup>
 

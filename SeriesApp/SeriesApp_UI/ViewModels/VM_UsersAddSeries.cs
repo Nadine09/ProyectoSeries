@@ -56,64 +56,95 @@ namespace SeriesApp_UI.ViewModels
             }
         }
 
+        /// <summary>
+        /// Este método averigua si el usuario tiene progreso anterior guardado y si lo tiene inicializa Episode y SeasonsEpisodes de acuerdo al progreso
+        /// </summary>
         private void CheckRelation()
         {
-            int season = 0, lastEpisode = 0;
-            usersEpisodesDAO.LastEpisode(User.Id, SeriesEpi.Id, ref season, ref lastEpisode);
-
-            Edit = season != 0;
-            Add = !Edit;
-
-            if (Edit)
+            try
             {
-                Episode = lastEpisode;
-                SeasonEpisodes = SeriesEpi.Episodes.Find(x => x.SeasonNumber == season);
+                int season = 0, lastEpisode = 0;
+                usersEpisodesDAO.LastEpisode(User.Id, SeriesEpi.Id, ref season, ref lastEpisode);
+
+                Edit = season != 0;
+                Add = !Edit;
+
+                if (Edit)
+                {
+                    Episode = lastEpisode;
+                    SeasonEpisodes = SeriesEpi.Episodes.Find(x => x.SeasonNumber == season);
+                }
+            }
+            catch (Exception)
+            {
+                Error();
             }
         }
 
+        /// <summary>
+        /// Este método verificará los datos y si están bien intentará añadir el progreso.
+        /// </summary>
         [RelayCommand]
         public async void SaveProgress()
         {
-            if (SeriesEpi != null && SeasonEpisodes != null && Episode != 0 && User != null)
+            try
             {
-                usersEpisodesDAO.AddProgress(SeriesEpi.Id, SeasonEpisodes.SeasonNumber, Episode, User.Id);
-                GoBack();
+                if (SeriesEpi != null && SeasonEpisodes != null && Episode != 0 && User != null)
+                {
+                    usersEpisodesDAO.AddProgress(SeriesEpi.Id, SeasonEpisodes.SeasonNumber, Episode, User.Id);
+                    GoBack();
+                }
             }
+            catch (Exception)
+            {
+                Error();
+            }
+
         }
 
+        /// <summary>
+        /// Este método verificará los datos y si están bien intentará actualizar el progreso.
+        /// </summary>
         [RelayCommand]
         public async void EditProgress()
         {
-            if (SeriesEpi != null && SeasonEpisodes != null && Episode != 0 && User != null)
+            try
             {
-                int lastEpisode = 0, lastSeason = 0;
-                bool equalsSeason, increasedProgress;
-
-                //Averiguamos el último episodio que ha visto el usuario
-                usersEpisodesDAO.LastEpisode(User.Id, SeriesEpi.Id, ref lastSeason, ref lastEpisode);
-
-                equalsSeason = lastSeason == SeasonEpisodes.SeasonNumber;
-
-                //Vemos si el progreso a cambiado
-                if (!(lastSeason == SeasonEpisodes.SeasonNumber && lastEpisode == Episode))
+                if (SeriesEpi != null && SeasonEpisodes != null && Episode != 0 && User != null)
                 {
-                    //Vemos si el progreso ha aumentado (vamos por un capítulo superior a la última vez)
-                    increasedProgress = lastSeason < SeasonEpisodes.SeasonNumber || (lastSeason == SeasonEpisodes.SeasonNumber && lastEpisode < Episode);
+                    int lastEpisode = 0, lastSeason = 0;
+                    bool equalsSeason, increasedProgress;
 
-                    if (increasedProgress) //ACLARACIÓN: Esto lo hago porque al ir para atrás me está fallando, si me da tiempo lo arreglaré
+                    //Averiguamos el último episodio que ha visto el usuario
+                    usersEpisodesDAO.LastEpisode(User.Id, SeriesEpi.Id, ref lastSeason, ref lastEpisode);
+
+                    equalsSeason = lastSeason == SeasonEpisodes.SeasonNumber;
+
+                    //Vemos si el progreso a cambiado
+                    if (!(lastSeason == SeasonEpisodes.SeasonNumber && lastEpisode == Episode))
                     {
-                        if (equalsSeason)
+                        //Vemos si el progreso ha aumentado (vamos por un capítulo superior a la última vez)
+                        increasedProgress = lastSeason < SeasonEpisodes.SeasonNumber || (lastSeason == SeasonEpisodes.SeasonNumber && lastEpisode < Episode);
+
+                        if (increasedProgress) //ACLARACIÓN: Esto lo hago porque al ir para atrás me está fallando, si me da tiempo lo arreglaré
                         {
-                            usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, lastEpisode, Episode, User.Id, increasedProgress);
-                        }
-                        else
-                        {
-                            usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, SeasonEpisodes.SeasonNumber, lastEpisode, Episode, User.Id, increasedProgress);
+                            if (equalsSeason)
+                            {
+                                usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, lastEpisode, Episode, User.Id, increasedProgress);
+                            }
+                            else
+                            {
+                                usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, SeasonEpisodes.SeasonNumber, lastEpisode, Episode, User.Id, increasedProgress);
+                            }
                         }
                     }
-                }
 
-                GoBack();
+                    GoBack();
+                }
+            }
+            catch (Exception)
+            {
+                Error();
             }
         }
         #endregion

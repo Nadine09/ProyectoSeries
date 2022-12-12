@@ -18,11 +18,20 @@
             cmdSelectById = SELECT_BY_ID;
         }
 
+        /// <summary>
+        /// Obtiene las 10 series mejor calificadas
+        /// </summary>
+        /// <returns></returns>
         public List<ClsSeries> GetTop10()
         {
             return ExecuteQuery(SELECT_TOP_10);
         }
 
+        /// <summary>
+        /// Obtiene las series que está viendo un usuario por su id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public List<ClsSeries> GetByUser(long id)
         {
             List<ClsSeries> series = null;
@@ -30,6 +39,11 @@
             return series;
         }
 
+        /// <summary>
+        /// Obtiene una lista de las temporadas (nº orden) y el numero de episodios que contienen
+        /// </summary>
+        /// <param name="idSerie"></param>
+        /// <returns></returns>
         public List<int[]> episodesPerSeason(long idSerie)
         {
             SqlConnection sqlConnection = null;
@@ -55,9 +69,7 @@
 
             //Devolvemos la lista de objetos
             return seasonEpisodes;
-        }
-
-        
+        }        
 
         public override ClsSeries BuildObject(SqlDataReader sqlDataReader)
         {
@@ -67,6 +79,8 @@
                 Name = (string)sqlDataReader["name"],
                 ImageUrl = (string)sqlDataReader["imageUrl"]
             };
+
+            // FALLA:
 
             //ClsSeries serie = new ClsSeries {
             //    Id = (int)sqlDataReader["id"],

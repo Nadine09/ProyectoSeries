@@ -10,15 +10,25 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackLayout Orientation="Horizontal" Grid.Row="0">
-            <Border Margin="10,15,10,20" BackgroundColor="{StaticResource clrLightGrey}">
+        <Grid Grid.Row="0" Padding="20">
+            <!--<Border Margin="0,5,5,10" BackgroundColor="{StaticResource clrLightGrey}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="30"/>
                 </Border.StrokeShape>
                 <SearchBar HorizontalOptions="Center" Text="{Binding SearchText}" PlaceholderColor="Black" TextColor="Black" CancelButtonColor="{StaticResource clrLightRed}"/>
+            </Border>-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Mis series" VerticalOptions="Center" FontAttributes="Bold" FontSize="Large" Grid.Column="0" TextColor="White"/>
+            <Border BackgroundColor="White" Padding="5" MaximumHeightRequest="60" MaximumWidthRequest="60" HorizontalOptions="End" Grid.Column="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="15"/>
+                </Border.StrokeShape>
+                <ImageButton Source="refresh.png" Command="{Binding RefreshCommand}" />
             </Border>
-            <Button Text="Refresh" Command="{Binding RefreshCommand}"/>
-        </StackLayout>
+        </Grid>
 
         <ScrollView Grid.Row="1" Orientation="Vertical" Margin="0,5,0,0">
             <CollectionView ItemsSource="{Binding Series}" SelectionMode="Single" SelectionChangedCommand="{Binding SeriesDetailsCommand}"  SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={RelativeSource Self}}">

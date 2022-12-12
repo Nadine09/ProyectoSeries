@@ -6,36 +6,38 @@
              x:Class="SeriesApp_UI.Views.CreateAccountPage"             
              Title="CreateAccountPage">
 
-    <VerticalStackLayout  Padding="20">
-        <Button Text="Atrás" Command="{Binding BackToLoginCommand}" MaximumHeightRequest="50" MaximumWidthRequest="100" Margin="0,10"/>
+    <VerticalStackLayout Padding="20" VerticalOptions="Center">
+        <Border BackgroundColor="White" Padding="5" HeightRequest="60" WidthRequest="60" HorizontalOptions="Start" Margin="0,10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="30"/>
+            </Border.StrokeShape>
+            <ImageButton Source="backicon.png" Command="{Binding BackToLoginCommand}" HeightRequest="30" MaximumWidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Border>
+        <Image Source="happypopcorn.png" HeightRequest="150" Margin="0,0,0,30"/>
         <Border Grid.Row="0" Margin="10" BackgroundColor="{StaticResource clrLightGrey}" Padding="20,5">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30"/>
             </Border.StrokeShape>
-            <Entry Placeholder="Username" Text="{Binding Username}"/>
+            <Entry Placeholder="Nombre de usuario" Text="{Binding Username}" TextColor="Black"/>
         </Border>
         <Border Grid.Row="0" Margin="10,10" BackgroundColor="{StaticResource clrLightGrey}" Padding="20,5">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30"/>
             </Border.StrokeShape>
-            <Entry Placeholder="Email" Text="{Binding Email}"/>
+            <Entry Placeholder="Email" Text="{Binding Email}" TextColor="Black"/>
         </Border>
         <Border Grid.Row="0" Margin="10" BackgroundColor="{StaticResource clrLightGrey}" Padding="20,5">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30"/>
             </Border.StrokeShape>
-            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" />
+            <Entry Placeholder="Contraseña" IsPassword="True" Text="{Binding Password}" TextColor="Black"/>
         </Border>
-
-
-
-
         <Label Text="{Binding ErrorMessage}" TextColor="Red" MaxLines="2" LineBreakMode="WordWrap"/>
-        <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5">
+        <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" WidthRequest="200">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="20"/>
             </Border.StrokeShape>
-            <Button Text="Create Account" Style="{StaticResource stlBtnLogin}" Command="{Binding CreateAccountCommand}"/>
+            <Button Text="Crear cuenta" Style="{StaticResource stlBtnLogin}" Command="{Binding CreateAccountCommand}"/>
         </Border>
     </VerticalStackLayout>
 </ContentPage>

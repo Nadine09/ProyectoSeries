@@ -21,6 +21,11 @@ namespace SeriesApp_DAL.DAO
             cmdSelectAll = SELECT_ALL;
         }
 
+        /// <summary>
+        /// Este método obtiene los géneros a los que pertenece una serie por su id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public List<ClsGenre> GetBySeries(long id)
         {
             List<ClsGenre> genres = null;

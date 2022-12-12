@@ -3,38 +3,29 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace SeriesApp_UI.ViewModels
 {
-    public partial class VM_Account : ObservableObject
+    public partial class VM_Account : VM_Base
     {
-        private UserDAO userDAO;
 
-        [ObservableProperty]
-        ClsUser user;
-
-        private long userId;
-
-        public VM_Account()
+        public VM_Account() : base()
         {
-            //GetUserId();
-            userDAO = new UserDAO();
-            User = App.Current.User;
-            //GetUser();
+
         }
 
-        private void GetUser()
-        {            
-            User = userDAO.GetById(userId);
-        }
-
-        private async void GetUserId()
-        {
-            userId = long.Parse(await SecureStorage.Default.GetAsync("Account"));
-        }
-
+        /// <summary>
+        /// Este método hace que se navege hacia la pagina Login
+        /// </summary>
+        /// <returns></returns>
         [RelayCommand]
         async Task LogoutAsync()
         {
-            //await SecureStorage.Default.SetAsync("Account", " ");
-            await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            try
+            {
+                await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            }
+            catch (Exception)
+            {
+                Error();
+            }
         }
     }
 }

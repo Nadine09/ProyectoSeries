@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SeriesApp_UI.Views.Templates.ItemSeriesHome">
+    <Position X="23" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Templates\ItemSeriesHome.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.Templates.ItemsSeriesSearch">
+    <Position X="24.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Templates\ItemsSeriesSearch.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.Templates.ItemUserSeries">
+    <Position X="26.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Templates\ItemUserSeries.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.AccountPage">
+    <Position X="22" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\AccountPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.CreateAccountPage">
+    <Position X="27.25" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\CreateAccountPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.ErrorPage">
+    <Position X="30" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ErrorPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.HomePage">
+    <Position X="23.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\HomePage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.LoginPage">
+    <Position X="25.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\LoginPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.SearchPage">
+    <Position X="23.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\SearchPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.SeriesDetailsPage">
+    <Position X="25.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\SeriesDetailsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.UsersAddSeriesPage">
+    <Position X="27.25" Y="10.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\UsersAddSeriesPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Views.UserSeriesPage">
+    <Position X="22" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\UserSeriesPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Models.ClsSeasonNumberWithMaxEpisode">
+    <Position X="25.25" Y="1" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ClsSeasonNumberWithMaxEpisode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Models.ClsSeriesWithEpisodesPerSeason">
+    <Position X="21.5" Y="1" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ClsSeriesWithEpisodesPerSeason.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Models.ItemUserSeriesDTO">
+    <Position X="29" Y="1" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAABAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Models\ItemUserSeriesDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.Utils.SeriesConverter">
+    <Position X="29.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAACAAAABAAAAAAAAAAgA=</HashCode>
+      <FileName>Utils\SeriesConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.ViewModels.VM_Account">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ViewModels\VM_Account.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.ViewModels.VM_Base">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAQA=</HashCode>
+      <FileName>ViewModels\VM_Base.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.ViewModels.VM_CreateAccount">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAgIAAAFgEAAAAEAAAAAAAAAgAABAA=</HashCode>
+      <FileName>ViewModels\VM_CreateAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.ViewModels.VM_Error">
+    <Position X="16.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\VM_Error.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.ViewModels.VM_Home">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAACAAAIAAABAAAAAAAA=</HashCode>
+      <FileName>ViewModels\VM_Home.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.ViewModels.VM_Login">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAgAAAABgAAAAAAAAAAAAQQAgQAAAA=</HashCode>
+      <FileName>ViewModels\VM_Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.ViewModels.VM_Search">
+    <Position X="14" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAACAAAAAAAAAAAAYAAAAAACAAAABAAAAAAAA=</HashCode>
+      <FileName>ViewModels\VM_Search.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SeriesApp_UI.ViewModels.VM_SeriesDetails">
+    <Position X="18.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>ViewModels\VM_SeriesDetails.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SeriesApp_UI.ViewModels.VM_UsersAddSeries">
+    <Position X="5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABAAQAAAAAAAwAAIAAAIAAAACCAAIAAAAAAAggCAAA=</HashCode>
+      <FileName>ViewModels\VM_UsersAddSeries.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SeriesApp_UI.ViewModels.VM_UserSeries">
+    <Position X="9.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAQCAAABAgAAAAAAIAAIAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>ViewModels\VM_UserSeries.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

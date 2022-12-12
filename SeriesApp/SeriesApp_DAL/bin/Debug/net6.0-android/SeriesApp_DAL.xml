@@ -47,11 +47,38 @@
             </summary>
             <param name="command">Instrucción que se ejecutará</param>
         </member>
+        <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.GetAll">
+            <summary>
+            Este método usa la propiedad cmdSelectAll, ejecuta la consulta y devuelve la lista de objetos T
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.GetById(System.Int64)">
+            <summary>
+            Este método usa la propiedad cmdSelectById, reemplaza @id en la cadena por el id dado y ejecuta la consulta. Devuelve un único objeto T
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.ExecuteQueryOneObject(System.String)">
+            <summary>
+            Este método ejecuta una consulta que devuelve un único objeto T. La consulta será el string command pasado por parámetros.
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.ExecuteQuery(System.String)">
+            <summary>
+            Este método ejecuta una consulta que devuelve una lista de objetos T. La consulta será el string command pasado por parámetros.
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
         <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.executeQueryGetInt(System.String)">
             <summary>
-            Este método inserta un objeto en la base de datos y devuelve el id del objeto insertado.
+            Este método ejecuta una consulta que devuelve un único valor int. La consulta será el string command pasado por parámetros.
             </summary>
-            <param name="command">Instrucción SQL para insertar el objeto</param>
+            <param name="command"></param>
             <returns></returns>
         </member>
         <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.BuildObject(Microsoft.Data.SqlClient.SqlDataReader)">
@@ -60,6 +87,48 @@
             </summary>
             <param name="sqlDataReader">Objeto SqlDataReader en el que se buscarán los valores para crear el objeto</param>
             <returns>Objeto creado</returns>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.GenreDAO.GetBySeries(System.Int64)">
+            <summary>
+            Este método obtiene los géneros a los que pertenece una serie por su id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.SeriesDAO.GetTop10">
+            <summary>
+            Obtiene las 10 series mejor calificadas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.SeriesDAO.GetByUser(System.Int64)">
+            <summary>
+            Obtiene las series que está viendo un usuario por su id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.SeriesDAO.episodesPerSeason(System.Int64)">
+            <summary>
+            Obtiene una lista de las temporadas (nº orden) y el numero de episodios que contienen
+            </summary>
+            <param name="idSerie"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.UserDAO.ValidateEmail(System.String)">
+            <summary>
+            Valida el email dado. Si el email ya está en uso devolverá FALSE, en caso contrario, TRUE.
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.UserDAO.GetUserByEmailAndPassword(System.String,System.String)">
+            <summary>
+            Obtiene (si existe) el usuario por su email y constraseña
+            </summary>
+            <param name="email"></param>
+            <param name="password"></param>
+            <returns></returns>
         </member>
         <member name="M:SeriesApp_DAL.DAO.UserDAO.CreateUser(SeriesApp_Entities.Classes.ClsUser)">
             <summary>
@@ -87,6 +156,29 @@
             <param name="idSerie"></param>
             <param name="season"></param>
             <param name="episode"></param>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.UsersEpisodesDAO.UpdateProgress(System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            Este método inserta los capitulos de episodio minEpisode (no incluido) hasta episodio maxEpisode (incluido) de la temporada dada (season) para la serie y el usuario indicados.
+            </summary>
+            <param name="idSerie"></param>
+            <param name="season"></param>
+            <param name="minEpisode"></param>
+            <param name="maxEpisode"></param>
+            <param name="userId"></param>
+            <param name="increasedProgress"></param>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.UsersEpisodesDAO.UpdateProgress(System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            Este método inserta los capitulos desde episodio minEpisode temporada minSeason (no incluido) hasta episodio maxEpisode temporada maxSeason (incluido) de la temporada dada (season) para la serie y el usuario indicados.
+            </summary>
+            <param name="idSerie"></param>
+            <param name="minSeason"></param>
+            <param name="maxSeason"></param>
+            <param name="minEpisode"></param>
+            <param name="maxEpisode"></param>
+            <param name="userId"></param>
+            <param name="increasedProgress"></param>
         </member>
     </members>
 </doc>

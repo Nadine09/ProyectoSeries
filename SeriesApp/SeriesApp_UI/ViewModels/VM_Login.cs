@@ -1,21 +1,16 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.IdentityModel.Tokens;
 using System.Collections.ObjectModel;
 
 namespace SeriesApp_UI.ViewModels
 {
-    public partial class VM_Login : ObservableObject
+    public partial class VM_Login : VM_Base
     {
-
         private UserDAO userDAO;
 
+        public const string EMPTY_FIELDS = "Los campos no pueden estar vacíos";
         public const string LOGIN_ERROR = "No se ha podido hacer login, revisa los datos e intentalo de nuevo";
-
-        [ObservableProperty]
-        ObservableCollection<ClsUser> users;
-
-        [ObservableProperty]
-        ClsUser selectedUser;
 
         [ObservableProperty]
         string email;
@@ -29,55 +24,65 @@ namespace SeriesApp_UI.ViewModels
         public VM_Login()
         {
             userDAO = new UserDAO();
-            users = new ObservableCollection<ClsUser>(userDAO.GetAll()); //QUITAR
         }
 
-
-
         #region Commands
+
+        /// <summary>
+        /// Este metodo valida los datos e intenta iniciar sesión. Si lo consigue navega a la pagina Home
+        /// </summary>
         [RelayCommand]
         async void Login()
         {
-            errorMessage = "";
-            //ClsUser user = userDAO.GetUserByEmailAndPassword(email, password); //TODO Mostrar
-            ClsUser user = SelectedUser; //Quitar
-            if (user != null)
+            try
             {
-                App.Current.Restart();
-                App.Current.User = user;
-                await SecureStorage.Default.SetAsync("Account", user.Id.ToString()); //QUITAR
-                await Shell.Current.GoToAsync("//HomePage");
-                //await Shell.Current.GoToAsync($"//{nameof(HomePage)}?", new Dictionary<string, object>
-                //{
-                //    ["UserId"] = user
-                //});
+                errorMessage = "";
 
-                //var dictionary = new Dictionary<string, object>();
-                //dictionary.Add("User", user);
-                //await Shell.Current.GoToAsync("/HomePage", dictionary);
+                //Comprobamos que los campos no estén vacios
+                if (!Email.IsNullOrEmpty() && !Password.IsNullOrEmpty())
+                {
+                    //Obtenemos el usuario con ese email y password
+                    User = userDAO.GetUserByEmailAndPassword(Email, Password);
+
+                    if (User != null)
+                    {
+                        App.Current.Restart();
+                        App.Current.User = User;
+                        await Shell.Current.GoToAsync("//HomePage");
+                    }
+                    else
+                    {
+                        ErrorMessage = LOGIN_ERROR;
+                    }
+                }
+                else
+                {
+                    ErrorMessage = EMPTY_FIELDS;
+                }
             }
-            else
+            catch (Exception)
             {
-                ErrorMessage = LOGIN_ERROR;
+                Error();
             }
         }
 
+
+        /// <summary>
+        /// Este método navega hacia la pagina CreateAccount
+        /// </summary>
         [RelayCommand]
         async void CreateAccount()
         {
-            await Shell.Current.GoToAsync($"//{nameof(CreateAccountPage)}");
+            try
+            {
+                await Shell.Current.GoToAsync($"//{nameof(CreateAccountPage)}");
+            }
+            catch (Exception)
+            {
+                Error();
+            }
         }
-
         #endregion
-
-        [ObservableProperty]
-        long id;
-
-        [RelayCommand]
-        async Task GetUserAsync() //QUITAR
-        {
-            Id = long.Parse(await SecureStorage.Default.GetAsync("Account"));
-        }
 
     }
 }

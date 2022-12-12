@@ -60,6 +60,15 @@ namespace SeriesApp_DAL.DAO
             CloseAll(ref sqlConnection, ref sqlDataReader);
         }
 
+        /// <summary>
+        /// Este método inserta los capitulos de episodio minEpisode (no incluido) hasta episodio maxEpisode (incluido) de la temporada dada (season) para la serie y el usuario indicados.
+        /// </summary>
+        /// <param name="idSerie"></param>
+        /// <param name="season"></param>
+        /// <param name="minEpisode"></param>
+        /// <param name="maxEpisode"></param>
+        /// <param name="userId"></param>
+        /// <param name="increasedProgress"></param>
         public void UpdateProgress(long idSerie, long season, long minEpisode, long maxEpisode, long userId, bool increasedProgress)
         {
             ExecuteNonQuery(UPDATE_PROGRESS
@@ -72,6 +81,16 @@ namespace SeriesApp_DAL.DAO
                 .Replace("@userId", userId.ToString()));
         }
 
+        /// <summary>
+        /// Este método inserta los capitulos desde episodio minEpisode temporada minSeason (no incluido) hasta episodio maxEpisode temporada maxSeason (incluido) de la temporada dada (season) para la serie y el usuario indicados.
+        /// </summary>
+        /// <param name="idSerie"></param>
+        /// <param name="minSeason"></param>
+        /// <param name="maxSeason"></param>
+        /// <param name="minEpisode"></param>
+        /// <param name="maxEpisode"></param>
+        /// <param name="userId"></param>
+        /// <param name="increasedProgress"></param>
         public void UpdateProgress(long idSerie, long minSeason, long maxSeason, long minEpisode, long maxEpisode, long userId, bool increasedProgress)
         {
             ExecuteNonQuery(UPDATE_PROGRESS
