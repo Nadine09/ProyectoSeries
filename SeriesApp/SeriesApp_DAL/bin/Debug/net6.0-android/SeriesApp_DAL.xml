@@ -88,6 +88,16 @@
             <param name="sqlDataReader">Objeto SqlDataReader en el que se buscarán los valores para crear el objeto</param>
             <returns>Objeto creado</returns>
         </member>
+        <member name="M:SeriesApp_DAL.DAO.GenericDAO`1.convertNullValues(System.Object)">
+            <summary>
+            Este método comprueba que el objeto pasado por parámetros no sea un DBNull, lo convierte a string y lo devuelve. 
+            En caso de que sea un DBNull devolverá una cadena vacía ("").
+            <br/>
+            <br/><b>PRECONDICIONES</b>: El objeto pasado por parámetros debe poder ser convertido a string o bien ser un DBNull.
+            </summary>
+            <param name="dbText"></param>
+            <returns></returns>
+        </member>
         <member name="M:SeriesApp_DAL.DAO.GenreDAO.GetBySeries(System.Int64)">
             <summary>
             Este método obtiene los géneros a los que pertenece una serie por su id.
@@ -179,6 +189,18 @@
             <param name="maxEpisode"></param>
             <param name="userId"></param>
             <param name="increasedProgress"></param>
+        </member>
+        <member name="M:SeriesApp_DAL.DAO.UsersEpisodesDAO.ReplaceUpdateProgressQuery(System.String,System.Int64,System.Int64,System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            Este método reeemplaza las cadenas por los valores correspondientes. Los valores se recibiran por parámetros.
+            </summary>
+            <param name="query"></param>
+            <param name="idSerie"></param>
+            <param name="minEpisode"></param>
+            <param name="maxEpisode"></param>
+            <param name="userId"></param>
+            <param name="increasedProgress"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>
