@@ -76,8 +76,9 @@
             ClsSeries serie = new()
             {
                 Id = (int)sqlDataReader["id"],
-                Name = (string)sqlDataReader["name"],
-                ImageUrl = (string)sqlDataReader["imageUrl"]
+                Name = convertNullValues(sqlDataReader["name"]),
+                ImageUrl = convertNullValues(sqlDataReader["imageUrl"]),
+                Synopsis = convertNullValues(sqlDataReader["synopsis"])
             };
 
             // FALLA:
@@ -95,5 +96,7 @@
 
             return serie;
         }
+
+        
     }
 }

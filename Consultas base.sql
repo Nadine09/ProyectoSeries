@@ -12,6 +12,9 @@ SELECT * FROM NAD_Series
 -- Season
 SELECT * FROM NAD_Seasons
 
+-- Episodes
+SELECT * FROM NAD_Episodes
+
 -- UsersEpisodes
 SELECT * FROM NAD_UsersEpisodes
 
@@ -41,7 +44,7 @@ ORDER BY SER.id, SEA.[order], E.[order]
 DECLARE @userId INT
 DECLARE @serieId INT
 
-SET @userId = 3
+SET @userId = 2
 SET @serieId = 1
 
 -- Obtener último episodio visto (Episode, Season)

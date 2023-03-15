@@ -71,14 +71,8 @@ namespace SeriesApp_DAL.DAO
         /// <param name="increasedProgress"></param>
         public void UpdateProgress(long idSerie, long season, long minEpisode, long maxEpisode, long userId, bool increasedProgress)
         {
-            ExecuteNonQuery(UPDATE_PROGRESS
-                .Replace("@query", UPDATE_PROGRESS_QUERY_ONE_SEASON)
-                .Replace("@instruction", increasedProgress? UPDATE_PROGRESS_INSERT : UPDATE_PROGRESS_DELETE)
-                .Replace("@idSerie", idSerie.ToString())
-                .Replace("@season", season.ToString())
-                .Replace("@minEpisode", increasedProgress ? minEpisode.ToString() : maxEpisode.ToString())
-                .Replace("@maxEpisode", increasedProgress ? maxEpisode.ToString() : maxEpisode.ToString())
-                .Replace("@userId", userId.ToString()));
+            ExecuteNonQuery(ReplaceUpdateProgressQuery(UPDATE_PROGRESS_QUERY_ONE_SEASON, idSerie, minEpisode, maxEpisode, userId, increasedProgress)
+                .Replace("@season", season.ToString()));                
         }
 
         /// <summary>
@@ -93,15 +87,31 @@ namespace SeriesApp_DAL.DAO
         /// <param name="increasedProgress"></param>
         public void UpdateProgress(long idSerie, long minSeason, long maxSeason, long minEpisode, long maxEpisode, long userId, bool increasedProgress)
         {
-            ExecuteNonQuery(UPDATE_PROGRESS
-                .Replace("@query", UPDATE_PROGRESS_QUERY_SOME_SEASONS)
+            ExecuteNonQuery(ReplaceUpdateProgressQuery(UPDATE_PROGRESS_QUERY_SOME_SEASONS, idSerie, minEpisode, maxEpisode, userId, increasedProgress)
+                .Replace("@minSeason", increasedProgress? minSeason.ToString() : maxSeason.ToString())
+                .Replace("@maxSeason", increasedProgress? maxSeason.ToString() : minSeason.ToString()));
+        }    
+
+        /// <summary>
+        /// Este método reeemplaza las cadenas por los valores correspondientes. Los valores se recibiran por parámetros.
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="idSerie"></param>
+        /// <param name="minEpisode"></param>
+        /// <param name="maxEpisode"></param>
+        /// <param name="userId"></param>
+        /// <param name="increasedProgress"></param>
+        /// <returns></returns>
+        private string ReplaceUpdateProgressQuery(string query, long idSerie, long minEpisode, long maxEpisode, long userId, bool increasedProgress)
+        {
+            string result = UPDATE_PROGRESS
+                .Replace("@query", query)
                 .Replace("@instruction", increasedProgress ? UPDATE_PROGRESS_INSERT : UPDATE_PROGRESS_DELETE)
                 .Replace("@idSerie", idSerie.ToString())
-                .Replace("@minSeason", increasedProgress? minSeason.ToString() : maxSeason.ToString())
-                .Replace("@maxSeason", increasedProgress? maxSeason.ToString() : minSeason.ToString())
                 .Replace("@minEpisode", increasedProgress ? minEpisode.ToString() : maxEpisode.ToString())
-                .Replace("@maxEpisode", increasedProgress ? maxEpisode.ToString() : maxEpisode.ToString())
-                .Replace("@userId", userId.ToString()));
-        }     
+                .Replace("@maxEpisode", increasedProgress ? maxEpisode.ToString() : minEpisode.ToString())
+                .Replace("@userId", userId.ToString());
+            return result;
+        }
     }
 }

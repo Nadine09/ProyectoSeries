@@ -78,15 +78,6 @@ CREATE TABLE NAD_UsersSeriesValuation(
 	CONSTRAINT FK_UsersSeriesValuation_Users FOREIGN KEY (userId) REFERENCES NAD_Users (id) ON DELETE NO ACTION ON UPDATE NO ACTION
 )
 
--- UsersSeriesAdd
-CREATE TABLE NAD_UsersSeriesAdd(
-	serieId INT NOT NULL,
-	userId INT NOT NULL,
-	CONSTRAINT PK_UsersSeriesAdd PRIMARY KEY (serieId, userId),
-	CONSTRAINT FK_UsersSeriesAdd_Series FOREIGN KEY (serieId) REFERENCES NAD_Series (id) ON DELETE CASCADE ON UPDATE NO ACTION,
-	CONSTRAINT FK_UsersSeriesAdd_Users FOREIGN KEY (userId) REFERENCES NAD_Users (id) ON DELETE NO ACTION ON UPDATE NO ACTION
-)
-
 GO
 
 -- UsersEpisodes

@@ -172,5 +172,18 @@ namespace SeriesApp_DAL.DAO
         /// <param name="sqlDataReader">Objeto SqlDataReader en el que se buscarán los valores para crear el objeto</param>
         /// <returns>Objeto creado</returns>
         public abstract T BuildObject(SqlDataReader sqlDataReader);
+
+        /// <summary>
+        /// Este método comprueba que el objeto pasado por parámetros no sea un DBNull, lo convierte a string y lo devuelve. 
+        /// En caso de que sea un DBNull devolverá una cadena vacía ("").
+        /// <br/>
+        /// <br/><b>PRECONDICIONES</b>: El objeto pasado por parámetros debe poder ser convertido a string o bien ser un DBNull.
+        /// </summary>
+        /// <param name="dbText"></param>
+        /// <returns></returns>
+        protected string convertNullValues(object dbText)
+        {
+            return !DBNull.Value.Equals(dbText) ? (string)dbText : "";
+        }
     }
 }
