@@ -22,7 +22,7 @@
                     </Border.StrokeShape>
                     <Image Source="{Binding Series.ImageUrl}" HeightRequest="250"/>
                 </Border>
-                <Label Text="{Binding Series.Synopsis}"/>
+                <Label Text="{Binding Series.Synopsis}" TextColor="White"/>
             </StackLayout>
 
             <Label TextColor="White"/>

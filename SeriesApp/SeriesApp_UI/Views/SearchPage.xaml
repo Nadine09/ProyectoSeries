@@ -16,7 +16,7 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30"/>
             </Border.StrokeShape>
-            <SearchBar HorizontalOptions="Center" Text="{Binding SearchText}" PlaceholderColor="Black" TextColor="Black" CancelButtonColor="{StaticResource clrLightRed}"/>
+            <SearchBar HorizontalOptions="Center" Text="{Binding SearchText}" PlaceholderColor="Black" TextColor="Black" CancelButtonColor="{StaticResource clrLightRed}" SearchCommand="{Binding SearchSerieCommand}" />
         </Border>        
 
         <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" Grid.Row="2">
