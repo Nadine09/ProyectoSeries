@@ -52,7 +52,7 @@ namespace SeriesApp_UI.ViewModels
             }
             else
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
         }
 
@@ -77,7 +77,7 @@ namespace SeriesApp_UI.ViewModels
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(DB_ERROR);
             }
         }
 
@@ -97,7 +97,7 @@ namespace SeriesApp_UI.ViewModels
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(DB_ERROR);
             }
 
         }
@@ -143,7 +143,7 @@ namespace SeriesApp_UI.ViewModels
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(DB_ERROR);
             }
         }
         #endregion

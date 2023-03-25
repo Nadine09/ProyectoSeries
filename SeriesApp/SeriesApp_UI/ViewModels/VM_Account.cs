@@ -5,11 +5,7 @@ namespace SeriesApp_UI.ViewModels
 {
     public partial class VM_Account : VM_Base
     {
-
-        public VM_Account() : base()
-        {
-
-        }
+        public VM_Account() : base() {}
 
         /// <summary>
         /// Este método hace que se navege hacia la pagina Login
@@ -20,11 +16,11 @@ namespace SeriesApp_UI.ViewModels
         {
             try
             {
-                await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+                Navigate($"//{nameof(LoginPage)}");
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
         }
     }

@@ -19,9 +19,6 @@ namespace SeriesApp_UI.ViewModels
         [ObservableProperty]
         string password;
 
-        [ObservableProperty]
-        string errorMessage;
-
         private UserDAO userDAO;
 
         public VM_CreateAccount()
@@ -39,7 +36,6 @@ namespace SeriesApp_UI.ViewModels
         {
             try
             {
-                errorMessage = "";
 
                 if (!Username.IsNullOrEmpty() && !Email.IsNullOrEmpty() && !Password.IsNullOrEmpty())
                 {
@@ -52,26 +48,28 @@ namespace SeriesApp_UI.ViewModels
 
                         if (newUser != null && newUser.Id != 0)
                         {
-                            await Shell.Current.GoToAsync("//HomePage");
+                            App.Current.Restart();
+                            App.Current.User = User;
+                            Navigate("//HomePage");
                         }
                         else
                         {
-                            ErrorMessage = CREATE_ACCOUNT_ERROR;
+                            ShowErrorMessage(CREATE_ACCOUNT_ERROR);
                         }
                     }
                     else
                     {
-                        ErrorMessage = INVALID_EMAIL;
+                        ShowErrorMessage(INVALID_EMAIL);
                     }
                 }
                 else
                 {
-                    ErrorMessage = CREATE_ACCOUNT_EMPTY_FIELDS;
+                    ShowErrorMessage(CREATE_ACCOUNT_EMPTY_FIELDS);
                 }
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
         }
 
@@ -81,15 +79,8 @@ namespace SeriesApp_UI.ViewModels
         [RelayCommand]
         public async void BackToLogin()
         {
-            try
-            {
-                //Volvemos atrás
-                await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
-            }
-            catch (Exception)
-            {
-                Error();
-            }
+            //Volvemos atrás
+            Navigate($"//{nameof(LoginPage)}");
         }
         #endregion
     }

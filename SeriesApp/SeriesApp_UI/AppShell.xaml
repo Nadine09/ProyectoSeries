@@ -26,8 +26,8 @@
         ContentTemplate="{DataTemplate views:ErrorPage}"
         Route="ErrorPage"/>
 
-    <TabBar Shell.BackgroundColor="{StaticResource clrLightBlue}">
-        <Tab Title="Home" Icon="home.png">
+    <TabBar Shell.TabBarBackgroundColor="{StaticResource clrLightBlue}" Shell.TabBarUnselectedColor="{StaticResource clrDarkBlue}" >
+        <Tab Title="Home" Icon="home.png" >
             <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate views:HomePage}"

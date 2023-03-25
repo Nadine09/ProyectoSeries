@@ -35,6 +35,14 @@
             </Border>
         </Grid>
 
+        <!-- Mensaje de error -->
+        <Border BackgroundColor="{StaticResource clrLightBlue}" Padding="5" IsVisible="{Binding ErrorMessageVisible}" Margin="0,5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5"/>
+            </Border.StrokeShape>
+            <Label x:Name="ErrorMessage" Text="{Binding ErrorMessage}" Style="{StaticResource lblErrorMessage}" Padding="5"/>
+        </Border>
+
         <Border BackgroundColor="{StaticResource clrDarkBlue}" Padding="15,20" VerticalOptions="Start">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="15"/>

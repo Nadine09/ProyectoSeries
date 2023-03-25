@@ -11,13 +11,21 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <Border Grid.Row="0" Margin="10,15,10,20" BackgroundColor="{StaticResource clrLightGrey}">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30"/>
             </Border.StrokeShape>
             <SearchBar HorizontalOptions="Center" Text="{Binding SearchText}" PlaceholderColor="Black" TextColor="Black" CancelButtonColor="{StaticResource clrLightRed}" SearchCommand="{Binding SearchSerieCommand}" />
-        </Border>        
+        </Border>
+
+        <!-- Mensaje de error -->
+        <Border BackgroundColor="{StaticResource clrLightBlue}" Padding="5" IsVisible="{Binding ErrorMessageVisible}" Margin="5" Grid.Row="1">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5"/>
+            </Border.StrokeShape>
+            <Label x:Name="ErrorMessage" Text="{Binding ErrorMessage}" Style="{StaticResource lblErrorMessage}" Padding="5"/>
+        </Border>
 
         <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" Grid.Row="2">
             <CollectionView ItemsSource="{Binding SearchResult}" ItemsLayout="VerticalList" SelectionMode="Single" SelectedItem="{Binding SelectedSerie}" SelectionChangedCommand="{Binding SeriesDetailsCommand}"  SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={RelativeSource Self}}">

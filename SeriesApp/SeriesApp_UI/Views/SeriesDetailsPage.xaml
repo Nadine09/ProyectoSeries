@@ -14,6 +14,14 @@
                 <ImageButton Source="backicon.png" Command="{Binding GoBackCommand}" HeightRequest="30" MaximumWidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"/>
             </Border>
 
+            <!-- Mensaje de error -->
+            <Border BackgroundColor="{StaticResource clrLightBlue}" Padding="5" IsVisible="{Binding ErrorMessageVisible}" Margin="0,5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5"/>
+                </Border.StrokeShape>
+                <Label x:Name="ErrorMessage" Text="{Binding ErrorMessage}" Style="{StaticResource lblErrorMessage}" Padding="5"/>
+            </Border>
+
             <StackLayout Margin="10,20">
                 <Label Text="{Binding Series.Name}" FontAttributes="Bold" FontSize="Title" TextColor="White"/>
                 <Border BackgroundColor="White" Padding="10" HorizontalOptions="Center" Margin="0,30">
@@ -24,8 +32,6 @@
                 </Border>
                 <Label Text="{Binding Series.Synopsis}" TextColor="White"/>
             </StackLayout>
-
-            <Label TextColor="White"/>
 
             <!-- Añadir serie -->
             <!--<Button Text="+" Command="{Binding AddSerieCommand}"/>-->

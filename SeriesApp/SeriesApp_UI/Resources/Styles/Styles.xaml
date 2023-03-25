@@ -346,7 +346,6 @@
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
-        <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />-->
         <Setter Property="BackgroundColor" Value="{StaticResource clrMediumBlue}"/>
     </Style>
 
@@ -376,7 +375,7 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
-    <!--  -->
+    <!-- Mis estilos -->
 
     <!-- Button -->
     <Style TargetType="Button" x:Key="stlBtnBasic">
@@ -403,6 +402,12 @@
 
     <Style TargetType="Label" x:Key="lblBigSeriesName" BasedOn="{StaticResource Key=lblGeneric}">
         <Setter Property="FontSize" Value="Header"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="lblErrorMessage">
+        <Setter Property="TextColor" Value="DarkRed"/>
+        <Setter Property="MaxLines" Value="2"/>
+        <Setter Property="LineBreakMode" Value="WordWrap"/>
     </Style>
 
     <!-- Entry -->

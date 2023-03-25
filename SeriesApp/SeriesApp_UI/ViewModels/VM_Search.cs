@@ -25,20 +25,27 @@ namespace SeriesApp_UI.ViewModels
         {
             if (string.IsNullOrEmpty(value))
             {
-                SearchResult = AllSeriesList;
+                SearchResult = AllSeriesList; // TODO mirar que se hace una copia, no sobreescribe
             }
         }
 
         [ObservableProperty]
         List<ClsSeries> searchResult;
 
-        List<ClsSeries> AllSeriesList;
+        List<ClsSeries> AllSeriesList;// privada
 
         public VM_Search()
         {
-            seriesDAO = new SeriesDAO();
-            AllSeriesList = seriesDAO.GetAll();
-            SearchResult = AllSeriesList;
+            try
+            {
+                seriesDAO = new SeriesDAO();
+                AllSeriesList = seriesDAO.GetAll();
+                SearchResult = AllSeriesList;
+            }
+            catch (Exception)
+            {
+                ShowErrorMessage(DB_ERROR);
+            }
         }
 
         /// <summary>
@@ -65,11 +72,11 @@ namespace SeriesApp_UI.ViewModels
             {
                 var dictionary = new Dictionary<string, object>();
                 dictionary.Add("Series", series);
-                await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
+                Navigate("/UsersAddSeriesPage", dictionary);
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
 
         }
@@ -86,11 +93,11 @@ namespace SeriesApp_UI.ViewModels
             {
                 var dictionary = new Dictionary<string, object>();
                 dictionary.Add("Series", series);
-                await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
+                Navigate("/SeriesDetailsPage", dictionary);
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
 
         }

@@ -8,6 +8,15 @@
     <ScrollView>
         <VerticalStackLayout>
             <Label Text="Home" FontAttributes="Bold" FontSize="Large" Margin="20,20" TextColor="White"/>
+            
+            <!-- Mensaje de error -->
+            <Border BackgroundColor="{StaticResource clrLightBlue}" Padding="5" IsVisible="{Binding ErrorMessageVisible}"  Margin="5,5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5"/>
+                </Border.StrokeShape>
+                <Label x:Name="ErrorMessage" Text="{Binding ErrorMessage}" Style="{StaticResource lblErrorMessage}" Padding="5"/>
+            </Border>
+            
             <Label Text="Añadidas recientemente" Style="{StaticResource lblTitle}"/>            
 
             <ScrollView Orientation="Horizontal">

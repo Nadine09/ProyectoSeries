@@ -9,6 +9,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <Border BackgroundColor="{StaticResource clrLightGrey}" Padding="10,20" VerticalOptions="Start" Margin="15,30" Grid.Row="0">
@@ -45,5 +46,14 @@
             </Border.StrokeShape>
             <Button Text="Logout" Command="{Binding LogoutCommand}" Style="{StaticResource stlBtnLogin}"/>
         </Border>
+
+        <!-- Mensaje de error -->
+        <Border BackgroundColor="{StaticResource clrLightBlue}" Padding="5" IsVisible="{Binding ErrorMessageVisible}" Margin="15" Grid.Row="2">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5"/>
+            </Border.StrokeShape>
+            <Label x:Name="ErrorMessage" Text="{Binding ErrorMessage}" Style="{StaticResource lblErrorMessage}" Padding="5"/>
+        </Border>
+        
     </Grid>
 </ContentPage>

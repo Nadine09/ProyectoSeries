@@ -18,7 +18,7 @@ namespace SeriesApp_UI.ViewModels
         private SeriesConverter converter;
 
         public VM_UserSeries() : base()
-        {
+        {            
             seriesDAO = new SeriesDAO();
             converter = new SeriesConverter();
             if (User.Id != 0)
@@ -26,6 +26,8 @@ namespace SeriesApp_UI.ViewModels
                 Refresh();
             }
         }
+
+        
 
         /// <summary>
         /// Este metodo obtiene las series de las que es usuario ya tiene progreso guardado
@@ -44,7 +46,7 @@ namespace SeriesApp_UI.ViewModels
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(DB_ERROR);
             }
         }
 
@@ -60,11 +62,11 @@ namespace SeriesApp_UI.ViewModels
             {
                 var dictionary = new Dictionary<string, object>();
                 dictionary.Add("Series", itemUserSeriesDTO.Series);
-                await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
+                Navigate("/UsersAddSeriesPage", dictionary);
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
         }
 

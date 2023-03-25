@@ -16,9 +16,15 @@ namespace SeriesApp_UI.ViewModels
 
         public VM_Home()
         {
-            seriesDAO = new SeriesDAO();
-            newSeries = seriesDAO.GetAll();
-            top10Series = seriesDAO.GetTop10();
+            try
+            {
+                seriesDAO = new SeriesDAO();
+                newSeries = seriesDAO.GetAll();
+                top10Series = seriesDAO.GetTop10();
+            }catch (Exception)
+            {
+                ShowErrorMessage(DB_ERROR);
+            }
         }
 
         /// <summary>
@@ -33,11 +39,11 @@ namespace SeriesApp_UI.ViewModels
             {
                 var dictionary = new Dictionary<string, object>();
                 dictionary.Add("Series", series);
-                await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
+                Navigate("/SeriesDetailsPage", dictionary);
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
         }
     }

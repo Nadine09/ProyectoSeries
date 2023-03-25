@@ -8,36 +8,48 @@
              Title="LoginPage">
 
     <VerticalStackLayout  Padding="20" VerticalOptions="Center">
-        <!--<Label 
-            Text="{Binding Valor}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Entry
-            Text="{Binding Number}"/>
-        <Label Text="{Binding Number}"/>-->
-        <Image Source="happypopcorn.png" HeightRequest="150" Margin="0,0,0,30"/>
+
+        
+        
+        <!-- Logo -->
+        <Image Source="logo.png" HeightRequest="150" Margin="0,0,0,30"/>
+
+        <!-- Mensaje de error -->
+        <Border BackgroundColor="{StaticResource clrLightBlue}" Padding="5"  IsVisible="{Binding ErrorMessageVisible}" Margin="0,5">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5"/>
+            </Border.StrokeShape>
+            <Label x:Name="ErrorMessage" Text="{Binding ErrorMessage}" Style="{StaticResource lblErrorMessage}" Padding="5"/>
+        </Border>
+
+        <!-- Campo email -->
         <Border Grid.Row="0" Margin="10" BackgroundColor="{StaticResource clrLightGrey}" Stroke="Transparent" Padding="20,5">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30"/>
             </Border.StrokeShape>
             <Entry Placeholder="Email" Text="{Binding Email}" TextColor="Black"/>
         </Border>
+
+        <!-- Campo contraseña -->
         <Border Grid.Row="0" Margin="10" BackgroundColor="{StaticResource clrLightGrey}" Padding="20,5">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30"/>
             </Border.StrokeShape>
             <Entry Placeholder="Contraseña" IsPassword="True" Text="{Binding Password}"  TextColor="Black"/>
-        </Border>
+        </Border>           
 
-        <Label Text="{Binding ErrorMessage}" TextColor="Red" MaxLines="2" LineBreakMode="WordWrap"/>    
-
+        <!-- Botón login -->
         <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" WidthRequest="200">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="15"/>
             </Border.StrokeShape>
             <Button Text="Entrar" Style="{StaticResource stlBtnLogin}" Command="{Binding LoginCommand}"/>
         </Border>
+
+        <!-- Separador -->
         <Line BackgroundColor="White" HeightRequest="1" Margin="20, 30"/>
+        
+        <!-- Botón crear cuenta -->
         <Border BackgroundColor="{StaticResource clrLightRed}" Padding="5" WidthRequest="200">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="15"/>

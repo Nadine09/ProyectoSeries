@@ -18,16 +18,12 @@ namespace SeriesApp_UI.ViewModels
         [ObservableProperty]
         string password;
 
-        [ObservableProperty]
-        string errorMessage;
-
         public VM_Login()
         {
             userDAO = new UserDAO();
         }
 
         #region Commands
-
         /// <summary>
         /// Este metodo valida los datos e intenta iniciar sesión. Si lo consigue navega a la pagina Home
         /// </summary>
@@ -36,8 +32,6 @@ namespace SeriesApp_UI.ViewModels
         {
             try
             {
-                errorMessage = "";
-
                 //Comprobamos que los campos no estén vacios
                 if (!Email.IsNullOrEmpty() && !Password.IsNullOrEmpty())
                 {
@@ -48,16 +42,16 @@ namespace SeriesApp_UI.ViewModels
                     {
                         App.Current.Restart();
                         App.Current.User = User;
-                        await Shell.Current.GoToAsync("//HomePage");
+                        Navigate("//HomePage");
                     }
                     else
                     {
-                        ErrorMessage = LOGIN_ERROR;
+                        ShowErrorMessage(LOGIN_ERROR);
                     }
                 }
                 else
                 {
-                    ErrorMessage = EMPTY_FIELDS;
+                    ShowErrorMessage(EMPTY_FIELDS);
                 }
             }
             catch (Exception)
@@ -73,14 +67,7 @@ namespace SeriesApp_UI.ViewModels
         [RelayCommand]
         async void CreateAccount()
         {
-            try
-            {
-                await Shell.Current.GoToAsync($"//{nameof(CreateAccountPage)}");
-            }
-            catch (Exception)
-            {
-                Error();
-            }
+            Navigate($"//{nameof(CreateAccountPage)}");
         }
         #endregion
 

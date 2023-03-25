@@ -9,9 +9,7 @@ namespace SeriesApp_UI.ViewModels
         [ObservableProperty]
         ClsSeries series;
 
-        public VM_SeriesDetails()
-        {
-        }
+        public VM_SeriesDetails() {}
 
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
@@ -24,7 +22,7 @@ namespace SeriesApp_UI.ViewModels
             }
             else
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
         }
 
@@ -39,11 +37,11 @@ namespace SeriesApp_UI.ViewModels
             {
                 var dictionary = new Dictionary<string, object>();
                 dictionary.Add("Series", Series);
-                await Shell.Current.GoToAsync("/UsersAddSeriesPage", dictionary);
+                Navigate("/UsersAddSeriesPage", dictionary);
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
 
         }

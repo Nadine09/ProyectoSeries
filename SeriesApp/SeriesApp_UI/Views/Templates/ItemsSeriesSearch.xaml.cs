@@ -1,6 +1,3 @@
-using AndroidX.Lifecycle;
-using SeriesApp_UI.ViewModels;
-
 namespace SeriesApp_UI.Views.Templates;
 
 public partial class ItemsSeriesSearch : ContentView
