@@ -2,18 +2,18 @@
 {
     public abstract class GenericAbstractDAO
     {
-        #region Properties
+        #region Propiedades
         protected ConnectionProvider connectionProvider;
         #endregion
 
-        #region Constructors
+        #region Constructores
         protected GenericAbstractDAO()
         {
             connectionProvider = new ConnectionProvider();
         }
         #endregion
 
-        #region Methods
+        #region Métodos
         /// <summary>
         /// Este método inicializa todo lo necesario para realizar una consulta. Crea y abre una conexión y la asigna a sqlConnection.
         /// </summary>

@@ -6,11 +6,20 @@ namespace SeriesApp_UI.ViewModels
     [QueryProperty("Series", "Series")]
     public partial class VM_SeriesDetails : VM_Base, IQueryAttributable
     {
+        #region Propiedades
         [ObservableProperty]
         ClsSeries series;
+        #endregion
 
+        #region Constructores
         public VM_SeriesDetails() {}
+        #endregion
 
+        #region Métodos
+        /// <summary>
+        /// Este método recoge los parámetros dados al navegar hasta la pagina
+        /// </summary>
+        /// <param name="query">IDictionary de donde se recogerán los parámetros</param>
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             Object obj;
@@ -25,7 +34,9 @@ namespace SeriesApp_UI.ViewModels
                 ShowErrorMessage(GENERIC_ERROR);
             }
         }
+        #endregion
 
+        #region Commands
         /// <summary>
         /// Este método navega a UsersAddSeries pasandole la serie
         /// </summary>
@@ -45,5 +56,6 @@ namespace SeriesApp_UI.ViewModels
             }
 
         }
+        #endregion
     }
 }

@@ -7,6 +7,7 @@
              Title="HomePage">
     <ScrollView>
         <VerticalStackLayout>
+            <!-- Nombre de la pantalla -->
             <Label Text="Home" FontAttributes="Bold" FontSize="Large" Margin="20,20" TextColor="White"/>
             
             <!-- Mensaje de error -->
@@ -16,9 +17,11 @@
                 </Border.StrokeShape>
                 <Label x:Name="ErrorMessage" Text="{Binding ErrorMessage}" Style="{StaticResource lblErrorMessage}" Padding="5"/>
             </Border>
-            
-            <Label Text="Añadidas recientemente" Style="{StaticResource lblTitle}"/>            
 
+            <!-- Nombre de la seccion Añadidas recientemente -->
+            <Label Text="Añadidas recientemente" Style="{StaticResource lblTitle}"/>
+
+            <!-- Listado de series de la seccion Añadidas recientemente -->
             <ScrollView Orientation="Horizontal">
                 <CollectionView ItemsSource="{Binding NewSeries}" ItemsLayout="HorizontalList" SelectionMode="Single" SelectionChangedCommand="{Binding SeriesDetailsCommand}"  SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={RelativeSource Self}}">
                     <CollectionView.ItemTemplate>
@@ -27,9 +30,12 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </ScrollView>            
+            </ScrollView>
 
+            <!-- Nombre de la seccion Top 10 -->
             <Label Text="Top 10" Style="{StaticResource lblTitle}"/>
+
+            <!-- Listado de series de la seccion Top 10 -->
             <ScrollView Orientation="Horizontal">
                 <CollectionView ItemsSource="{Binding Top10Series}" ItemsLayout="HorizontalList" SelectionMode="Single" SelectionChangedCommand="{Binding SeriesDetailsCommand}"  SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={RelativeSource Self}}">
                     <CollectionView.ItemTemplate>

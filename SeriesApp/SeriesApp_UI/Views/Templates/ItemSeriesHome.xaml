@@ -20,12 +20,15 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
+            
+            <!-- Imagen de la serie -->
             <Image x:Name="img" Source="{Binding ImageUrl}" 
                    Grid.Row="0" 
                    VerticalOptions="Center" 
                    HorizontalOptions="Start" 
                    HeightRequest="200"/>
 
+            <!-- Nombre de la serie -->
             <Label Grid.Row="1"
                          Text="{Binding Name}"
                          FontAttributes="Bold"

@@ -12,17 +12,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Padding="20">
-            <!--<Border Margin="0,5,5,10" BackgroundColor="{StaticResource clrLightGrey}">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="30"/>
-                </Border.StrokeShape>
-                <SearchBar HorizontalOptions="Center" Text="{Binding SearchText}" PlaceholderColor="Black" TextColor="Black" CancelButtonColor="{StaticResource clrLightRed}"/>
-            </Border>-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
+            <!-- Nombre de la pantalla -->
             <Label Text="Mis series" VerticalOptions="Center" FontAttributes="Bold" FontSize="Large" Grid.Column="0" TextColor="White"/>
+
+            <!-- Botón actualizar -->
             <Border BackgroundColor="White" Padding="5" MaximumHeightRequest="60" MaximumWidthRequest="60" HorizontalOptions="End" Grid.Column="1">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="15"/>
@@ -39,6 +36,7 @@
             <Label x:Name="ErrorMessage" Text="{Binding ErrorMessage}" Style="{StaticResource lblErrorMessage}" Padding="5"/>
         </Border>
 
+        <!-- Listado de series -->
         <ScrollView Grid.Row="2" Orientation="Vertical" Margin="0,5,0,0">
             <CollectionView ItemsSource="{Binding Series}" SelectionMode="Single" SelectionChangedCommand="{Binding SeriesDetailsCommand}"  SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={RelativeSource Self}}">
                 <CollectionView.ItemTemplate>

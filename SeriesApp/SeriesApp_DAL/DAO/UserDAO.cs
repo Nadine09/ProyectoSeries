@@ -11,6 +11,7 @@ namespace SeriesApp_DAL.DAO
 {
     public class UserDAO : GenericDAO<ClsUser>
     {
+        #region Constantes
         public const string TABLE_NAME = "NAD_Users";
         public const string VALIDATE_EMAIL = "SELECT * FROM NAD_Users WHERE email = '@email'";
         public const string INSERT = $"INSERT INTO {TABLE_NAME} (UserName, Email, Password) VALUES ('@username', '@email', '@password')";
@@ -19,13 +20,17 @@ namespace SeriesApp_DAL.DAO
         
         public const string SELECT_BY_ID = $"SELECT id, username, email, [password] FROM {TABLE_NAME} WHERE Id = '@id'";
         public const string SELECT_ALL = $"SELECT id, username, email, [password] FROM {TABLE_NAME}";
+        #endregion
 
+        #region Constructores
         public UserDAO()
         {
             cmdSelectById = SELECT_BY_ID;
             cmdSelectAll = SELECT_ALL;
         }
+        #endregion
 
+        #region Métodos
         /// <summary>
         /// Valida el email dado. Si el email ya está en uso devolverá FALSE, en caso contrario, TRUE.
         /// </summary>
@@ -85,5 +90,6 @@ namespace SeriesApp_DAL.DAO
 
             return user;
         }
+        #endregion
     }
 }

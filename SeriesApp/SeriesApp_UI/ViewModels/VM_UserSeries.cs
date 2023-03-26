@@ -9,6 +9,7 @@ namespace SeriesApp_UI.ViewModels
 {
     public partial class VM_UserSeries : VM_Observer
     {
+        #region Propiedades
         [ObservableProperty]
         ClsSeries selectedSerie;
 
@@ -17,16 +18,20 @@ namespace SeriesApp_UI.ViewModels
 
         private SeriesDAO seriesDAO;
         private SeriesConverter converter;
+        #endregion
 
+        #region Constructores
         public VM_UserSeries() : base()
         {            
             seriesDAO = new SeriesDAO();
             converter = new SeriesConverter();
             Series = new ObservableCollection<ItemUserSeriesDTO>();
         }
+        #endregion
 
+        #region Commands
         /// <summary>
-        /// Este metodo obtiene las series de las que es usuario ya tiene progreso guardado
+        /// Este metodo obtiene las series de las que es usuario ya tiene progreso guardado y actualiza el listado Series
         /// </summary>
         [RelayCommand]
         void Refresh()
@@ -70,17 +75,6 @@ namespace SeriesApp_UI.ViewModels
         }
 
         /// <summary>
-        /// Este metodo suma 1 al progreso
-        /// </summary>
-        /// <param name="itemUserSeriesDTO"></param>
-        /// <returns></returns>
-        [RelayCommand]
-        public async Task NextEpisode(ItemUserSeriesDTO itemUserSeriesDTO)
-        {
-            //TODO Hacer que el progreso se incremente en 1 episodio
-        }
-
-        /// <summary>
         /// Este método navega a SeriesDetails pasandole la serie recibida por parámetros
         /// </summary>
         /// <param name="itemUserSeriesDTO"></param>
@@ -92,12 +86,13 @@ namespace SeriesApp_UI.ViewModels
             {
                 var dictionary = new Dictionary<string, object>();
                 dictionary.Add("Series", itemUserSeriesDTO.Series);
-                await Shell.Current.GoToAsync("/SeriesDetailsPage", dictionary);
+                Navigate("/SeriesDetailsPage", dictionary);
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
         }
+        #endregion
     }
 }

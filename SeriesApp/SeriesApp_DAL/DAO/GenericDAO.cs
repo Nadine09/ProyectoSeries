@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 namespace SeriesApp_DAL.DAO
 {
     public abstract class GenericDAO<T> : GenericAbstractDAO
-    {        
+    {
 
-        #region Properties
+        #region Propiedades
         public string cmdSelectAll;
         public string cmdSelectById;
         #endregion
 
-        #region Constructors
+        #region Constructores
         public GenericDAO() : base()
         {
 
@@ -31,6 +31,7 @@ namespace SeriesApp_DAL.DAO
         }
         #endregion
 
+        #region Métodos
         /// <summary>
         /// Este método usa la propiedad cmdSelectAll, ejecuta la consulta y devuelve la lista de objetos T
         /// </summary>
@@ -185,5 +186,6 @@ namespace SeriesApp_DAL.DAO
         {
             return !DBNull.Value.Equals(dbText) ? (string)dbText : "";
         }
+        #endregion
     }
 }

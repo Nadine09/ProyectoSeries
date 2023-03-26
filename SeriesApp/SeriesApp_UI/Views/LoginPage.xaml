@@ -9,8 +9,6 @@
 
     <VerticalStackLayout  Padding="20" VerticalOptions="Center">
 
-        
-        
         <!-- Logo -->
         <Image Source="logo.png" HeightRequest="150" Margin="0,0,0,30"/>
 

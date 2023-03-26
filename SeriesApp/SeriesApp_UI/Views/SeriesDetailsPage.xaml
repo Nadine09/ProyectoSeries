@@ -7,6 +7,8 @@
              Title="SeriesDetailsPage">
     <ScrollView>
         <VerticalStackLayout x:DataType="vm:VM_SeriesDetails" Padding="10,20">
+            
+            <!-- Botón atrás -->
             <Border BackgroundColor="White" Padding="5" HeightRequest="60" WidthRequest="60" HorizontalOptions="Start">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="30"/>
@@ -23,18 +25,21 @@
             </Border>
 
             <StackLayout Margin="10,20">
+                <!-- Nombre de la serie -->
                 <Label Text="{Binding Series.Name}" FontAttributes="Bold" FontSize="Title" TextColor="White"/>
+
+                <!-- Imagen de la serie -->
                 <Border BackgroundColor="White" Padding="10" HorizontalOptions="Center" Margin="0,30">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="15"/>
                     </Border.StrokeShape>
                     <Image Source="{Binding Series.ImageUrl}" HeightRequest="250"/>
                 </Border>
+
+                <!-- Synopsis de la serie -->
                 <Label Text="{Binding Series.Synopsis}" TextColor="White"/>
             </StackLayout>
 
-            <!-- Añadir serie -->
-            <!--<Button Text="+" Command="{Binding AddSerieCommand}"/>-->
         </VerticalStackLayout>
     </ScrollView>
 

@@ -24,8 +24,10 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Imagen de la serie -->
             <Image Source="{Binding Series.ImageUrl}" Grid.RowSpan="2" Grid.Column="0" VerticalOptions="Center"/>
-            
+
+            <!-- Nombre de la serie -->
             <Label Grid.Column="1" Grid.Row="0"
                          Text="{Binding Series.Name}"
                          FontAttributes="Bold"
@@ -35,30 +37,21 @@
                          Margin="10, 0"
                    TextColor="White"/>
 
+            <!-- Progreso de la serie -->
             <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1" Margin="10, 0" VerticalOptions="Center">
                 <Label Text="Temporada " TextColor="White"/>
                 <Label Text="{Binding SeasonNumber}" TextColor="White"/>
                 <Label Text=", Episodio " TextColor="White"/>
                 <Label Text="{Binding EpisodeNumber}" TextColor="White"/>
             </StackLayout>
-            
-            <!-- Progreso en la temporada indicado con un progressBar -->
-            <!--<ProgressBar Grid.Column="1" Grid.Row="1" Progress="0.5" IsVisible="true" Margin="10,0,0,0" ProgressColor="{StaticResource clrLightBlue}"/>-->
 
+            <!-- Botón editar progreso -->
             <Border Stroke="{StaticResource clrLightBlue}" BackgroundColor="{StaticResource clrDarkBlue}"  Grid.Column="2" Grid.Row="1" HeightRequest="50" WidthRequest="50" Padding="5" VerticalOptions="End" Margin="10,0,0,0">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="5"/>
                 </Border.StrokeShape>
                 <ImageButton Source="edit.png"  HeightRequest="35" WidthRequest="35" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:VM_UserSeries}}, Path=EditSerieCommand}" CommandParameter="{Binding .}"/>
             </Border>
-
-            <!-- Botón para sumar un episodio visto -->
-            <!--<Border Stroke="{StaticResource clrLightBlue}" BackgroundColor="{StaticResource clrDarkBlue}"  Grid.Column="2" Grid.Row="1" HeightRequest="40" WidthRequest="40" Padding="5" Margin="10,0,0,0">
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="5"/>
-                </Border.StrokeShape>
-                <ImageButton Source="plus.png"  HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:VM_UserSeries}}, Path=NextEpisodeCommand}" CommandParameter="{Binding .}"/>
-            </Border>-->
 
         </Grid>
     </Border>

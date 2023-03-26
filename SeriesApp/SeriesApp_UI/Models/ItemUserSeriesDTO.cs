@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace SeriesApp_UI.Models
 {
+    /// <summary>
+    /// Esta clase se usará para almacenar una serie y el último capítulo que ha visto un usuario de esta
+    /// </summary>
     public partial class ItemUserSeriesDTO : ObservableObject
     {
+        #region Propiedades
         [ObservableProperty]
         ClsSeries series;
 
@@ -17,7 +21,9 @@ namespace SeriesApp_UI.Models
 
         [ObservableProperty]
         int episodeNumber;
+        #endregion
 
+        #region Constructores
         public ItemUserSeriesDTO()
         {
         }
@@ -28,5 +34,6 @@ namespace SeriesApp_UI.Models
             SeasonNumber = seasonNumber;
             EpisodeNumber = episodeNumber;
         }
+        #endregion
     }
 }

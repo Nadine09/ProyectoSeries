@@ -6,8 +6,11 @@ namespace SeriesApp_UI.ViewModels
 {
     public partial class VM_Account : VM_Observer
     {
+        #region Constructores
         public VM_Account() : base() {}
+        #endregion
 
+        #region Commands
         /// <summary>
         /// Este método hace que se navege hacia la pagina Login
         /// </summary>
@@ -17,5 +20,6 @@ namespace SeriesApp_UI.ViewModels
         {
             Navigate($"//{nameof(LoginPage)}");
         }
+        #endregion
     }
 }

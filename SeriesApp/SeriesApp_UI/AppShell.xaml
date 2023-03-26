@@ -9,8 +9,6 @@
     Shell.NavBarIsVisible="False"
     FlyoutBackgroundColor="{AppThemeBinding Default={StaticResource clrLightBlue}}">
 
-
-
     <ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate views:LoginPage}"
@@ -26,7 +24,7 @@
         ContentTemplate="{DataTemplate views:ErrorPage}"
         Route="ErrorPage"/>
 
-    <TabBar Shell.TabBarBackgroundColor="{StaticResource clrLightBlue}" Shell.TabBarUnselectedColor="{StaticResource clrDarkBlue}" >
+    <TabBar Shell.TabBarBackgroundColor="{StaticResource clrLightBlue}" Shell.TabBarUnselectedColor="{StaticResource clrDarkBlue}" Shell.TabBarTitleColor="White">
         <Tab Title="Home" Icon="home.png" >
             <ShellContent
             Title="Home"

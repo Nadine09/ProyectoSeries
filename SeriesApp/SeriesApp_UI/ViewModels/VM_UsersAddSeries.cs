@@ -9,7 +9,10 @@ namespace SeriesApp_UI.ViewModels
     [QueryProperty("Series", "Series")]
     public partial class VM_UsersAddSeries : VM_Observer, IQueryAttributable
     {
+        #region Constantes
         public const string EMPTY_FIELDS = "Los campos no pueden estar vacíos ni el episodio puede ser 0";
+        #endregion
+
         #region Properties
         private SeriesConverter converter;
         private UsersEpisodesDAO usersEpisodesDAO;
@@ -33,7 +36,7 @@ namespace SeriesApp_UI.ViewModels
         int episode;
         #endregion
 
-        #region Constructors
+        #region Constructores
         public VM_UsersAddSeries() : base()
         {
             converter = new SeriesConverter();
@@ -41,7 +44,11 @@ namespace SeriesApp_UI.ViewModels
         }
         #endregion
 
-        #region Methods
+        #region Métodos
+        /// <summary>
+        /// Este método recoge los parámetros dados al navegar hasta la pagina
+        /// </summary>
+        /// <param name="query">IDictionary de donde se recogerán los parámetros</param>
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             Object obj;
@@ -89,7 +96,9 @@ namespace SeriesApp_UI.ViewModels
                 ShowErrorMessage(DB_ERROR);
             }
         }
+        #endregion
 
+        #region Commands
         /// <summary>
         /// Este método verificará los datos y si están bien intentará añadir el progreso.
         /// </summary>

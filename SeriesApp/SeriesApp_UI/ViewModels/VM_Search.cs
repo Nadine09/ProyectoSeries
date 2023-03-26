@@ -6,34 +6,22 @@ namespace SeriesApp_UI.ViewModels
 {
     public partial class VM_Search : VM_Base
     {
+        #region Propiedades
         private SeriesDAO seriesDAO;
 
         [ObservableProperty]
         ClsSeries selectedSerie;
 
         [ObservableProperty]
-        string searchText;
-        
-        /// <summary>
-        /// Este método se ejecutará cuando la cadena SearchText cambie. Si esta está vacía o es nula se actualizará la lista de series para contenerlas todas.
-        /// 
-        /// ACLARACIÓN: Esto he tenido que hacerlo porque el Search Bar sólo llama al commando enlazado cuando la búsqueda contiene texto,
-        /// cuando está vacía o únicamente contiene espacios en blanco no se actualizaría.
-        /// </summary>
-        /// <param name="value"></param>
-        partial void OnSearchTextChanged(string value)
-        {
-            if (string.IsNullOrEmpty(value))
-            {
-                SearchResult = AllSeriesList; // TODO mirar que se hace una copia, no sobreescribe
-            }
-        }
+        string searchText;        
 
         [ObservableProperty]
         List<ClsSeries> searchResult;
 
-        List<ClsSeries> AllSeriesList;// privada
+        private List<ClsSeries> AllSeriesList;
+        #endregion
 
+        #region Constructores
         public VM_Search()
         {
             try
@@ -47,7 +35,26 @@ namespace SeriesApp_UI.ViewModels
                 ShowErrorMessage(DB_ERROR);
             }
         }
+        #endregion
 
+        #region Métodos
+        /// <summary>
+        /// Este método se ejecutará cuando la cadena SearchText cambie. Si esta está vacía o es nula se actualizará la lista de series para contenerlas todas.
+        /// 
+        /// ACLARACIÓN: Esto he tenido que hacerlo porque el Search Bar sólo llama al commando enlazado cuando la búsqueda contiene texto,
+        /// cuando está vacía o únicamente contiene espacios en blanco no se actualizaría.
+        /// </summary>
+        /// <param name="value"></param>
+        partial void OnSearchTextChanged(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                SearchResult = AllSeriesList;
+            }
+        }
+        #endregion
+
+        #region Commands
         /// <summary>
         /// Este método es ejecutado cuando el usuario pulsa en el botón de búsqueda y el texto introducido no es nulo, 
         /// ni está vacío, ni contiene unicamente espacios en blanco. 
@@ -101,5 +108,6 @@ namespace SeriesApp_UI.ViewModels
             }
 
         }
+        #endregion
     }
 }

@@ -9,25 +9,30 @@ namespace SeriesApp_UI.ViewModels
 {
     public partial class VM_Login : VM_Base
     {
+
+        #region Constantes
         public const string EMPTY_FIELDS = "Los campos no pueden estar vacíos";
         public const string LOGIN_ERROR = "No se ha podido hacer login, revisa los datos e intentalo de nuevo";
+        #endregion
 
+        #region Propiedades
         private CurrentUser currentUser;
         private UserDAO userDAO;
-
-
 
         [ObservableProperty]
         string email;
 
         [ObservableProperty]
         string password;
+        #endregion
 
+        #region Constructores
         public VM_Login()
         {
             userDAO = new UserDAO();
             currentUser = CurrentUser.GetInstance();
         }
+        #endregion
 
         #region Commands
         /// <summary>
@@ -62,7 +67,7 @@ namespace SeriesApp_UI.ViewModels
             }
             catch (Exception)
             {
-                Error();
+                ShowErrorMessage(GENERIC_ERROR);
             }
         }
 

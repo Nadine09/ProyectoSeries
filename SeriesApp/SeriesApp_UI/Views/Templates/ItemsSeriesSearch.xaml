@@ -24,8 +24,10 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
+            <!-- Imagen de la serie -->
             <Image Source="{Binding ImageUrl}" Grid.RowSpan="2" Grid.Column="0" VerticalOptions="Center"/>
 
+            <!-- Nombre de la serie -->
             <Label Grid.Column="1" Grid.Row="0"
                          Text="{Binding Name}"
                          FontAttributes="Bold"
@@ -35,6 +37,7 @@
                          Margin="10, 0"
                    TextColor="White"/>
 
+            <!-- Botón añadir serie -->
             <Border Stroke="{StaticResource clrLightBlue}" BackgroundColor="{StaticResource clrDarkBlue}"  Grid.Column="2" Grid.Row="0" HeightRequest="50" WidthRequest="50" Padding="5" VerticalOptions="End" Margin="10,0,0,0">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="5"/>

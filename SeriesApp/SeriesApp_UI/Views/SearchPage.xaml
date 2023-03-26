@@ -12,6 +12,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- Barra de búsqueda -->
         <Border Grid.Row="0" Margin="10,15,10,20" BackgroundColor="{StaticResource clrLightGrey}">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30"/>
@@ -27,6 +28,7 @@
             <Label x:Name="ErrorMessage" Text="{Binding ErrorMessage}" Style="{StaticResource lblErrorMessage}" Padding="5"/>
         </Border>
 
+        <!-- Listado de series -->
         <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" Grid.Row="2">
             <CollectionView ItemsSource="{Binding SearchResult}" ItemsLayout="VerticalList" SelectionMode="Single" SelectedItem="{Binding SelectedSerie}" SelectionChangedCommand="{Binding SeriesDetailsCommand}"  SelectionChangedCommandParameter="{Binding Path=SelectedItem, Source={RelativeSource Self}}">
                 <CollectionView.ItemTemplate>

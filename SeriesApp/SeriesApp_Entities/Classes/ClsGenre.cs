@@ -8,12 +8,12 @@ namespace SeriesApp_Entities.Classes
 {
     public class ClsGenre
     {
-        #region Public properties
+        #region Propiedades
         public long Id { get; set; }
         public string Name { get; set; }
         #endregion
 
-        #region Constructors 
+        #region Constructores 
         public ClsGenre()
         {
         }

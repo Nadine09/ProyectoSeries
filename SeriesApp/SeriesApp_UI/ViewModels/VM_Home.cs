@@ -5,6 +5,7 @@ namespace SeriesApp_UI.ViewModels
 {    
     public partial class VM_Home : VM_Base
     {
+        #region Propiedades
         private SeriesDAO seriesDAO;
 
         [ObservableProperty]
@@ -12,7 +13,9 @@ namespace SeriesApp_UI.ViewModels
 
         [ObservableProperty]
         List<ClsSeries> top10Series;
+        #endregion
 
+        #region Constructores
         public VM_Home()
         {
             try
@@ -25,7 +28,9 @@ namespace SeriesApp_UI.ViewModels
                 ShowErrorMessage(DB_ERROR);
             }
         }
+        #endregion
 
+        #region Commands
         /// <summary>
         /// Este método navega a SeriesDetails pasandole la serie recibida por parámetros
         /// </summary>
@@ -45,5 +50,6 @@ namespace SeriesApp_UI.ViewModels
                 ShowErrorMessage(GENERIC_ERROR);
             }
         }
+        #endregion
     }
 }

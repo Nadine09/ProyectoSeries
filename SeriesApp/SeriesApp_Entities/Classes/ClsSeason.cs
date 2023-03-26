@@ -8,7 +8,7 @@ namespace SeriesApp_Entities.Classes
 {
     public class ClsSeason
     {        
-        #region Public properties
+        #region Propiedades
         public long Id { get; set; }
         public int Orden { get; set; }
         public string Name { get; set; }
@@ -19,7 +19,7 @@ namespace SeriesApp_Entities.Classes
         public long SerieId { get; set; }
         #endregion
 
-        #region Constructors
+        #region Constructores
         public ClsSeason()
         {
         }

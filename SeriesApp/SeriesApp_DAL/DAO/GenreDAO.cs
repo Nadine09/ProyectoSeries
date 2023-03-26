@@ -10,17 +10,22 @@ namespace SeriesApp_DAL.DAO
 {
     public class GenreDAO : GenericDAO<ClsGenre>
     {
+        #region Constantes
         public const string TABLE_NAME = "NAD_Genres";
         public const string TABLE_NAME_SERIES_GENRES = "NAD_SeriesGenres";
 
         public const string SELECT_ALL = $"SELECT [id], [name] FROM {TABLE_NAME}";
         public const string SELECT_BY_SERIES = $"SELECT [id], [name] FROM {TABLE_NAME_SERIES_GENRES} AS SG INNER JOIN {TABLE_NAME} AS G ON SG.genreId = G.id WHERE SG.serieId = @id";
+        #endregion
 
+        #region Constructores
         public GenreDAO()
         {
             cmdSelectAll = SELECT_ALL;
         }
+        #endregion
 
+        #region Métodos
         /// <summary>
         /// Este método obtiene los géneros a los que pertenece una serie por su id.
         /// </summary>
@@ -42,5 +47,6 @@ namespace SeriesApp_DAL.DAO
             };
             return genre;
         }
+        #endregion
     }
 }

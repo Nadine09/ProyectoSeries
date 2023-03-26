@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SeriesApp_Entities.Enums
 {
+    /// <summary>
+    /// Este enum contiene las clasificaciones de edad recomendada
+    /// </summary>
     public enum MRA
     {
         MRA0 = 0,

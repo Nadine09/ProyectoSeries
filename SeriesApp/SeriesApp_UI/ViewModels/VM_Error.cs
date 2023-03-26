@@ -7,9 +7,23 @@ using System.Threading.Tasks;
 
 namespace SeriesApp_UI.ViewModels
 {
-    public partial class VM_Error : VM_Base
+    public partial class VM_Error : ObservableObject
     {
+        #region Constantes
+        public const string ERROR = "Lo sentimos, ha ocurrido un error inesperado... ";
+        #endregion
+
+        #region Propiedades
         [ObservableProperty]
-        string errorMessage = "Lo sentimos, ha ocurrido un error inesperado... ";
+        string errorMessage;
+        #endregion
+
+        #region Constructores
+        public VM_Error()
+        {
+            errorMessage = ERROR;
+        }
+        #endregion
+
     }
 }

@@ -9,7 +9,7 @@ namespace SeriesApp_Entities.Classes
 {
     public class ClsSeries
     {
-        #region Public properties
+        #region Propiedades
         public long Id { get; set; }
         public string Name { get; set; }
         public string Synopsis { get; set; }
@@ -20,7 +20,7 @@ namespace SeriesApp_Entities.Classes
         public string ImageUrl { get; set; }
         #endregion
 
-        #region Constructors 
+        #region Constructores 
         public ClsSeries()
         {
         }
@@ -54,9 +54,6 @@ namespace SeriesApp_Entities.Classes
             Valuation = clsSeries.Valuation;
             ImageUrl = clsSeries.ImageUrl;
         }
-
-
-
         #endregion
 
     }

@@ -8,14 +8,14 @@ namespace SeriesApp_Entities.Classes
 {
     public class ClsUser
     {
-        #region Public properties
+        #region Propiedades
         public long Id { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         #endregion
 
-        #region Constructors 
+        #region Constructores 
         public ClsUser()
         {
         }
@@ -35,7 +35,6 @@ namespace SeriesApp_Entities.Classes
             Password = password;
         }
         #endregion
-
         
     }
 }
