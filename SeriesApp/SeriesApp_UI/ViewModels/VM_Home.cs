@@ -2,8 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 
 namespace SeriesApp_UI.ViewModels
-{
-    //[QueryProperty("User", "User")]
+{    
     public partial class VM_Home : VM_Base
     {
         private SeriesDAO seriesDAO;

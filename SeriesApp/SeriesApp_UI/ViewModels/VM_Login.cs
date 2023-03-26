@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using LeteoApp_UI.Classes;
+using LeteoApp_UI.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 using System.Collections.ObjectModel;
 
@@ -7,10 +9,13 @@ namespace SeriesApp_UI.ViewModels
 {
     public partial class VM_Login : VM_Base
     {
-        private UserDAO userDAO;
-
         public const string EMPTY_FIELDS = "Los campos no pueden estar vacíos";
         public const string LOGIN_ERROR = "No se ha podido hacer login, revisa los datos e intentalo de nuevo";
+
+        private CurrentUser currentUser;
+        private UserDAO userDAO;
+
+
 
         [ObservableProperty]
         string email;
@@ -21,6 +26,7 @@ namespace SeriesApp_UI.ViewModels
         public VM_Login()
         {
             userDAO = new UserDAO();
+            currentUser = CurrentUser.GetInstance();
         }
 
         #region Commands
@@ -36,12 +42,12 @@ namespace SeriesApp_UI.ViewModels
                 if (!Email.IsNullOrEmpty() && !Password.IsNullOrEmpty())
                 {
                     //Obtenemos el usuario con ese email y password
-                    User = userDAO.GetUserByEmailAndPassword(Email, Password);
+                    ClsUser user = userDAO.GetUserByEmailAndPassword(Email, Password);
 
-                    if (User != null)
+                    if (user != null)
                     {
-                        App.Current.Restart();
-                        App.Current.User = User;
+                        //Actualizamos el usuario actual
+                        currentUser.User = user;
                         Navigate("//HomePage");
                     }
                     else

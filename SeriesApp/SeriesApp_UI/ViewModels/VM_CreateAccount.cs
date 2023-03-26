@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using LeteoApp_UI.Classes;
 using Microsoft.IdentityModel.Tokens;
 
 namespace SeriesApp_UI.ViewModels
@@ -9,6 +10,8 @@ namespace SeriesApp_UI.ViewModels
         public const string CREATE_ACCOUNT_ERROR = "No se ha podido crear el usuario";
         public const string INVALID_EMAIL = "El email ya está en uso, prueba con otro o inicia sesión";
         public const string CREATE_ACCOUNT_EMPTY_FIELDS = "Los campos no pueden estar vacíos";
+
+        private CurrentUser currentUser;
 
         [ObservableProperty]
         string username;
@@ -24,6 +27,7 @@ namespace SeriesApp_UI.ViewModels
         public VM_CreateAccount()
         {
             userDAO = new UserDAO();
+            currentUser = CurrentUser.GetInstance();
         }
 
         /// <summary>
@@ -48,8 +52,9 @@ namespace SeriesApp_UI.ViewModels
 
                         if (newUser != null && newUser.Id != 0)
                         {
-                            App.Current.Restart();
-                            App.Current.User = User;
+                            //Actualizamos el usuario actual
+                            currentUser.User = newUser;
+
                             Navigate("//HomePage");
                         }
                         else

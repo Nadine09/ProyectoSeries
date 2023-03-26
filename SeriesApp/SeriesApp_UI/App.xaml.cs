@@ -8,23 +8,12 @@ public partial class App : Application
 {
     public new static App Current => (App)Application.Current;
     public IServiceProvider Services { get; set; }
-    public ClsUser User { get; set; }
 
     public App()
     {
         var services = new ServiceCollection();
         Services = ConfigureServices(services);
         InitializeComponent();
-        MainPage = new AppShell();
-    }
-
-    /// <summary>
-    /// Este método reinicia las Page de la aplicación
-    /// </summary>
-    public void Restart()
-    {
-        var services = new ServiceCollection();
-        Services = ConfigureServices(services);
         MainPage = new AppShell();
     }
 

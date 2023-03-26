@@ -1,13 +1,15 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using LeteoApp_UI.ViewModels;
 using SeriesApp_DAL.DAO;
 using SeriesApp_UI.Utils;
 
 namespace SeriesApp_UI.ViewModels
 {
     [QueryProperty("Series", "Series")]
-    public partial class VM_UsersAddSeries : VM_Base, IQueryAttributable
+    public partial class VM_UsersAddSeries : VM_Observer, IQueryAttributable
     {
+        public const string EMPTY_FIELDS = "Los campos no pueden estar vacíos ni el episodio puede ser 0";
         #region Properties
         private SeriesConverter converter;
         private UsersEpisodesDAO usersEpisodesDAO;
@@ -47,8 +49,15 @@ namespace SeriesApp_UI.ViewModels
 
             if (hasValue)
             {
-                SeriesEpi = converter.ConvertToSeriesWithEpisodesPerSeason((ClsSeries)obj);
-                CheckRelation();
+                try
+                {
+                    SeriesEpi = converter.ConvertToSeriesWithEpisodesPerSeason((ClsSeries)obj);
+                    CheckRelation();
+                }
+                catch
+                {
+                    ShowErrorMessage(DB_ERROR);
+                }
             }
             else
             {
@@ -94,6 +103,10 @@ namespace SeriesApp_UI.ViewModels
                     usersEpisodesDAO.AddProgress(SeriesEpi.Id, SeasonEpisodes.SeasonNumber, Episode, User.Id);
                     GoBack();
                 }
+                else
+                {
+                    ShowErrorMessage(EMPTY_FIELDS);
+                }
             }
             catch (Exception)
             {
@@ -125,17 +138,17 @@ namespace SeriesApp_UI.ViewModels
                     {
                         //Vemos si el progreso ha aumentado (vamos por un capítulo superior a la última vez)
                         increasedProgress = lastSeason < SeasonEpisodes.SeasonNumber || (lastSeason == SeasonEpisodes.SeasonNumber && lastEpisode < Episode);
-                         
-                        
-                            if (equalsSeason)
-                            {
-                                usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, lastEpisode, Episode, User.Id, increasedProgress);
-                            }
-                            else
-                            {
-                                usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, SeasonEpisodes.SeasonNumber, lastEpisode, Episode, User.Id, increasedProgress);
-                            }
-                        
+
+
+                        if (equalsSeason)
+                        {
+                            usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, lastEpisode, Episode, User.Id, increasedProgress);
+                        }
+                        else
+                        {
+                            usersEpisodesDAO.UpdateProgress(SeriesEpi.Id, lastSeason, SeasonEpisodes.SeasonNumber, lastEpisode, Episode, User.Id, increasedProgress);
+                        }
+
                     }
 
                     GoBack();

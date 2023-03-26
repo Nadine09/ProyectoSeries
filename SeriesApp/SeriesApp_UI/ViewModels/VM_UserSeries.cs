@@ -1,12 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using LeteoApp_UI.ViewModels;
 using Microsoft.IdentityModel.Tokens;
 using SeriesApp_UI.Utils;
 using System.Collections.ObjectModel;
 
 namespace SeriesApp_UI.ViewModels
 {
-    public partial class VM_UserSeries : VM_Base
+    public partial class VM_UserSeries : VM_Observer
     {
         [ObservableProperty]
         ClsSeries selectedSerie;
@@ -21,13 +22,8 @@ namespace SeriesApp_UI.ViewModels
         {            
             seriesDAO = new SeriesDAO();
             converter = new SeriesConverter();
-            if (User.Id != 0)
-            {
-                Refresh();
-            }
+            Series = new ObservableCollection<ItemUserSeriesDTO>();
         }
-
-        
 
         /// <summary>
         /// Este metodo obtiene las series de las que es usuario ya tiene progreso guardado
@@ -35,18 +31,21 @@ namespace SeriesApp_UI.ViewModels
         [RelayCommand]
         void Refresh()
         {
-            try
+            if (User.Id != 0)
             {
-                List<ClsSeries> userSeries = seriesDAO.GetByUser(User.Id);
-                if (!userSeries.IsNullOrEmpty())
+                try
                 {
-                    Series = new ObservableCollection<ItemUserSeriesDTO>();
-                    userSeries.ForEach(x => Series.Add(converter.ConvertToItemUserSeriesDTO(x, User.Id)));
+                    List<ClsSeries> userSeries = seriesDAO.GetByUser(User.Id);
+                    series.Clear();
+                    if (!userSeries.IsNullOrEmpty())
+                    {                        
+                        userSeries.ForEach(x => Series.Add(converter.ConvertToItemUserSeriesDTO(x, User.Id)));
+                    }
                 }
-            }
-            catch (Exception)
-            {
-                ShowErrorMessage(DB_ERROR);
+                catch (Exception)
+                {
+                    ShowErrorMessage(DB_ERROR);
+                }
             }
         }
 

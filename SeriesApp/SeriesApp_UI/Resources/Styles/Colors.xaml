@@ -41,7 +41,7 @@
     <Color x:Key="Blue200Accent">#72ACF1</Color>
     <Color x:Key="Blue300Accent">#A7CBF6</Color>
     
-     <!-- -->
+     <!-- Mis colores -->
     <Color x:Key="clrLightBlue">#98C1D9</Color>
     <Color x:Key="clrMediumBlue">#3D5A80</Color>
     <Color x:Key="clrDarkBlue">#293241</Color>
@@ -49,6 +49,4 @@
     <Color x:Key="clrLightRed">#EE6C4D</Color>
     <Color x:Key="clrTransparentWhite">#66FFFFFF</Color>
     
-    
-
 </ResourceDictionary>

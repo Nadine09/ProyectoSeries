@@ -15,19 +15,13 @@ namespace SeriesApp_UI.ViewModels
         public const string GENERIC_ERROR = "Ha ocurrido un error inesperado.";
 
         [ObservableProperty]
-        ClsUser user;
-
-        [ObservableProperty]
         bool errorMessageVisible;
 
         [ObservableProperty]
         string errorMessage;
 
         #region Constructors
-        protected VM_Base()
-        {
-            User = App.Current.User;
-        }
+        protected VM_Base() {}
         #endregion
 
         public void ClearErrorMessage() { ErrorMessageVisible = false; }
