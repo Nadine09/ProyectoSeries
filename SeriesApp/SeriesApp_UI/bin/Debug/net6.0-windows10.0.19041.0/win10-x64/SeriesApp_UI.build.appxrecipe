@@ -1741,6 +1741,9 @@
     <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\account.scale-100.png">
       <PackagePath>account.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\add.scale-100.png">
+      <PackagePath>add.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
     </AppxPackagedFile>
@@ -1834,6 +1837,12 @@
     <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\back.scale-100.png">
+      <PackagePath>back.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\backicon.scale-100.png">
+      <PackagePath>backicon.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -1849,14 +1858,32 @@
     <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\edit.scale-100.png">
+      <PackagePath>edit.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\ghost.scale-100.png">
+      <PackagePath>ghost.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\happypopcorn.scale-100.png">
+      <PackagePath>happypopcorn.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
       <PackagePath>home.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\list.scale-100.png">
       <PackagePath>list.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\popcorn.scale-100.jpg">
-      <PackagePath>popcorn.scale-100.jpg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo.scale-100.png">
+      <PackagePath>logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\plus.scale-100.png">
+      <PackagePath>plus.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\refresh.scale-100.png">
+      <PackagePath>refresh.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-100.png">
+      <PackagePath>search.scale-100.png</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

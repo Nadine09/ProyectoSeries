@@ -64,3 +64,4 @@ C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_DAL\obj\Debug\net
 C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0-ios\refint\SeriesApp_DAL.dll
 C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0-ios\SeriesApp_DAL.pdb
 C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0-ios\ref\SeriesApp_DAL.dll
+C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_DAL\obj\Debug\net6.0-ios\build-signature\signature

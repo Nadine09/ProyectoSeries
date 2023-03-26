@@ -4,5 +4,10 @@
         <name>SeriesApp_Entities</name>
     </assembly>
     <members>
+        <member name="T:SeriesApp_Entities.Enums.MRA">
+            <summary>
+            Este enum contiene las clasificaciones de edad recomendada
+            </summary>
+        </member>
     </members>
 </doc>

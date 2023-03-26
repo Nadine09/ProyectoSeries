@@ -6,101 +6,101 @@ build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = SeriesApp_UI
+build_property.RootNamespace = LeteoApp_UI
 build_property.ProjectDir = C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_UI\
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.App.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.AppShell.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/AccountPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.AccountPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.AccountPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\AccountPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AccountPage.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/CreateAccountPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.CreateAccountPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.CreateAccountPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\CreateAccountPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CreateAccountPage.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/ErrorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.ErrorPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.ErrorPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ErrorPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ErrorPage.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/HomePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.HomePage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.HomePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\HomePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\HomePage.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/SearchPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.SearchPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.SearchPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SearchPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SearchPage.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/SeriesDetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.SeriesDetailsPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.SeriesDetailsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SeriesDetailsPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SeriesDetailsPage.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/Templates/ItemSeriesHome.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.Templates.ItemSeriesHome.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.Templates.ItemSeriesHome.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Templates\ItemSeriesHome.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Templates\ItemSeriesHome.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/Templates/ItemsSeriesSearch.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.Templates.ItemsSeriesSearch.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.Templates.ItemsSeriesSearch.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Templates\ItemsSeriesSearch.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Templates\ItemsSeriesSearch.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/Templates/ItemUserSeries.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.Templates.ItemUserSeries.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.Templates.ItemUserSeries.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Templates\ItemUserSeries.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Templates\ItemUserSeries.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/UsersAddSeriesPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.UsersAddSeriesPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.UsersAddSeriesPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\UsersAddSeriesPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\UsersAddSeriesPage.xaml
 
 [C:/Users/nadin/source/repos/ProyectoSeries/SeriesApp/SeriesApp_UI/Views/UserSeriesPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SeriesApp_UI.Views.UserSeriesPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = LeteoApp_UI.Views.UserSeriesPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\UserSeriesPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\UserSeriesPage.xaml

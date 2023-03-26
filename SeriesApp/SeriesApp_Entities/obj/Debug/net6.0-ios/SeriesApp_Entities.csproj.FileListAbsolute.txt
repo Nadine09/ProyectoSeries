@@ -55,3 +55,4 @@ C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debu
 C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-ios\refint\SeriesApp_Entities.dll
 C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-ios\SeriesApp_Entities.pdb
 C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-ios\ref\SeriesApp_Entities.dll
+C:\Users\nadin\source\repos\ProyectoSeries\SeriesApp\SeriesApp_Entities\obj\Debug\net6.0-ios\build-signature\signature
